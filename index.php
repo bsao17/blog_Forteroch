@@ -14,6 +14,21 @@ if ($action != null) {
             accueil();
             break;
 
+        case "biography":
+            accueil();
+            echo "here is biography";
+            break;
+
+        case "chapter":
+            accueil();
+            echo "here is chapter";
+            break;
+
+        case "contact":
+            echo "here is contact";
+            break;
         
+        default :
+            echo "Enter the good link !";
     }
 }

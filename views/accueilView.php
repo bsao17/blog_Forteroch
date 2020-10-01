@@ -13,7 +13,7 @@
             <h1 class="text-light"><u>Jean Forteroche - Billet simple pour l'Alaska</u></h1>
         </header>
         <section class="text-dark">
-            <h2><u>Chapitre Premier</u></h2>
+            <h2><u><?php echo $_GET['action']; ?></u></h2>
     </div>
 
 </section>
