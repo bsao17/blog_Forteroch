@@ -8,27 +8,30 @@ if (isset($_GET['action'])) {
     $action = null;
 }
 
+$direction = new NavigationSite;
+
 if ($action != null) {
     switch ($action) {
-        case "accueil":
-            accueil();
+        case "home":
+            $direction->home();
             break;
 
         case "biography":
-            accueil();
+            $direction->biography();
             echo "here is biography";
             break;
 
         case "chapter":
-            accueil();
+            $direction->chapter();
             echo "here is chapter";
             break;
 
         case "contact":
+            $direction->contact();
             echo "here is contact";
             break;
         
         default :
-            echo "Enter the good link !";
+            echo "<h1 class='bg-warning'><u class'text-danger'>404 not found !</u></h1>";
     }
 }
