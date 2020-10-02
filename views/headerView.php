@@ -6,12 +6,15 @@
                     <a class="nav-link active" href="<?php echo "?action=home" ?>">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="?action=<?= "chapter"; ?> ">Chapters</a>
+                    <a class="nav-link text-light" href="?action=<?= "chapter"; ?> ">Chapters</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php echo "?action=biography" ?>">Biography</a>
+                    <a class="nav-link text-light" href="<?php echo "?action=biography" ?>">Biography</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php echo "?action=contact" ?>">Contact</a>
+                    <a class="nav-link text-light" href="<?php echo "?action=contact" ?>">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="<?php echo "?action=login" ?>">Login</a>
                 </li>
             </ul>

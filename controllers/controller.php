@@ -1,8 +1,5 @@
 <?php
 
-function accueil(){
-    
-}
 
 class NavigationSite{
     public function home(){
@@ -23,5 +20,10 @@ class NavigationSite{
     public function contact(){
         require_once("./views/accueilView.php");
         echo "here is Contact page";
+    }
+    
+    public function login(){
+        require_once("./views/accueilView.php");
+        echo "here is login page";
     }
 }

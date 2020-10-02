@@ -15,7 +15,7 @@
             <?php require("headerView.php"); ?>
         </header>
         <section class="text-dark">
-            <h2><u><?php echo $_GET['action']; ?></u></h2>
+            <h3 class="card p-2 mt-2"><?php echo strtoupper( $_GET['action']); ?></h3>
     </div>
 
     </section>
