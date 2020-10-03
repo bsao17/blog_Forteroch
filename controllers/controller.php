@@ -1,10 +1,13 @@
 <?php
+require_once("./models/ConnectDbClass.php");
+require("./views/accueilView.php");
 
 
 class NavigationSite{
     public function home(){
-        require_once("./views/accueilView.php");
-        echo "here is Home page";
+        require_once("./views/billetsView.php");
+        
+        
     }
 
     public function chapter(){
@@ -13,17 +16,17 @@ class NavigationSite{
     }
 
     public function biography(){
-        require_once("./views/accueilView.php");
+        
         echo "here is Biography page";
     }
 
     public function contact(){
-        require_once("./views/accueilView.php");
+        
         echo "here is Contact page";
     }
     
     public function login(){
-        require_once("./views/accueilView.php");
+        
         echo "here is login page";
     }
 }

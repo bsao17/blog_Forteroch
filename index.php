@@ -18,14 +18,17 @@ if ($action != null) {
 
         case "biography":
             $direction->biography();
+            echo "here is biography";
             break;
 
         case "chapter":
             $direction->chapter();
+            echo "here is chapter";
             break;
 
         case "contact":
             $direction->contact();
+            echo "here is contact";
             break;
 
         case "login":
