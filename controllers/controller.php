@@ -10,7 +10,7 @@ class NavigationSite{
     }
 
     public function chapter(){
-        require_once("./views/accueilView.php");
+        
         echo "here is Chapters page";
     }
 

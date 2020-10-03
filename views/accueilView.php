@@ -1,4 +1,4 @@
-
+<?php require("./models/DatabaseClass.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,7 +18,10 @@
         <section class="text-dark">
             <h3 class="card p-2 mt-2"><?php echo strtoupper( $_GET['action']); ?></h3>
 
-            
+            <?php
+                $db = new Database;
+                echo $db->getConnection();
+            ?>
     </div>
 
     </section>
