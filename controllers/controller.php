@@ -1,11 +1,10 @@
 <?php
-require_once("./models/ConnectDbClass.php");
 require("./views/accueilView.php");
 
 
 class NavigationSite{
     public function home(){
-        require_once("./views/billetsView.php");
+       
         
         
     }
