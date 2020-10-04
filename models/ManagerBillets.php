@@ -1,17 +1,12 @@
 <?php
-
-class ManagerBillets{
-    private $host = "mysql:host = localhost; dbname = blogjeanforteroch; charset = utf8";
-    private $login = "root";
-    private $password = "";
-    public $dtb;
-
-    public function __construct($_host, $_login, $_password)
+require_once("DatabaseClass.php");
+class ManagerBillets
+{
+    public function display()
     {
-        $this->_host = $host;
-        $this->dtb = new PDO($_host, $_login, $_password);
-    }
-
-    public function display(){
+        $db = new Database();
+        $connection = $db->getConnection();
+        $result = $connection->query("SELECT * FROM billets");
+        require("./views/billetsView.php");
     }
 }

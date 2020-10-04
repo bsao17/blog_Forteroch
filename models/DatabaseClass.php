@@ -13,7 +13,7 @@ class Database
         try{
             $connection = new PDO(Database::DB_HOST, Database::DB_USER, Database::DB_PASS );
             $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            return 'Connexion OK';
+            return $connection;
         }
         //On lève une erreur si la connexion échoue
         catch(Exception $e)

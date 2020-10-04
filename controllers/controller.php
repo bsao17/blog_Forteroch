@@ -1,12 +1,12 @@
 <?php
 require("./views/accueilView.php");
+require("./models/ManagerBillets.php");
 
 
 class NavigationSite{
     public function home(){
-       
-        
-        
+        $billets = new ManagerBillets();
+        $billets->display();   
     }
 
     public function chapter(){
