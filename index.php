@@ -32,7 +32,7 @@ if ($action != null) {
             break;
 
         case "login":
-            echo "enter login";
+            $direction->login();
             break;
         
         default :

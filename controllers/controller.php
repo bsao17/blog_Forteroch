@@ -25,7 +25,6 @@ class NavigationSite{
     }
     
     public function login(){
-        
-        echo "here is login page";
+        require_once("./views/login.views.php");
     }
 }

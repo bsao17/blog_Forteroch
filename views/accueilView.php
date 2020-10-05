@@ -13,7 +13,7 @@
 <body>
     <div class="border border-light bg-info m-2 rounded d-flex flex-column justify-content-center align-items-center">
         <header>
-            <?php require("headerView.php"); ?>
+            <?php require("TEMPLATES/headerView.php"); ?>
         </header>
         <section class="text-dark">
             <h3 class="card p-2 mt-2"><?php echo strtoupper( $_GET['action']); ?></h3>
