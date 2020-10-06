@@ -1,18 +1,20 @@
 <?php
-require("./views/accueilView.php");
+require("./views/TEMPLATES/baseTemplate.php");
 require("./models/ManagerBillets.php");
 
 
 class NavigationSite{
     public function home(){
         $billets = new ManagerBillets();
-        $post = $billets->getBillet(); 
-        require("./views/billetsView.php");  
+        $post = $billets->getBillet();
+        require("./views/home.php") ;
     }
 
     public function chapter(){
+        $billets = new ManagerBillets();
+        $post = $billets->getBillet(); 
+        require("./views/billetsView.php");  
         
-        echo "here is Chapters page";
     }
 
     public function biography(){
@@ -26,6 +28,6 @@ class NavigationSite{
     }
     
     public function login(){
-        require_once("./views/login.views.php");
+        require_once("./views/Connect.views.php");
     }
 }

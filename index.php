@@ -23,7 +23,6 @@ if ($action != null) {
 
         case "chapter":
             $direction->chapter();
-            echo "here is chapter";
             break;
 
         case "contact":
@@ -31,7 +30,7 @@ if ($action != null) {
             echo "here is contact";
             break;
 
-        case "login":
+        case "connect":
             $direction->login();
             break;
         

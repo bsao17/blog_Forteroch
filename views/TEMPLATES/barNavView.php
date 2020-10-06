@@ -1,13 +1,13 @@
 
-<h1 class="text-light"><u>Jean Forteroche - Billet simple pour l'Alaska</u></h1><hr>
+<p class="text-light h1"><u>Jean Forteroche - Billet simple pour l'Alaska</u></p><hr>
 
             <ul class="nav nav-tabs">
                 <li class="nav-item">
                     <a class="nav-link active" href="<?php echo "?action=home" ?>">Home</a>
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="nav-link text-light" href="?action=<?= "chapter"; ?> ">Chapters</a>
-                </li>
+                </li> -->
                 <li class="nav-item">
                     <a class="nav-link text-light" href="<?php echo "?action=biography" ?>">Biography</a>
                 </li>
@@ -15,6 +15,6 @@
                     <a class="nav-link text-light" href="<?php echo "?action=contact" ?>">Contact</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-light" href="<?php echo "?action=login" ?>">Connect</a>
+                    <a class="nav-link text-light" href="<?php echo "?action=connect" ?>">Connect</a>
                 </li>
             </ul>

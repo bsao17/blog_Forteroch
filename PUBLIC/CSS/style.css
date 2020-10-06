@@ -1,6 +1,17 @@
+:root{
+    --globalBlue : #17a3b8d0;
+}
+
+
+
 body{
     background-color: rgba(2, 36, 87, 0.5);
     font-family: 'Playfair Display', serif;
+    background: repeat center /cover fixed url('../PICTURES/landscape-nature-wilderness-walking-mountain-snow-864039-pxhere.com.jpg') ;
+}
+
+#banner{
+    background-color: var(--globalBlue);
 }
 
 #billetTitle{
@@ -8,6 +19,23 @@ body{
 }
 
 #billet{
-    font-family: 'Playfair Display', serif;
     font-size: 1.1rem;
+    background-color: var(--globalBlue);
+}
+
+#login_form{
+    background-color: var(--globalBlue);
+}
+
+#form{
+    background-color: rgb(38, 45, 65);
+}
+
+#home{
+    background-color: rgba(245, 245, 245, 0.8);
+}
+
+.chapter1{
+    background-color: #17a3b84b;
+    font-size: 1.4rem;
 }
