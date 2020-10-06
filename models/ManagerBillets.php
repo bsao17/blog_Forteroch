@@ -2,11 +2,32 @@
 require_once("DatabaseClass.php");
 class ManagerBillets
 {
-    public function display()
+    private $db;
+    private $connection;
+
+    public function __construct()
     {
-        $db = new Database();
-        $connection = $db->getConnection();
-        $result = $connection->query("SELECT * FROM billets");
-        require("./views/billetsView.php");
+        $this->db = new Database();
+        $this->connection = $this->db->getConnection();
     }
+
+    public function getBillet()
+    {
+        $request = $this->connection->query("SELECT * FROM billets");
+        $result = $request->fetch();
+        return $result;
+    }
+
+    public function createBillet(){
+
+    }
+
+    public function deleteBillet(){
+
+    }
+
+    public function updateBillet(){
+
+    }
+
 }

@@ -15,6 +15,6 @@
                     <a class="nav-link text-light" href="<?php echo "?action=contact" ?>">Contact</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-light" href="<?php echo "?action=login" ?>">Login</a>
+                    <a class="nav-link text-light" href="<?php echo "?action=login" ?>">Connect</a>
                 </li>
             </ul>

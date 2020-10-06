@@ -1,8 +1,5 @@
-<section class="m-2 border border-light bg-info rounded text-center">
+<section class="m-2 p-2 border border-light bg-info rounded text-center" id="billet">
     <?php
-        require_once("./models/ManagerBillets.php");
-        while($res = $result->fetch()){
-            echo "<strong class='h4'><u>".$res['title']."</u></strong>"."<br>".$res['content'];
-        }
+        echo "<hr class='border border-dark'><strong class='h4 text-light bg-primary rounded p-1' id='billetTitle'>".$post['title']."</strong><br><br><span class='text-light'>".$post['content']."</span><hr class='border border-light'>";
     ?>
 </section>

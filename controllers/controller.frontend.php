@@ -6,7 +6,8 @@ require("./models/ManagerBillets.php");
 class NavigationSite{
     public function home(){
         $billets = new ManagerBillets();
-        $billets->display();   
+        $post = $billets->getBillet(); 
+        require("./views/billetsView.php");  
     }
 
     public function chapter(){

@@ -1,0 +1,13 @@
+body{
+    background-color: rgba(2, 36, 87, 0.5);
+    font-family: 'Playfair Display', serif;
+}
+
+#billetTitle{
+    box-shadow: rgba(0, 0, 0, 0.5) 5px 5px 10px;
+}
+
+#billet{
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+}

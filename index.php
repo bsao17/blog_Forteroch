@@ -1,6 +1,6 @@
 <?php
 
-require_once("./controllers/controller.php");
+require_once("./controllers/controller.frontend.php");
 
 if (isset($_GET['action'])) {
     $action = $_GET['action'];
