@@ -7,13 +7,14 @@
         Esse, inventore dolorum sequi iusto eos numquam id qui, accusamus non maxime dolore sit commodi quibusdam rerum ab, 
         praesentium veniam alias sapiente voluptates debitis.
     </p>
-    <div class="text-center chapter1" id="chapter1">
-        <a href="?action=billets">
+    <div class="text-center chapter1 pt-2 border border-light m-2 rounded" id="chapter1">
+        <a href="?action=getBillets">
             <?php 
-            foreach($post as $value){
+            foreach($post as $billet){
 
-                echo $value['title']."<br>";
-                echo $value['content']."<hr>";
+                echo "<strong class='btn btn-light'>".$billet['ID']."</strong><br>";
+                echo $billet['title']."<hr class='border border-light'>";
+                
             }
             ?>
         </a>

@@ -55,3 +55,7 @@ body{
 .pict1{
     box-shadow: rgb(48, 48, 48) 5px 5px 5px;
 }
+
+#comments{
+    background: var(--globalBlue);
+}

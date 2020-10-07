@@ -1,6 +1,7 @@
 <?php
 require("./views/TEMPLATES/baseTemplate.php");
 require("./models/ManagerBillets.php");
+require("./models/ManagerComment.php");
 
 
 class NavigationSite{
@@ -14,6 +15,11 @@ class NavigationSite{
         $billets = new ManagerBillets();
         $post = $billets->getBillet();
         require("./views/billetsView.php");  
+    }
+
+    public function addComment(){
+        $comment = new ManagerComment;
+        $comment->postComment();
     }
 
     public function biography(){

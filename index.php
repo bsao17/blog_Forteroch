@@ -23,7 +23,7 @@ if ($action != null) {
             echo "here is biography";
             break;
 
-        case "billets":
+        case "getBillets":
             $direction->getbillet();
             break;
 

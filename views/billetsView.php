@@ -1,7 +1,14 @@
 <section class="m-2 p-2 border border-light rounded text-center" id="billet">
     <?php
-        echo "<div>"."<span class='h4'>Chapter N° ".$post['ID']."</span><hr class='border border-dark'><strong class='h4 text-light bg-primary rounded p-1' id='billetTitle'>".
-        $post['title']."</strong><br><br><span class='text-light'>".
-        $post['content']."</span><hr class='border border-light'></div>";
+        foreach($post as $value){
+            echo $value['ID']." | ";
+            echo "<strong><u class='text-light'>".$value['title']."</u></strong><br><hr>";
+            echo $value['content']."<hr class='bg-light'>";
+        }
     ?>
 </section>
+
+<hr class="border border-dark">
+    <section id="comments" class="m-2 border border-light rounded" >
+        <?php  include_once('commentFormView.php') ?>
+    </section>

@@ -19,9 +19,7 @@
                 <h3 class="card card-light p-2 mt-2"><?php echo strtoupper( $_GET['action']); ?></h3>
         </header>
 
-            <?php
-                
-            ?>
+    
     </div>
 
     </section>
