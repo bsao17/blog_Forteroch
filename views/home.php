@@ -6,9 +6,10 @@
         Esse eius ea laboriosam, architecto est doloribus ad? Quidem fugiat quo nesciunt nisi non. Accusantium, at? Consequuntur, dolore. 
         Esse, inventore dolorum sequi iusto eos numquam id qui, accusamus non maxime dolore sit commodi quibusdam rerum ab, 
         praesentium veniam alias sapiente voluptates debitis.
+        <img src="../PUBLIC/PICTURES/sky.jpg" alt="" class="picture">
     </p>
     <div class="text-center chapter1 pt-2 border border-light m-2 rounded" id="chapter1">
-        <a href="?action=getBillets">
+        <a href="chapters">
             <?php 
             foreach($post as $billet){
 

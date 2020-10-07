@@ -14,7 +14,7 @@
 <body>
     <div class="border border-light m-2 rounded d-flex flex-column justify-content-center align-items-center" id="banner">
         <header>
-            <?php require("barNavView.php"); ?>
+            <?php require("barNavTemplate.php"); ?>
             <section class="text-dark">
                 <h3 class="card card-light p-2 mt-2"><?php echo strtoupper( $_GET['action']); ?></h3>
         </header>

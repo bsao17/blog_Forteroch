@@ -59,3 +59,9 @@ body{
 #comments{
     background: var(--globalBlue);
 }
+
+.picture{
+    width: 40%;
+    height: auto;
+    margin: auto;
+}
