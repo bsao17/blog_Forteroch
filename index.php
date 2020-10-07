@@ -1,6 +1,7 @@
 <?php
 
 require_once("./controllers/controller.frontend.php");
+require_once("./controllers/controller.backend.php");
 
 if (isset($_GET['action'])) {
     $action = $_GET['action'];
@@ -9,6 +10,7 @@ if (isset($_GET['action'])) {
 }
 
 $direction = new NavigationSite;
+$administration = new Administration;
 
 if ($action != null) {
     switch ($action) {
@@ -21,8 +23,8 @@ if ($action != null) {
             echo "here is biography";
             break;
 
-        case "chapter":
-            $direction->chapter();
+        case "billets":
+            $direction->getbillet();
             break;
 
         case "contact":
@@ -31,7 +33,7 @@ if ($action != null) {
             break;
 
         case "connect":
-            $direction->login();
+            $administration->login();
             break;
         
         default :

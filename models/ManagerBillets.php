@@ -14,7 +14,7 @@ class ManagerBillets
     public function getBillet()
     {
         $request = $this->connection->query("SELECT * FROM billets");
-        $result = $request->fetch();
+        $result = $request->fetchAll();
         return $result;
     }
 

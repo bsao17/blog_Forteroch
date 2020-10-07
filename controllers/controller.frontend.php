@@ -10,11 +10,10 @@ class NavigationSite{
         require("./views/home.php") ;
     }
 
-    public function chapter(){
+    public function getbillet(){
         $billets = new ManagerBillets();
-        $post = $billets->getBillet(); 
+        $post = $billets->getBillet();
         require("./views/billetsView.php");  
-        
     }
 
     public function biography(){
@@ -25,9 +24,5 @@ class NavigationSite{
     public function contact(){
         
         echo "here is Contact page";
-    }
-    
-    public function login(){
-        require_once("./views/Connect.views.php");
     }
 }

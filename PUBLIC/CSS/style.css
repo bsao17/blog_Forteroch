@@ -2,7 +2,19 @@
     --globalBlue : #17a3b8d0;
 }
 
+a{
+    color: rgb(71, 71, 71);
+    text-decoration: none;
+}
 
+a:visited{
+    color: rgb(71, 71, 71);
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: none;
+}
 
 body{
     background-color: rgba(2, 36, 87, 0.5);
@@ -38,4 +50,8 @@ body{
 .chapter1{
     background-color: #17a3b84b;
     font-size: 1.4rem;
+}
+
+.pict1{
+    box-shadow: rgb(48, 48, 48) 5px 5px 5px;
 }

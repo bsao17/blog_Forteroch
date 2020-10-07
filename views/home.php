@@ -8,9 +8,14 @@
         praesentium veniam alias sapiente voluptates debitis.
     </p>
     <div class="text-center chapter1" id="chapter1">
-        <a href="index.php/?action=chapter">
-            <?= $post['ID']." | ".$post['title']; ?>
+        <a href="?action=billets">
+            <?php 
+            foreach($post as $value){
+
+                echo $value['title']."<br>";
+                echo $value['content']."<hr>";
+            }
+            ?>
         </a>
-        <img src="<?= $post['imageCover']; ?>" alt="" class="w-25 rounded m-1 border border-light">
     </div>
 </section>
