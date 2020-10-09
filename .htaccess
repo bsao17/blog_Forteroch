@@ -1,6 +1,6 @@
-RewriteEngine on
-RewriteRule ^jean-forteroche/home$ index.php/?action=home
-RewriteRule ^jean-forteroche/chapters$ index.php/?action=getBillets
-RewriteRule ^jean-forteroche/biography$ index.php/?action=biography
-RewriteRule ^jean-forteroche/contact$ index.php/?action=contact
-RewriteRule ^jean-forteroche/connect$ index.php/?action=connect
+# RewriteEngine on
+# RewriteRule ^jean-forteroche/home$ index.php/?action=home
+# RewriteRule ^jean-forteroche/chapters$ index.php/?action=getBillets
+# RewriteRule ^jean-forteroche/biography$ index.php/?action=biography
+# RewriteRule ^jean-forteroche/contact$ index.php/?action=contact
+# RewriteRule ^jean-forteroche/connect$ index.php/?action=connect

@@ -9,7 +9,7 @@
         <img src="../PUBLIC/PICTURES/sky.jpg" alt="" class="picture">
     </p>
     <div class="text-center chapter1 pt-2 border border-light m-2 rounded" id="chapter1">
-        <a href="chapters">
+        <a href="?action=getBillets">
             <?php 
             foreach($post as $billet){
 

@@ -1,6 +1,9 @@
 <?php 
-require_once("DatabaseClass.php");
+function findClass($class){
+    require($class.".php");
+}
 
+spl_autoload_register("findClass");
 class ManagerComment{
 
     private $db;

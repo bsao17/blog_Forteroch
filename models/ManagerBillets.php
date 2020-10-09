@@ -1,5 +1,9 @@
 <?php
-require_once("DatabaseClass.php");
+
+function classAutoload($class){
+    require_once($class.'php');
+}
+spl_autoload_register('classautoload');
 class ManagerBillets
 {
     private $db;
