@@ -65,3 +65,7 @@ body{
     height: auto;
     margin: auto;
 }
+
+#contactForm{
+    background-color: var(--globalBlue);
+}

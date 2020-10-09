@@ -17,14 +17,18 @@
             </tr>
             <tr>
                 <td>Password :</td>
-                <td><input type="text" name="password" id="password"></td>
+                <td><input type="password" name="password" id="password"></td>
             </tr>
             <tr>
                 <td>Repeat Password :</td>
-                <td><input type="text" name="Repeat_password" id="Repeat_password"></td>
+                <td><input type="password" name="Repeat_password" id="Repeat_password"></td>
             </tr>
             <tr>
                 <td><button type="submit" class='btn btn-light text-dark'>Connect</button><br></td>
+            </tr><br>
+            <tr class="border-top">
+                <td>Create User Account :</td>
+                <td><a href="<?= '?action=signup'; ?>" class="btn btn-outline-light">Create</a></td>
             </tr>
         </table>
     </form>

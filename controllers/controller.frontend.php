@@ -8,9 +8,9 @@ class NavigationSite{
     public function home(){
         $billets = new ManagerBillets();
         $post = $billets->getBillet();
-        require("./views/home.php") ;
+        require("./views/home.php");
     }
-
+    
     public function getbillet(){
         $billets = new ManagerBillets();
         $post = $billets->getBillet();
@@ -23,12 +23,12 @@ class NavigationSite{
     }
 
     public function biography(){
-        
+        require_once("./views/TEMPLATES/biographTemplate.php");
         echo "here is Biography page";
     }
 
     public function contact(){
-        
+        require_once("./views/TEMPLATES/contactTemplate.php");
         echo "here is Contact page";
     }
 }
