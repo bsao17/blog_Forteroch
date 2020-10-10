@@ -5,31 +5,41 @@
         <table>
             <tr>
                 <td>Firstname :</td>
-                <td><input type="text" name="firstname" id="firstname"></td>
+                <td><input type="text" name="firstname" id="firstname" class="rounded"></td>
             </tr>
             <tr>
                 <td>Lastname :</td>
-                <td><input type="text" name="lastname" id="lastname"></td>
+                <td><input type="text" name="lastname" id="lastname" class="rounded"></td>
             </tr>
             <tr>
                 <td>Login :</td>
-                <td><input type="text" name="login" id="login"></td>
+                <td><input type="text" name="login" id="login" class="rounded"></td>
             </tr>
-            <tr>
+            <tr> 
                 <td>Password :</td>
-                <td><input type="password" name="password" id="password"></td>
+                <td><input type="password" name="password" id="password" class="rounded"></td>
             </tr>
             <tr>
                 <td>Repeat Password :</td>
-                <td><input type="password" name="Repeat_password" id="Repeat_password"></td>
+                <td><input type="password" name="Repeat_password" id="Repeat_password" class="rounded"></td>
             </tr>
+        </table>
+
+        <table>
             <tr>
                 <td><button type="submit" class='btn btn-light text-dark'>Connect</button><br></td>
             </tr><br>
-            <tr class="border-top">
+        </table><hr class="border border-light">
+
+    </form>
+    
+    <form action="" method="POST" class="bg-light rounded m-3 pt-1 pb-1 pr-5 pl-5">
+        <table class="border border-light">
+        <tr>
                 <td>Create User Account :</td>
-                <td><a href="<?= '?action=signup'; ?>" class="btn btn-outline-light">Create</a></td>
+                <td><a href="<?= '?action=signup'; ?>" class="btn btn-warning border border-secondary">Create</a></td>
             </tr>
         </table>
+
     </form>
 </div>

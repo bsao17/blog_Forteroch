@@ -12,7 +12,7 @@ class Database
         //Tentative de connexion à la base de données
         try{
             $connection = new PDO(Database::DB_HOST, Database::DB_USER, Database::DB_PASS );
-            $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
             return $connection;
         }
         //On lève une erreur si la connexion échoue

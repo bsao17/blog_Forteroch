@@ -69,3 +69,7 @@ body{
 #contactForm{
     background-color: var(--globalBlue);
 }
+
+#picture-home{
+    box-shadow: black 5px 5px 10px;
+}

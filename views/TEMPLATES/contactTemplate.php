@@ -1,6 +1,6 @@
 
 <section class="border border-light m-2 rounded" id="contactForm">
-    <form action="mailto:declic62@gmail.com" class="d-flex flex-column align-items-center form-group">
+    <form action="?action=sendmail" method="POST" class="d-flex flex-column align-items-center form-group">
         <label for="firstname"  class="m-2">Firstname :
             <input type="text" name="firstname" class="form-control">
         </label>
