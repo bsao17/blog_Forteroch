@@ -7,7 +7,7 @@ try{
         mail("contact@devwebdino.com", "test", $_POST['contentMail']);;
         echo "<h1 class='border border-info bg-light'>E-mail send !!!</h1>";
     }else{
-        echo "sorry not found mail !";
+        echo "sorry not send mail !";
     }
 }catch(Exception $e){
     echo "send error : ".$e->getMessage();

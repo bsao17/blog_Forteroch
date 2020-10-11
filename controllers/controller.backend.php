@@ -14,6 +14,7 @@ class AdministrationSite{
             $repeat_password = $_POST['repeat_password'];
             $role = 'user';
             var_dump($request);
+            var_dump($server);
             die;
         }
         require_once("./views/createUserView.php");
