@@ -1,6 +1,6 @@
 <?php
-    require_once("./controllers/controller.frontend.php");
-    require_once("./controllers/controller.backend.php");
+    require_once("./controllers/controller.NavigationSite.php");
+    require_once("./controllers/controller.AdministrationSite.php");
 
 try{
 

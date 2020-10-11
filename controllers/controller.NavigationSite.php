@@ -21,7 +21,7 @@ class NavigationSite{
     }
 
     public function biography(){
-        require_once("./views/TEMPLATES/biographTemplate.php");
+        require_once("./views/TEMPLATES/biographyTemplate.php");
     }
 
     public function contact(){
