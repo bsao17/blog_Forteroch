@@ -3,7 +3,7 @@
 function classAutoload($class){
     require_once($class.'php');
 }
-spl_autoload_register('classautoload');
+spl_autoload_register('classAutoload');
 class ManagerBillets
 {
     private $db;
@@ -17,9 +17,13 @@ class ManagerBillets
 
     public function getBillet()
     {
-        $request = $this->connection->query("SELECT * FROM billets");
-        $result = $request->fetchAll();
-        return $result;
+        if(($_POST['login'] == "bsao17") && ($_POST['password'] == "1234") && ($_POST['repeat_password'] == $_POST['password'])){
+                $request = $this->connection->query("SELECT * FROM billets");
+                $result = $request->fetchAll();
+                return $result;
+        }else{
+            echo "login or password bad";
+        }
     }
 
     public function createBillet(){

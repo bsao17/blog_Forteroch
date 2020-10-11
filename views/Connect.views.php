@@ -1,16 +1,8 @@
 
 <div id="login_form" class="d-flex flex-column align-items-center border border-light p-2 ml-2 mr-2 rounded">
-    <h2 class='card card-light rounded p-1'>Connect</h2>
-    <form action="" method="POST" class="border border-light text-light rounded p-2" id="form">
+    
+    <form action="?action=getBillets" method="POST" class="border border-light text-light rounded p-2" id="form">
         <table>
-            <tr>
-                <td>Firstname :</td>
-                <td><input type="text" name="firstname" id="firstname" class="rounded"></td>
-            </tr>
-            <tr>
-                <td>Lastname :</td>
-                <td><input type="text" name="lastname" id="lastname" class="rounded"></td>
-            </tr>
             <tr>
                 <td>Login :</td>
                 <td><input type="text" name="login" id="login" class="rounded"></td>
@@ -21,7 +13,7 @@
             </tr>
             <tr>
                 <td>Repeat Password :</td>
-                <td><input type="password" name="Repeat_password" id="Repeat_password" class="rounded"></td>
+                <td><input type="password" name="repeat_password" id="repeat_password" class="rounded"></td>
             </tr>
         </table>
 

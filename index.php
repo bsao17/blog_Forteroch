@@ -36,7 +36,7 @@ try{
                 $direction->sendMail();
                 break;
     
-            case "connect":
+            case "signin":
                 $administration->login();
                 break;
             
