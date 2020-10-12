@@ -1,0 +1,52 @@
+<?php session_start(); ?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="../PUBLIC/CSS/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+    <title>Jean Forteroche</title>
+</head>
+
+<body>
+    <div class="border border-light m-2 rounded d-flex flex-column justify-content-center align-items-center" id="banner">
+        <header>
+
+            <section class="text-dark">
+                <h3 class="card card-light p-2 mt-2 text-center"><?php echo strtoupper($_GET['action']); ?></h3>
+            </section>
+
+
+            <p class="text-light h1 bg-dark rounded p-1 mt-2">Jean Forteroche - Billet simple pour l'Alaska</p>
+            <hr class="border border-light">
+
+            <ul class="navbar navbar-dark bg-dark rounded">
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="<?php echo "?action=home" ?>">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="<?php echo "?action=biography" ?>">Biography</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="<?php echo "?action=contact" ?>">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="<?php echo "?action=getBillets" ?>">Chapters</a>
+                </li>
+            </ul>
+
+        </header>
+    </div>
+    <!--Bootstrap-->
+    <section>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    </section>
+</body>
+
+</html>

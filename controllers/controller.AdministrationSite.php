@@ -1,11 +1,13 @@
 <?php
 
 class AdministrationSite{
-    public function login(){
+    public function signin(){
+        require("./views/TEMPLATES/baseTemplate.php");
         require_once("./views/Connect.views.php");
     }
 
     public function signup($request, $server){
+        require("./views/TEMPLATES/baseTemplate.php");
         if($server['REQUEST_METHOD'] == 'POST'){
             $firstname = $_POST['firstname'];
             $lastname = $_POST['lastname'];
@@ -13,8 +15,6 @@ class AdministrationSite{
             $password = $_POST['password'];
             $repeat_password = $_POST['repeat_password'];
             $role = 'user';
-            var_dump($request);
-            var_dump($server);
             die;
         }
         require_once("./views/createUserView.php");

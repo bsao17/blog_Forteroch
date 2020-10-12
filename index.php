@@ -16,7 +16,7 @@ try{
     if ($action != null) {
         switch ($action) {
             case "home":
-                $direction->homeFirst();
+                $direction->accueil();
                 break;
     
             case "biography":
@@ -37,7 +37,7 @@ try{
                 break;
     
             case "signin":
-                $administration->login();
+                $administration->signin();
                 break;
             
             case "signup":
