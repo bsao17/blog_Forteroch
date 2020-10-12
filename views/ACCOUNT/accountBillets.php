@@ -7,8 +7,3 @@
         }
     ?>
 </section>
-
-<hr class="border border-dark">
-    <section id="comments" class="m-2 border border-light rounded" >
-        <?php  include_once('commentFormView.php') ?>
-    </section>

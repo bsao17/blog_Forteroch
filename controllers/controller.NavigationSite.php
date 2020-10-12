@@ -1,5 +1,4 @@
 <?php
-
 require("./models/ManagerBillets.php");
 require("./models/ManagerComment.php");
 
@@ -7,14 +6,20 @@ require("./models/ManagerComment.php");
 class NavigationSite{
     public function accueil(){
         require("./views/TEMPLATES/baseTemplate.php");
-        require("./views/welcome.php");
+        require("./views/accueilView.php");
+    }
+    
+    public function home(){
+        require("./views/TEMPLATES/accountBaseTemplate.php");
+        require("./views/ACCOUNT/accountHome.php");
     }
     
     public function getbillet(){
+        require("./views/TEMPLATES/accountBaseTemplate.php");
         $billets = new ManagerBillets();
         $post = $billets->getBillet();
-        require("./views/ACCOUNT/accountChapter.php"); 
-        var_dump($_SESSION) ;
+        require_once("./views/ACCOUNT/accountBillets.php");
+        require_once("views/commentFormView.php");
     }
 
     public function addComment(){
@@ -24,12 +29,12 @@ class NavigationSite{
     }
 
     public function biography(){
-        require("./views/TEMPLATES/baseTemplate.php");
-        require_once("./views/TEMPLATES/biographyTemplate.php");
+        require_once("./views/TEMPLATES/accountBaseTemplate.php");
+        require_once('./views/ACCOUNT/accountBiography.php');
     }
 
     public function contact(){
-        require("./views/TEMPLATES/baseTemplate.php");
+        require("./views/TEMPLATES/accountBaseTemplate.php");
         require_once("./views/TEMPLATES/contactTemplate.php");
     }
 

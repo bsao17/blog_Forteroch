@@ -17,13 +17,10 @@ class ManagerBillets
 
     public function getBillet()
     {
-        if(($_POST['login'] == "bsao17") && ($_POST['password'] == "1234") && ($_POST['repeat_password'] == $_POST['password'])){
-                $request = $this->connection->query("SELECT * FROM billets");
-                $result = $request->fetchAll();
-                return $result;
-        }else{
-            echo "login or password bad";
-        }
+        
+        $request = $this->connection->query("SELECT * FROM billets");
+        $result = $request->fetchAll();
+        return $result;
     }
 
     public function createBillet(){

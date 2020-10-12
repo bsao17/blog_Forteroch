@@ -15,8 +15,12 @@ try{
     
     if ($action != null) {
         switch ($action) {
-            case "home":
+            case "accueil":
                 $direction->accueil();
+                break;
+            
+            case "home":
+                $direction->home();
                 break;
     
             case "biography":

@@ -47,6 +47,10 @@ body{
     background-color: rgb(38, 45, 65);
 }
 
+#commentForm{
+    background-color: var(--globalBlue);
+}
+
 #home{
     background-color: rgba(245, 245, 245, 0.8);
 }

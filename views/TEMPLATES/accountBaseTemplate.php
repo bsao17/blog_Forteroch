@@ -1,4 +1,7 @@
-<?php session_start(); ?>
+<?php 
+    require("./models/DatabaseClass.php"); 
+    session_start();
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -15,32 +18,15 @@
 <body>
     <div class="border border-light m-2 rounded d-flex flex-column justify-content-center align-items-center" id="banner">
         <header>
-
+            <?php require("accountBarNav.php"); ?>
             <section class="text-dark">
-                <h3 class="card card-light p-2 mt-2 text-center"><?php echo strtoupper($_GET['action']); ?></h3>
-            </section>
-
-
-            <p class="text-light h1 bg-dark rounded p-1 mt-2">Jean Forteroche - Billet simple pour l'Alaska</p>
-            <hr class="border border-light">
-
-            <ul class="navbar navbar-dark bg-dark rounded">
-                <li class="nav-item">
-                    <a class="nav-link text-light" href="<?php echo "?action=home" ?>">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-light" href="<?php echo "?action=biography" ?>">Biography</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-light" href="<?php echo "?action=contact" ?>">Contact</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-light" href="<?php echo "?action=getBillets" ?>">Chapters</a>
-                </li>
-            </ul>
-
+                <h3 class="card card-light p-2 mt-2 text-center"><?php echo strtoupper( $_GET['action']); ?></h3>
         </header>
+
+    
     </div>
+
+    </section>
     <!--Bootstrap-->
     <section>
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

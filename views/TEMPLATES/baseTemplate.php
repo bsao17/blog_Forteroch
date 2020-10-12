@@ -17,7 +17,7 @@
         <header>
             <?php require("barNavTemplate.php"); ?>
             <section class="text-dark">
-                <h3 class="card card-light p-2 mt-2 text-center"><?php echo strtoupper( $_GET['action']); ?></h3>
+                <h4 class="card card-light p-2 mt-2 text-center w-25 m-auto"><?php echo strtoupper( $_GET['action']); ?></h4>
         </header>
 
     

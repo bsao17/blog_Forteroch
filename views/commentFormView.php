@@ -1,5 +1,5 @@
 
-<section>
+<section class="m-2 border border-light rounded" id="commentForm">
     <form action="" method="POST">
         <div class="form-group">
             <div class="m-2">
