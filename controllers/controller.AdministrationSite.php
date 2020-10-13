@@ -4,6 +4,8 @@ require_once("./models/ManagerUser.php");
 class AdministrationSite{
     public function signin(){
         require("./views/TEMPLATES/baseTemplate.php");
+        $user = new ManagerUser();
+        $user->signin();
         require_once("./views/Connect.views.php");
     }
 
@@ -16,8 +18,13 @@ class AdministrationSite{
             $password = $_POST['password'];
             $repeat_password = $_POST['repeat_password'];
             $role = 'user';
-            $newUser = new ManagerUser();
-            $newUser->signup($login, $firstname, $lastname, $password, $role);
+            if($password == $repeat_password){
+                $newUser = new ManagerUser();
+                $newUser->signup($login, $firstname, $lastname, $password, $role);
+            }else{
+                echo "<pre class='text-center text-danger bg-warning m-2 h4'>error password</pre>";
+                die;
+            }
             die;
         }
         require_once("./views/createUserView.php");

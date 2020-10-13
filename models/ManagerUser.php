@@ -23,17 +23,10 @@ class ManagerUser{
 
      }
 
-     public function delete(){
-
+     public function signin(){
+          $user = $this->connection->query("SELECT login, password FROM user");
+          $result = $user->fetchAll();
+          return $result;
      }
-
-     public function display(){
-
-     }
-
-     public function upadate(){
-
-     }
-
      
 }
