@@ -12,15 +12,23 @@ class ManagerUser{
      }
      
      public function signup($login, $firstname, $lastname, $password, $role){
-          $user = $this->connection->prepare("INSERT INTO user(login, firstname, lastname, password, role) VALUES (:login, :firstname, :lastname, :password, :role)");
-          $user->bindParam(":login", $login);
-          $user->bindParam(":firstname", $firstname);
-          $user->bindParam(":lastname", $lastname);
-          $user->bindParam(":password", $password);
-          $user->bindParam(":role", $role);
-          $user->execute();
-          return $user;
-
+          $sql = $this->connection->query("SELECT login, firstname, lastname from user") or die(print_r($this->connection->errorInfo()));
+          $req = $sql->fetchAll();
+          foreach($req as $value){
+              if($value['login'] == $login){
+                   echo "<pre class='text-center text-danger bg-warning w-50 m-auto'>Login already exist</pre>";
+              }else{
+                   $user = $this->connection->prepare("INSERT INTO user(login, firstname, lastname, password, role) VALUES (:login, :firstname, :lastname, :password, :role)");
+                   $user->bindParam(":login", $login);
+                   $user->bindParam(":firstname", $firstname);
+                   $user->bindParam(":lastname", $lastname);
+                   $user->bindParam(":password", $password);
+                   $user->bindParam(":role", $role);
+                   $user->execute();
+                   return $user;
+              }
+          }
+         
      }
 
      public function signin(){

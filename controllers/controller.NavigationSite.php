@@ -1,4 +1,5 @@
 <?php
+require_once("Controller.php");
 require("./models/ManagerBillets.php");
 require("./models/ManagerComment.php");
 
