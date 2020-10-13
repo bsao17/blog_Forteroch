@@ -1,4 +1,5 @@
 <?php
+require_once("./models/ManagerUser.php");
 
 class AdministrationSite{
     public function signin(){
@@ -15,8 +16,15 @@ class AdministrationSite{
             $password = $_POST['password'];
             $repeat_password = $_POST['repeat_password'];
             $role = 'user';
+            $newUser = new ManagerUser();
+            $newUser->signup($login, $firstname, $lastname, $password, $role);
             die;
         }
         require_once("./views/createUserView.php");
+    }
+
+    public function admin(){
+        require("./views/TEMPLATES/accountBaseTemplate.php");
+        require_once("./views/ACCOUNT/adminAccount.php");
     }
 }

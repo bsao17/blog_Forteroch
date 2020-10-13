@@ -1,6 +1,5 @@
 <?php 
-    require("./models/DatabaseClass.php"); 
-    session_start();
+    
 ?>
 
 <!DOCTYPE html>
@@ -20,11 +19,11 @@
         <header>
             <?php require("accountBarNav.php"); ?>
             <section class="text-dark">
-                <h3 class="card card-light p-2 mt-2 text-center"><?php echo strtoupper( $_GET['action']); ?></h3>
+                <h3 class="card card-light p-2 mt-2 text-center"><?php echo strtoupper( $_GET['action'])."<br>".$_SESSION['login']; ?></h3>
         </header>
-
-    
     </div>
+
+    <?php var_dump($_SESSION); ?>
 
     </section>
     <!--Bootstrap-->

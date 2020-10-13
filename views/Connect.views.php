@@ -1,4 +1,3 @@
-
 <div id="login_form" class="d-flex flex-column align-items-center border border-light p-2 ml-2 mr-2 rounded">
     
     <form action="?action=getBillets" method="POST" class="border border-light text-light rounded p-2" id="form">
@@ -16,13 +15,13 @@
                 <td><input type="password" name="repeat_password" id="repeat_password" class="rounded"></td>
             </tr>
         </table>
-
+        
         <table>
             <tr>
                 <td><button type="submit" class='btn btn-light text-dark'>Connect</button><br></td>
             </tr><br>
         </table><hr class="border border-light">
-
+        
     </form>
     
     <form action="" method="POST" class="bg-light rounded m-3 pt-1 pb-1 pr-5 pl-5">

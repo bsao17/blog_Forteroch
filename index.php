@@ -31,6 +31,10 @@ try{
             case "getBillets":
                 $direction->getbillet();
                 break;
+
+            case "admin":
+                $administration->admin();
+                break;
     
             case "contact":
                 $direction->contact();

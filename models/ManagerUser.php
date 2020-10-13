@@ -1,10 +1,6 @@
 <?php 
 
-function findClass($class){
-     require_once($class.'.php');
-}
-spl_autoload_register("findclass");
-
+require_once("./models/DatabaseClass.php");
 class ManagerUser{
      
      private $db;
@@ -15,7 +11,7 @@ class ManagerUser{
           $this->connection = $this->db->getConnection();
      }
      
-     public function signUp($login, $firstname, $lastname, $password, $role){
+     public function signup($login, $firstname, $lastname, $password, $role){
           $user = $this->connection->prepare("INSERT INTO user(login, firstname, lastname, password, role) VALUES (:login, :firstname, :lastname, :password, :role)");
           $user->bindParam(":login", $login);
           $user->bindParam(":firstname", $firstname);
