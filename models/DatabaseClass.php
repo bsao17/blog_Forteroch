@@ -12,7 +12,7 @@ class Database
         
         try{
             $connection = new PDO(Database::DB_HOST, Database::DB_USER, Database::DB_PASS );
-            $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
+            $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             return $connection;
         }
         catch(Exception $e)

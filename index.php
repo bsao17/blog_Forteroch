@@ -4,7 +4,7 @@
 
 try{
 
-    if (isset($_GET['action']) || isset($_POST['action'])) {
+    if (isset($_GET['action']) || isset($_POST['action'])){
         $action = $_GET['action'];
     } else {
         $action = null;

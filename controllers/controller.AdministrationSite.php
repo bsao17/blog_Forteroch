@@ -19,17 +19,19 @@ class AdministrationSite{
             $repeat_password = $_POST['repeat_password'];
             $role = 'user';
             if($password == $repeat_password){
-                if(!empty($firstname) && !empty($lastname)){
+                if(!empty($firstname) && !empty($lastname) && !empty($login)){
                     $newUser = new ManagerUser();
                     $newUser->signup($login, $firstname, $lastname, $password, $role);
+                }else{
+                    echo "<pre class='text-center text-danger bg-warning m-auto w-50 rounded h4'>error, fields shouldn't empty</pre>";
+                    die;
                 }
             }else{
                 echo "<pre class='text-center text-danger bg-warning m-2 h4'>error password<br>restart registration</pre>";
                 die;
-            }
-            
+            } 
         }
-        require_once("./views/createUserView.php");
+        require_once("./views/registerView.php");
     }
 
     public function admin(){
