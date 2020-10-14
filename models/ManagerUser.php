@@ -17,6 +17,7 @@ class ManagerUser{
           foreach($req as $value){
               if($value['login'] == $login){
                    echo "<pre class='text-center text-danger bg-warning w-50 m-auto'>Login already exist</pre>";
+                   var_dump($value['login']);
               }else{
                    $user = $this->connection->prepare("INSERT INTO user(login, firstname, lastname, password, role) VALUES (:login, :firstname, :lastname, :password, :role)");
                    $user->bindParam(":login", $login);
@@ -27,8 +28,7 @@ class ManagerUser{
                    $user->execute();
                    return $user;
               }
-          }
-         
+          }  
      }
 
      public function signin(){

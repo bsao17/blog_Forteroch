@@ -19,13 +19,15 @@ class AdministrationSite{
             $repeat_password = $_POST['repeat_password'];
             $role = 'user';
             if($password == $repeat_password){
-                $newUser = new ManagerUser();
-                $newUser->signup($login, $firstname, $lastname, $password, $role);
+                if(!empty($firstname) && !empty($lastname)){
+                    $newUser = new ManagerUser();
+                    $newUser->signup($login, $firstname, $lastname, $password, $role);
+                }
             }else{
-                echo "<pre class='text-center text-danger bg-warning m-2 h4'>error password</pre>";
+                echo "<pre class='text-center text-danger bg-warning m-2 h4'>error password<br>restart registration</pre>";
                 die;
             }
-            die;
+            
         }
         require_once("./views/createUserView.php");
     }

@@ -3,7 +3,7 @@
 
             <ul class="navbar navbar-dark bg-dark rounded w-25 m-auto">
                 <li class="nav-item">
-                    <a class="nav-link text-light" href="<?php echo "?action=accueil" ?>">Home</a>
+                    <a class="nav-link text-light" href="<?php echo "?action=accueil" ?>">Accueil</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-light" href="<?php echo "?action=signin" ?>">sign in</a>
