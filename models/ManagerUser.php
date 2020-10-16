@@ -21,7 +21,6 @@ class ManagerUser
                if($req->execute()){
                     if($req->rowCount() == 1){
                          return null;
-                         die;
                     }else{
                          $user = $this->connection->prepare("INSERT INTO user(login, firstname, lastname, password, role) VALUES (:login, :firstname, :lastname, :password, :role)");
                          $user->bindParam(":login", $login);
@@ -31,16 +30,20 @@ class ManagerUser
                          $user->bindParam(":role", $role);
                          $user->execute();
                          return $user;
-                         die;
                     }
                }
-          }     
+          }
      }
 
-     public function signin()
+     public function signin($login, $password)
      {
-          $user = $this->connection->query("SELECT login, password FROM user");
-          $result = $user->fetchAll();
-          return $result;
+          $sql = "SELECT * FROM user WHERE login = :login && password = :password";
+          if($req = $this->connection->prepare($sql)){
+               $req->bindParam(":login", $login, PDO::PARAM_STR);
+               $req->bindParam(":password", $password, PDO::PARAM_STR);
+               if($req->rowCount() == 2){
+                    return true;
+               }
+          }
      }
 }

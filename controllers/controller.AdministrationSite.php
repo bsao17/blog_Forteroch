@@ -3,10 +3,24 @@ require_once("./models/ManagerUser.php");
 
 
 class AdministrationSite{
-    public function signin(){
+    public function signin($request, $server){
         require("./views/TEMPLATES/baseTemplate.php");
-        $user = new ManagerUser();
-        $user->signin();
+        if($server['REQUEST_METHOD'] == 'POST'){
+            $login = $_POST['login'];
+            $password = $_POST['password'];
+            $repeat_password = $_POST['repeat_password'];
+            if(!empty($login) && !empty($password) && !empty($repeat_password)){
+                if($password == $repeat_password){
+                    $user = new ManagerUser();
+                    if($user->signin($login, $password) == true){
+                        header("location: ?action=home");
+                    }else{
+                        echo "<pre class='text-center text-danger bg-warning w-50 m-auto rounded'>Error login or password !</pre>"
+                    }
+                }
+            }
+        }
+       
         require_once("./views/Connect.views.php");
     }
 
