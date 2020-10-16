@@ -15,7 +15,7 @@ class AdministrationSite{
                     if($user->signin($login, $password) == true){
                         header("location: ?action=home");
                     }else{
-                        echo "<pre class='text-center text-danger bg-warning w-50 m-auto rounded'>Error login or password !</pre>"
+                        echo "<pre class='text-center text-danger bg-warning w-50 m-auto rounded'>Error login or password !</pre>";
                     }
                 }
             }
