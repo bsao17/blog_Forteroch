@@ -1,4 +1,4 @@
-
+<?php require("./views/TEMPLATES/baseTemplate.php"); ?>
 <div id="login_form" class="d-flex flex-column align-items-center border border-light p-2 ml-2 mr-2 rounded">
     <h2 class='card card-light rounded p-1'>Create User Account</h2>
     <form action="?action=signup" method="POST" class="border border-light text-light rounded p-2 form-group" id="form">
@@ -29,3 +29,10 @@
         </table>
     </form>
 </div>
+<?php if($signup_status == true){
+    echo "<pre class='text-center text-dark bg-success m-auto w-50 rounded h4'>votre compte à été créé</pre>";
+}
+if($error != "") {
+    echo $error;
+}
+?>

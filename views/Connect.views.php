@@ -1,6 +1,8 @@
+<?php  require("./views/TEMPLATES/baseTemplate.php"); ?>
+
 <div id="login_form" class="d-flex flex-column align-items-center border border-light p-2 ml-2 mr-2 rounded">
     
-    <form action="?action=getBillets" method="POST" class="border border-light text-light rounded p-2" id="form">
+    <form action="?action=signin" method="POST" class="border border-light text-light rounded p-2" id="form">
         <table>
             <tr>
                 <td>Login :</td>
