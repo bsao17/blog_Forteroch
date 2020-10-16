@@ -37,12 +37,12 @@ class ManagerUser
 
      public function signin($login, $password)
      {
-          $sql = "SELECT * FROM user WHERE login = :login && password = :password";
+          $sql = "SELECT * FROM user WHERE login = :username && password = :password";
           if($req = $this->connection->prepare($sql)){
-               $req->bindParam(":login", $login, PDO::PARAM_STR);
+               $req->bindParam(":username", $login, PDO::PARAM_STR);
                $req->bindParam(":password", $password, PDO::PARAM_STR);
-               if($req->rowCount() == 2){
-                    return true;
+               if($req->rowCount() > 0){
+                    return null;
                }
           }
      }

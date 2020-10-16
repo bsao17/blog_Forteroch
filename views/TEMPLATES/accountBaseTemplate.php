@@ -9,6 +9,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/224ea7dbd6.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../PUBLIC/CSS/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
     <title>Jean Forteroche</title>
@@ -19,13 +20,14 @@
         <header>
             <?php require("accountBarNav.php"); ?>
             <section class="text-dark">
-                <h3 class="card card-light p-2 mt-2 text-center"><?php echo strtoupper( $_GET['action'])."<br>".$_SESSION['login']; ?></h3>
+                <h3 class="card card-light p-2 mt-2 text-center"><?php echo strtoupper( $_GET['action']); ?></h3>
+                <a href="<?php  echo "?action=accueil"; session_destroy(); ?>" class="btn btn-light mb-2 "><i class="fas fa-sign-out-alt"></i>deconnexion</a>
         </header>
     </div>
 
     </section>
     <footer>
-        <?php var_dump($_SESSION); ?>
+        
     </footer>
     <!--Bootstrap-->
     <section>

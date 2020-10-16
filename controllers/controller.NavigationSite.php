@@ -16,12 +16,34 @@ class NavigationSite extends Controller{
     }
     
     public function getbillet(){
+        if($_SERVER['REQUEST_METHOD'] == 'POST'){
+            require("./views/TEMPLATES/accountBaseTemplate.php");
+            
+            $login = $_POST['login'];
+            $password = $_POST['password'];
+            $repeat_password = $_POST['repeat_password'];
+            
+            if (!empty($login) && !empty($password) && !empty($repeat_password)) {
+                if ($password == $repeat_password) {
+                    $user = new ManagerUser();
+                    if ($user->signin($login, $password) == null) {
+                        $billets = new ManagerBillets();
+                        $post = $billets->getBillet();
+                        require_once("./views/ACCOUNT/accountBillets.php");
+                        require_once("views/commentFormView.php");
+                    } else {
+                        echo "<pre class='text-center text-danger bg-warning w-50 m-auto rounded'>Error login or password !</pre>";
+                    }
+                }
+            } else {
+                echo "<pre class='text-center text-danger bg-warning w-50 m-auto rounded'>Field does not empty !</pre>";
+            }
+            
+        }else{
+            echo "404 not found";
+            die;
+        }
         
-        require("./views/TEMPLATES/accountBaseTemplate.php");
-        $billets = new ManagerBillets();
-        $post = $billets->getBillet();
-        require_once("./views/ACCOUNT/accountBillets.php");
-        require_once("views/commentFormView.php");
     }
 
     public function addComment(){
