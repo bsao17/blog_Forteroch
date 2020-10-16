@@ -1,6 +1,7 @@
 <?php
 require_once("./models/ManagerUser.php");
 
+
 class AdministrationSite{
     public function signin(){
         require("./views/TEMPLATES/baseTemplate.php");
@@ -21,7 +22,10 @@ class AdministrationSite{
             if($password == $repeat_password){
                 if(!empty($firstname) && !empty($lastname) && !empty($login)){
                     $newUser = new ManagerUser();
-                    $newUser->signup($login, $firstname, $lastname, $password, $role);
+                    if($newUser->signup($login, $firstname, $lastname, $password, $role) == null){
+                        echo "<pre class='text-center text-danger bg-warning w-50 m-auto rounded'>login Already exist !</pre>";
+                        die;
+                    }
                 }else{
                     echo "<pre class='text-center text-danger bg-warning m-auto w-50 rounded h4'>error, fields shouldn't empty</pre>";
                     die;
