@@ -16,9 +16,8 @@ class AdministrationSite
             if (!empty($login) && !empty($password) && !empty($repeat_password)) {
                 if ($password == $repeat_password) {
                     $user = new ManagerUser();
-                    if ($user->signin($login, $password) == null) {
-                        echo "<span class='text-center bg-success w-25 m-auto'>connection ok</span>";
-                        // header("location: ?action=getBillets");
+                    if ($user->signin($login, $password) == true) {
+                        header("location: ?action=getBillets");
                     } else {
                         $signin_status = true;
                         $error = "<pre class='text-center text-danger bg-warning w-25 m-auto rounded'>Error login or password !</pre>";
