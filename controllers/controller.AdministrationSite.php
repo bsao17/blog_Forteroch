@@ -17,10 +17,13 @@ class AdministrationSite
                 if ($password == $repeat_password) {
                     $user = new ManagerUser();
                     if ($user->signin($login, $password) == true) {
+                        session_start();
+                        $_SESSION['login'] = $login;
+                        $_SESSION['logued'] = true;
                         header("location: ?action=getBillets");
                     } else {
                         $signin_status = true;
-                        $error = "<pre class='text-center text-danger bg-warning w-25 m-auto rounded'>Error login or password !</pre>";
+                        $error = "<pre class='text-center text-danger bg-warning w-25 m-auto rounded'>Error password !</pre>";
                     }
                 } else {
                     $signin_status = true;

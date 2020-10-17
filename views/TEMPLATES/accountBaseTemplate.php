@@ -1,5 +1,5 @@
 <?php 
-    
+
 ?>
 
 <!DOCTYPE html>
@@ -21,13 +21,14 @@
             <?php require("accountBarNav.php"); ?>
             <section class="text-dark">
                 <h3 class="card card-light p-2 mt-2 text-center"><?php echo strtoupper( $_GET['action']); ?></h3>
-                <a href="<?php  echo "?action=accueil"; session_destroy(); ?>" class="btn btn-light mb-2 "><i class="fas fa-sign-out-alt"></i>deconnexion</a>
+                <p class="h5 bg-success p-1 rounded text-center">Welcome <span class="h4"><strong><?= $_SESSION['login']; ?></strong></span>  and good reading.</p>
+                <a href="<?php  echo "?action=accueil"; ?>" class="btn btn-light mb-2 "><i class="fas fa-sign-out-alt"></i>deconnexion</a>
         </header>
     </div>
 
     </section>
     <footer>
-        
+
     </footer>
     <!--Bootstrap-->
     <section>
