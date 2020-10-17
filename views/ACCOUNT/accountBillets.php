@@ -1,4 +1,4 @@
-
+<?php require_once("./views/TEMPLATES/accountBaseTemplate.php"); ?>
 <section class="m-2 p-2 border border-light rounded text-center" id="billet">
     <?php
         foreach($post as $value){
