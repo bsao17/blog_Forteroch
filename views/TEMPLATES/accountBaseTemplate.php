@@ -21,7 +21,9 @@
             <?php require("accountBarNav.php"); ?>
             <section class="text-dark">
                 <h3 class="card card-light p-2 mt-2 text-center"><?php echo strtoupper( $_GET['action']); ?></h3>
-                <p class="h5 bg-success p-1 rounded text-center">Welcome <span class="h4"><strong><?= $_SESSION['login']; ?></strong></span>  and good reading.</p>
+                <div class=" p-1 bg-success rounded mb-2 border border-dark">
+                    <p class="h6 bg-light p-1 text-center m-0 border border-dark"><span class="h4 text-secondary"><i class="fas fa-user-circle"></i></span><span class="h4"> <strong><?= " | ".$_SESSION['login']; ?></strong> :Logued !</span></p>
+                </div>
                 <a href="<?php  echo "?action=accueil"; ?>" class="btn btn-light mb-2 "><i class="fas fa-sign-out-alt"></i>deconnexion</a>
         </header>
     </div>

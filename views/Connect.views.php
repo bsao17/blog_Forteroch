@@ -6,15 +6,15 @@
         <table>
             <tr>
                 <td class="text-light">Login :</td>
-                <td><input type="text" name="login" id="login" class="rounded"></td>
+                <td><input type="text" name="login" id="login" class="rounded bg-form m-1"></td>
             </tr>
             <tr> 
                 <td class="text-light">Password :</td>
-                <td><input type="password" name="password" id="password" class="rounded"></td>
+                <td><input type="password" name="password" id="password" class="rounded bg-form m-1"></td>
             </tr>
             <tr>
                 <td class="text-light">Repeat Password :</td>
-                <td><input type="password" name="repeat_password" id="repeat_password" class="rounded"></td>
+                <td><input type="password" name="repeat_password" id="repeat_password" class="rounded bg-form m-1"></td>
             </tr>
         </table>
         

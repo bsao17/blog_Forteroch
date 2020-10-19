@@ -1,5 +1,5 @@
 :root{
-    --globalBlue : #17a3b8d0;
+    --globalBlue : #697a8db0;
 }
 
 a{
@@ -80,4 +80,8 @@ body{
 
 #picture-home{
     box-shadow: black 5px 5px 10px;
+}
+
+.bg-form{
+    background-color: #d6d6d6;
 }

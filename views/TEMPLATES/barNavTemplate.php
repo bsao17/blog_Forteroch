@@ -11,6 +11,6 @@
                 <li class="nav-item">
                     <a class="nav-link text-light" href="<?php echo "?action=signin" ?>">
                     <i class="fas fa-sign-in-alt"></i>
-                    sign in</a>
+                    Se connecter</a>
                 </li>
             </ul>

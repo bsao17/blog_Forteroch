@@ -5,12 +5,12 @@
     <li class="nav-item">
         <a class="nav-link text-light" href="<?php echo "?action=home" ?>">
         <i class="fas fa-home"></i>
-        Home</a>
+        Bienvenue</a>
     </li>
     <li class="nav-item">
         <a class="nav-link text-light" href="<?php echo "?action=biography" ?>">
         <i class="fas fa-user-edit"></i>
-        Biography</a>
+        Biographie</a>
     </li>
     <li class="nav-item">
         <a class="nav-link text-light" href="<?php echo "?action=contact" ?>">
@@ -20,6 +20,6 @@
     <li class="nav-item">
         <a class="nav-link text-light" href="<?php echo "?action=getBillets" ?>">
         <i class="far fa-bookmark"></i>
-        Chapters</a>
+        Chapitres</a>
     </li>
 </ul>
