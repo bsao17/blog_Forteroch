@@ -15,9 +15,8 @@ class ManagerComment{
     }
 
     public function postComment(){
-        $comment = $this->connection->prepare("INSERT INTO comments(ID_billet, ID_user, contentsDb) VALUES( :ID_billet, ID_user, :comment)");
-        $comment->bindParam(":ID_billet", $_SESSION['ID_billet']);
-        $comment->bindParam(":ID_user", $_SESSION['ID_user']);
+        $comment = $this->connection->prepare("INSERT INTO comments(ID_billet, ID_user, contentsDb) VALUES( :username, :comment)");
+        $comment->bindParam(":username", $_SESSION['login']);
         $comment->bindParam(":ID_billet", $_POST['comment']);
         $comment->execute();
     }

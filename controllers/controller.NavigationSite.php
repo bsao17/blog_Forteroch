@@ -1,7 +1,6 @@
 <?php
 require("./models/ManagerBillets.php");
 require("./models/ManagerComment.php");
-require_once("ControllerAbstract.php");
 
 class NavigationSite {
     public function accueil(){

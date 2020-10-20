@@ -24,7 +24,8 @@ class ManagerBillets
     }
 
     public function createBillet(){
-
+        $sql = $this->connection->prepare("INSERT INTO billets(title, content) VALUES (:title, :content) ");
+        
     }
 
     public function deleteBillet(){

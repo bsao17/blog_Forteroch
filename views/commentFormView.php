@@ -1,6 +1,6 @@
 
 <section class="m-2 border border-light rounded" id="commentForm">
-    <form action="" method="POST">
+    <form action="?action=getBillets" method="POST">
         <div class="form-group">
             <div class="m-2">
                 <label for="firstname" class="text-light h5">Firstname</label>
