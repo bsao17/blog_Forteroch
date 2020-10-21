@@ -26,11 +26,11 @@
         
     </form>
     
-    <form class="bg-light rounded m-3 pt-1 pb-1 pr-5 pl-5">
+    <form class=" rounded m-3 p-1 card">
         <table class="border border-light">
             <tr>
                 <td>Create User Account :</td>
-                <td><a href="<?= '?action=signup'; ?>" class="btn btn-warning border border-secondary">Create</a></td>
+                <td><a href="<?= '?action=signup'; ?>" class="btn btn-warning border border-secondary ">Create</a></td>
             </tr>
         </table>
 
@@ -41,3 +41,4 @@
         echo $error;
     }
 ?>
+<?php require_once("TEMPLATES/footerView.php"); ?>

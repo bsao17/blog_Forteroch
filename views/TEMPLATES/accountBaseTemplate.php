@@ -16,13 +16,13 @@
 </head>
 
 <body>
-    <div class="border border-light m-2 rounded d-flex flex-column justify-content-center align-items-center" id="banner">
+    <div class="  d-flex flex-column justify-content-center align-items-center" id="banner">
         <header>
             <?php require("accountBarNav.php"); ?>
             <section class="text-dark">
-                <h3 class="card card-light p-2 mt-2 text-center"><?php echo strtoupper( $_GET['action']); ?></h3>
+                <h3 class="card card-light text-center"><?php echo strtoupper( $_GET['action']); ?></h3>
                 <div class=" p-1 bg-success rounded mb-2 border border-dark">
-                    <p class="h6 bg-light p-1 text-center m-0 border border-dark"><span class="h4 text-secondary"><i class="fas fa-user-circle"></i></span><span class="h4"> <strong><?= " | ".$_SESSION['login']; ?></strong> :Logued !</span></p>
+                    <p class="h6 bg-light p-1 text-center m-1 border border-dark"><span class="h4 text-secondary"><i class="fas fa-user-circle"></i></span><span class="h4"> <strong><?= " | ".$_SESSION['login']; ?></strong> :Logued !</span></p>
                 </div>
                 <a href="<?php  echo "?action=accueil"; ?>" class="btn btn-light mb-2 "><i class="fas fa-sign-out-alt"></i>deconnexion</a>
         </header>
@@ -38,6 +38,7 @@
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     </section>
+    <?php var_dump($_COOKIE); ?>
 </body>
 
 </html>

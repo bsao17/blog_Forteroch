@@ -8,4 +8,5 @@
         praesentium veniam alias sapiente voluptates debitis.
         <img src="../PUBLIC/PICTURES/sky.jpg" alt="" id="picture-home"  class="img-fluid img-thumbnail w-50 m-auto rounded" alt="Responsive image">
     </p>
-</section>  
+</section><br><br><br>  
+<?php require_once("TEMPLATES/footerView.php"); ?>

@@ -85,3 +85,16 @@ body{
 .bg-form{
     background-color: #d6d6d6;
 }
+
+#footer{
+    width: 100%;
+    position: fixed;
+    bottom: 0%;
+    margin-bottom: 0px;
+    background-color:  #343A40;
+    color: white;
+}
+
+li{
+    margin: 20px;
+}

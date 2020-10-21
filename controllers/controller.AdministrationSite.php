@@ -20,6 +20,9 @@ class AdministrationSite
                         session_start();
                         $_SESSION['login'] = $login;
                         $_SESSION['logued'] = true;
+                        $cookie_name = "user_login";
+                        $cookie_value = $_SESSION['login'];
+                        setcookie($cookie_name, $cookie_value, time() + (3600*24*365), "/");
                         header("location: ?action=getBillets");
                     } else {
                         $signin_status = true;
@@ -71,7 +74,6 @@ class AdministrationSite
 
     public function admin()
     {
-        require("./views/TEMPLATES/accountBaseTemplate.php");
-        require_once("./views/ACCOUNT/adminAccount.php");
+        require_once("./views/TEMPLATES/accessAdminView.php");
     }
 }

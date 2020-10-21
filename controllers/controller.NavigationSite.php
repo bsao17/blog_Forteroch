@@ -15,11 +15,15 @@ class NavigationSite {
     }
     
     public function getbillet(){
-        session_start();
-        $billets = new ManagerBillets();
-        $post = $billets->getBillet();
-        require_once("./views/ACCOUNT/accountBillets.php");
-        require_once("views/commentFormView.php");
+        if($_REQUEST == "POST" || isset($_COOKIE['user_login'])){
+            session_start();
+            $billets = new ManagerBillets();
+            $post = $billets->getBillet();
+            require_once("./views/ACCOUNT/accountBillets.php");
+            require_once("views/commentFormView.php");
+        }else{
+            header("location: ?action=signin");
+        }
     }
 
     public function addComment(){
