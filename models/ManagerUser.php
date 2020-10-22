@@ -43,13 +43,31 @@ class ManagerUser
                if($result->rowCount() == 1){
                     $res = $result->fetch();
                     $password_hash = $res['password'];
-                    var_dump($password);
-                    var_dump($password_hash);
                     if(password_verify($password, $password_hash)){
                         return true;
                     }
                }
                 
+            }
+        }
+    }
+
+    public function adminConnection($login, $password){
+        $sql = "SELECT login, password, role FROM user WHERE login = :username";
+        if($result = $this->connection->prepare($sql)){
+            $result->bindParam(":username", $login);
+            if($result->execute()){
+                if($result->rowCount() == 1){
+                    $req = $result->fetch();
+                    $password_hash = $req['password'];
+                    $roleDb = $req['role'];
+                    if(password_verify($password, $password_hash)){
+                        if($roleDb == "admin"){
+                            return true;
+                        }
+                    }
+                }
+
             }
         }
     }

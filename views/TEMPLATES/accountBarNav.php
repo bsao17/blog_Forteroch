@@ -1,7 +1,7 @@
 
-<p class="text-light h1 bg-dark rounded mt-2">Jean Forteroche - Billet simple pour l'Alaska</p><hr class="border border-light">
+<p class="text-light h1 bg-dark rounded mt-2 p-2">Jean Forteroche - Billet simple pour l'Alaska</p><hr class="border border-light">
 
-<ul class="navbar navbar-dark bg-dark rounded">
+<ul class="navbar navbar-dark bg-dark rounded p-0">
     <li class="nav-item">
         <a class="nav-link text-light" href="<?php echo "?action=home" ?>">
         <i class="fas fa-home"></i>

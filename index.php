@@ -32,8 +32,12 @@ try{
                 $direction->getbillet();
                 break;
 
+            case "admin_connect":
+                $administration->adminConnect($_REQUEST, $_SERVER);
+                break;
+
             case "admin":
-                $administration->admin();
+                $administration->admin($_REQUEST, $_SERVER);
                 break;
     
             case "contact":

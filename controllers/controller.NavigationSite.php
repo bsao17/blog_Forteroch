@@ -10,7 +10,7 @@ class NavigationSite {
     
     public function home(){
         session_start();
-        require("./views/TEMPLATES/accountBaseTemplate.php");
+        
         require("./views/ACCOUNT/accountHome.php");
     }
     

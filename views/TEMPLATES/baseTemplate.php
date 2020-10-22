@@ -9,6 +9,7 @@
     <script src="https://kit.fontawesome.com/224ea7dbd6.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../PUBLIC/CSS/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.ico" />
     <title>Jean Forteroche</title>
 </head>
 
@@ -16,13 +17,17 @@
     <div class="border border-light m-2 rounded d-flex flex-column justify-content-center align-items-center" id="banner">
         <header>
             <?php require("barNavTemplate.php"); ?>
-            <section class="text-dark m-2">
-                <h4 class="card card-light p-2 text-center w-25 m-auto"><?php echo strtoupper( $_GET['action']); ?></h4>
+            <section class="text-dark m-3">
+                <h4 class="card card-light p-2 text-center w-50 m-auto"><?php echo strtoupper( $_GET['action']); ?></h4>
         </header>
 
     
     </div>
     </section>
+
+    <footer>
+        <?php require_once("footerView.php"); ?>
+    </footer>
     <!--Bootstrap-->
     <section>
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

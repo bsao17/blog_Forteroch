@@ -12,11 +12,13 @@
     <script src="https://kit.fontawesome.com/224ea7dbd6.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../PUBLIC/CSS/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.ico" />
+    <script src="../../PUBLIC/JS/main.js"></script>
     <title>Jean Forteroche</title>
 </head>
 
 <body>
-    <div class="  d-flex flex-column justify-content-center align-items-center" id="banner">
+    <div class="  d-flex flex-column justify-content-center align-items-center m-2 border border-light rounded" id="banner">
         <header>
             <?php require("accountBarNav.php"); ?>
             <section class="text-dark">
@@ -30,7 +32,7 @@
 
     </section>
     <footer>
-
+        <?php require_once("footerView.php"); ?>
     </footer>
     <!--Bootstrap-->
     <section>
@@ -38,7 +40,6 @@
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     </section>
-    <?php var_dump($_COOKIE); ?>
 </body>
 
 </html>

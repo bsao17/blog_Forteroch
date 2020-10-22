@@ -3,9 +3,10 @@ require_once("./models/ManagerUser.php");
 
 class AdministrationSite
 {
+    // Signin Method 
     public function signin($request, $server)
     {
-        $error = "";
+        $error = '';
         $signin_status = false;
         if ($server['REQUEST_METHOD'] == 'POST') {
 
@@ -23,7 +24,7 @@ class AdministrationSite
                         $cookie_name = "user_login";
                         $cookie_value = $_SESSION['login'];
                         setcookie($cookie_name, $cookie_value, time() + (3600*24*365), "/");
-                        header("location: ?action=getBillets");
+                        header("location: ?action=home");
                     } else {
                         $signin_status = true;
                         $error = "<pre class='text-center text-danger bg-warning w-25 m-auto rounded'>Error password !</pre>";
@@ -40,12 +41,13 @@ class AdministrationSite
         require_once("./views/Connect.views.php");
     }
 
+    //Signup Method
     public function signup($request, $server)
     {
         $signup_status = false;
         $error = "";
         $regex = "/[a-zA-Z0-9\-\_\@]{6,}/";
-        if ($server['REQUEST_METHOD'] == 'POST') {
+        if ($server["REQUEST_METHOD"] == 'POST') {
             $firstname = htmlspecialchars(trim($_POST['firstname']));
             $lastname = htmlspecialchars(trim($_POST['lastname']));
             $login = htmlspecialchars(trim($_POST['login']));
@@ -72,8 +74,32 @@ class AdministrationSite
         require_once("./views/registerView.php");
     }
 
-    public function admin()
-    {
+    // Account Admin connection
+    public function adminConnect($request, $server)
+    {   
+        $request_status = false;
+        $error = "<pre class='text-center text-danger bg-warning w-25 m-auto h4 rounded'>Error connection !</pre>";
+        if($server["REQUEST_METHOD"] == "POST"){
+            $login = $_POST['admin_log'];
+            $password = $_POST['admin_password'];
+            if(!empty(isset($login)) && !empty(isset($password))){
+                $admin = new ManagerUser();
+                if($admin->adminConnection($login, $password) == true){
+                    session_start();
+                    header("location: ?action=admin");
+                }else{
+                    $request_status = true;
+                }
+            }else{
+                $request_status = true;
+            }
+        }
         require_once("./views/TEMPLATES/accessAdminView.php");
     }
+
+    //Access Admin account
+    public function admin($request, $server){
+        require_once("./views/ACCOUNT/adminAccount.php"); 
+    }
 }
+ 

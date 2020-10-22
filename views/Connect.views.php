@@ -41,4 +41,3 @@
         echo $error;
     }
 ?>
-<?php require_once("TEMPLATES/footerView.php"); ?>
