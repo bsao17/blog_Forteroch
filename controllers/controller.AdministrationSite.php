@@ -81,14 +81,13 @@ class AdministrationSite
         $request_status = false;
         $error = "<pre class='text-center text-danger bg-warning w-25 m-auto h4 rounded'>Error connection !</pre>";
         if($server["REQUEST_METHOD"] == "POST"){
-            $login = $_POST['admin_log'];
-            $password = $_POST['admin_password'];
+            $login = htmlspecialchars(trim($_POST['admin_log']));
+            $password = htmlspecialchars(trim($_POST['admin_password']));
             if(!empty(isset($login)) && !empty(isset($password))){
                 $admin = new ManagerUser();
                 if($admin->adminConnection($login, $password) == true){
                     session_start();
                     header("location: ?action=createBillets");
-                    exit;
                 }else{
                     $request_status = true;
                 }
@@ -101,6 +100,13 @@ class AdministrationSite
 
     //Create new billets
     public function createBillet(){
+
+        if(!empty(isset($_POST["titleBillet"])) && !empty(isset($_POST["contentBillet"]))){
+            $title = $_POST["titleBillet"];
+            $content = $_POST["contentBillet"];
+            $billet = new ManagerBillets();
+            $billet->createBillet($title, $content);
+        }
         require_once("./views/ACCOUNT/createBillets.php");
     }
 }

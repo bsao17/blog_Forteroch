@@ -16,7 +16,8 @@
 <body class="bg-secondary my-2">
     <h1 class="text-center text-light w-50 m-auto bg-info rounded border border-light">Billet</h1>
 
-    <form action="action=admin_connect" method="POST" class="m-2 p-2 border border-light rounded bg-info">
+    <!--Form TinyMCE-->
+    <form action="?action=createBillets" method="POST" class="m-2 p-2 border border-light rounded bg-info">
       <label for="titleBillet" class="h4 text-light">Titre :
         <input type="text" name="titleBillet" placeholder="Votre titre ici" class="h5 w-100">
       </label>
