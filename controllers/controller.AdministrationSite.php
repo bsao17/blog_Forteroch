@@ -1,5 +1,6 @@
 <?php
 require_once("./models/ManagerUser.php");
+require_once("./models/ManagerBillets.php");
 
 class AdministrationSite
 {
@@ -74,7 +75,7 @@ class AdministrationSite
         require_once("./views/registerView.php");
     }
 
-    // Account Admin connection
+    // Account account access
     public function adminConnect($request, $server)
     {   
         $request_status = false;
@@ -86,7 +87,8 @@ class AdministrationSite
                 $admin = new ManagerUser();
                 if($admin->adminConnection($login, $password) == true){
                     session_start();
-                    header("location: ?action=admin");
+                    header("location: ?action=createBillets");
+                    exit;
                 }else{
                     $request_status = true;
                 }
@@ -94,12 +96,12 @@ class AdministrationSite
                 $request_status = true;
             }
         }
-        require_once("./views/TEMPLATES/accessAdminView.php");
+        require_once("./views/TEMPLATES/admin_connect.php");
     }
 
-    //Access Admin account
-    public function admin($request, $server){
-        require_once("./views/ACCOUNT/adminAccount.php"); 
+    //Create new billets
+    public function createBillet(){
+        require_once("./views/ACCOUNT/createBillets.php");
     }
 }
  

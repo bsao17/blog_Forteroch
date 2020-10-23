@@ -23,11 +23,17 @@ class ManagerBillets
         return $result;
     }
 
-    public function createBillet(){
+    public function createBillet($title, $content){
         $sql = "INSERT INTO billets(title, content) VALUES (:title, :content) ";
         if($req = $this->connection->prepare($sql)){
-            $req->bindParam(":title", $_POST['']);
+            $req->bindParam(":title", $title);
+            $req->bindParam(":content", $content);
+            $req->execute();
+            $results = $req->fetch();
+            return $results;
         }
+            
+        
         
     }
 

@@ -32,14 +32,14 @@ try{
                 $direction->getbillet();
                 break;
 
+            case "createBillets":
+                $administration->createBillet();
+                break;
+
             case "admin_connect":
                 $administration->adminConnect($_REQUEST, $_SERVER);
                 break;
 
-            case "admin":
-                $administration->admin($_REQUEST, $_SERVER);
-                break;
-    
             case "contact":
                 $direction->contact();
                 break;

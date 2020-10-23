@@ -14,15 +14,16 @@
     <title>Admin account</title>
 </head>
 <body class="bg-secondary my-2">
-    <h1 class="text-center w-50 m-auto bg-info rounded border border-light">Billet</h1>
+    <h1 class="text-center text-light w-50 m-auto bg-info rounded border border-light">Billet</h1>
 
-    <form action="" method="POST" class="m-2 p-2 border border-light rounded bg-info">
-      <textarea id="mytextarea" rows="20">Hello, World!</textarea>
+    <form action="action=admin_connect" method="POST" class="m-2 p-2 border border-light rounded bg-info">
+      <label for="titleBillet" class="h4 text-light">Titre :
+        <input type="text" name="titleBillet" placeholder="Votre titre ici" class="h5 w-100">
+      </label>
+      <textarea id="mytextarea" name="contentBillet" rows="20" placeholder="Contenu"></textarea>
       <input type="submit" value="New Billet" class="btn btn-light m-2">
+      <button class="btn btn-danger m-2"><a href="?action=getBillets" class="text-light">Disconnect</a></button>
     </form>
-
-    <button class="btn btn-info m-2"><a href="?action=getBillets" class="text-light">Disconnect</a></button>
-
 
 </body>
 
