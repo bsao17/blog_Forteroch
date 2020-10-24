@@ -40,7 +40,7 @@ class NavigationSite {
 
     public function contact(){
         session_start();
-        require("./views/TEMPLATES/accountBaseTemplate.php");
+        
         require_once("./views/TEMPLATES/contactTemplate.php");
     }
 

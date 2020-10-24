@@ -24,4 +24,7 @@
         ab sapiente minima. Odit provident debitis consequatur, quis veniam natus nisi error nesciunt, consectetur labore eligendi delectus quasi at enim 
         id sequi sed, perferendis sapiente culpa!
     </p>
-</section><br><br><br>  
+</section><br><br> 
+<footer>
+    <?php require_once("./views/TEMPLATES/footerView.php"); ?>
+</footer>
