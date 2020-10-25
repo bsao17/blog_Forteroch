@@ -96,6 +96,7 @@ class AdministrationSite
             }
         }
         require_once("./views/TEMPLATES/admin_connect.php");
+        
     }
 
     //Create new billets

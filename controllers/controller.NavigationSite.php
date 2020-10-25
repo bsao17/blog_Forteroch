@@ -4,7 +4,6 @@ require("./models/ManagerComment.php");
 
 class NavigationSite {
     public function accueil(){
-        require("./views/TEMPLATES/baseTemplate.php");
         require("./views/accueilView.php");
     }
     
@@ -20,7 +19,7 @@ class NavigationSite {
             $billets = new ManagerBillets();
             $post = $billets->getBillet();
             require_once("./views/ACCOUNT/accountBillets.php");
-            require_once("views/commentFormView.php");
+            
         }else{
             header("location: ?action=signin");
         }

@@ -1,4 +1,4 @@
-
+<?php require("./views/TEMPLATES/baseTemplate.php"); ?>
 <section class="home border border-light m-2 rounded" id="home">
     <h1 class="text-center">Welcome On My Blog</h1><hr>
     <h2 class="pl-4"><u>Présentation</u> </h2>
@@ -27,5 +27,8 @@
         <img src="../PUBLIC\PICTURES\wilderness-bear.jpg" alt="" id="picture-accueil7"  class="img-fluid img-thumbnail w-25 m-1 rounded" alt="Responsive image">
         <img src="../PUBLIC\PICTURES\snow-winter-dog.jpg" alt="" id="picture-accueil8"  class="img-fluid img-thumbnail w-25 m-1 rounded" alt="Responsive image">
     </picture><hr>
-</section><br><br><br>  
+</section><hr><br> 
+<footer>
+    <?php require_once("TEMPLATES/footerView.php"); ?>
+</footer>
 

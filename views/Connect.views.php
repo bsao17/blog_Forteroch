@@ -35,9 +35,14 @@
         </table>
 
     </form>
-</div>
+</div><br><br><br><br><br><br><br>
+<footer>
+    <?php require_once("./views/TEMPLATES/footerView.php"); ?>
+</footer>
 <?php  
     if($signin_status == true){
         echo $error;
     }
 ?>
+
+

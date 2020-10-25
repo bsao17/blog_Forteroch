@@ -1,5 +1,5 @@
 
-<footer class="h6" id="footer">
+<footer class="h5" id="footer">
         <ul class="d-flex m-1 justify-content-center">
             <a href=""><li class="text-light"><i class="fab fa-facebook-square"></i> Facebook</li></a>
             <a href=""><li class="text-light"><i class="fab fa-twitter-square"></i> Twitter</li></a>

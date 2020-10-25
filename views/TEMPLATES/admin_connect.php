@@ -12,8 +12,8 @@
     </form>
 </section>
 
+
 <?php 
-    require_once("footerView.php");
     if($request_status == true){
         echo $error;
     }

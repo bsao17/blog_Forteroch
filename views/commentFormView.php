@@ -18,3 +18,7 @@
         </div>
     </form>
 </section> <br><br><br>
+<section>
+    <?php require_once("commentDisplayView.php"); ?>
+
+</section>

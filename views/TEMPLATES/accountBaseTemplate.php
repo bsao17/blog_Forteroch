@@ -1,6 +1,3 @@
-<?php
-
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -13,14 +10,14 @@
     <link rel="stylesheet" href="../PUBLIC/CSS/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
     <link rel="icon" href="favicon.ico" />
-    <script src="../../PUBLIC/JS/main.js"></script>
+    <script src="PUBLIC\JS\main.js" async></script>
     <title>Jean Forteroche</title>
 </head>
 
 <body>
-    <div id="globalBody">
+    <div class="globalBody">
         <header>
-            <div class="  d-flex flex-column justify-content-center align-items-center m-2 border border-light rounded" id="banner">
+            <div class=" d-flex flex-column justify-content-center align-items-center m-2 border border-light rounded" id="banner">
                 <?php require("accountBarNav.php"); ?>
                 <section class="text-dark w-25">
                     <h3 class="card card-light text-center"><?php echo strtoupper($_GET['action']); ?></h3>

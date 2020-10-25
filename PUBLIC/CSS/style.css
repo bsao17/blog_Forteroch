@@ -30,7 +30,13 @@ body{
     background: repeat center /cover fixed url('../PICTURES/landscape-nature-wilderness-walking-mountain-snow-864039-pxhere.com.jpg') ;
 }
 
-#globalBody{
+#baseBody{
+    position: relative;
+    width: 100%;
+    height: max-content;
+}
+
+.globalBody{
     position: relative;
 }
 
@@ -49,7 +55,7 @@ body{
 
 #billets{
     font-size: 1.1rem;
-    background-color: var(--globalBlue);
+    display: flex;
 }
 
 #login_form{
@@ -106,8 +112,8 @@ body{
 #footer{
     width: 100%;
     position: absolute;
-    bottom: 0%;
-    margin-bottom: 0px;
+    bottom: 0vh;
+    margin-bottom: 0px; 
     background-color:  #343A40;
     color: white;
     z-index: 10;

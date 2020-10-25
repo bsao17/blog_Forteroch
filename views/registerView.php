@@ -1,5 +1,5 @@
 <?php require("./views/TEMPLATES/baseTemplate.php"); ?>
-<div id="login_form" class="d-flex flex-column align-items-center border border-light p-2 ml-2 mr-2 rounded">
+<div id="login_form" class="d-flex flex-column align-items-center border border-light p-2 ml-2 mr-2 mb-5 rounded">
     <h2 class='card card-light rounded p-1'>Créer un compte</h2>
     <form action="?action=signup" method="POST" class="border border-light rounded p-2 form-group" id="form">
         <table class="m-1">
@@ -31,7 +31,9 @@
     <div class=" p-1">
         <pre class="text-center"><span class="text-danger h1"><i class="fas fa-exclamation-triangle"></i></strong></span> <u class="bg-warning">the password need contain at least 6 characters with letters, numbers and signs such as :</u><span class="h4">[<span class="bg-warning h6"> _ - @ </span>] </span><br><span class="bg-warning"><u>and no spaces</u></span></pre>
     </div>
-</div>
+</div><br><br>
+<?php require_once("./views/TEMPLATES/footerView.php"); ?>
+
 <?php if($signup_status == true){
     echo "<pre class='text-center text-dark bg-success m-auto w-50 rounded h4'>votre compte à été créé</pre>";
 }
@@ -39,3 +41,5 @@ if($error != "") {
     echo $error;
 }
 ?>
+
+
