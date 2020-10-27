@@ -36,7 +36,7 @@
 
     </form>
 </div><br><br><br><br><br><br><br>
-<footer>
+<footer class="fixed-bottom">
     <?php require_once("./views/TEMPLATES/footerView.php"); ?>
 </footer>
 <?php  

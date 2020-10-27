@@ -8,13 +8,17 @@ class NavigationSite {
     }
     
     public function home(){
-        session_start();
-        
-        require("./views/ACCOUNT/accountHome.php");
+        if(isset($_COOKIE['user_login'])){
+            session_start();
+            require("./views/ACCOUNT/accountHome.php");
+        }else{
+            header("location: ?action=signin");
+        }
     }
     
     public function getbillet(){
         if($_REQUEST == "POST" || isset($_COOKIE['user_login'])){
+            
             session_start();
             $billets = new ManagerBillets();
             $post = $billets->getBillet();
@@ -32,15 +36,22 @@ class NavigationSite {
     }
 
     public function biography(){
-        session_start();
-        require_once("./views/TEMPLATES/accountBaseTemplate.php");
-        require_once('./views/ACCOUNT/accountBiography.php');
+        if(isset($_COOKIE['user_login'])){
+            session_start();
+            require_once("./views/TEMPLATES/accountBaseTemplate.php");
+            require_once('./views/ACCOUNT/accountBiography.php');
+        }else{
+            header("location: ?action=signin");
+        }
     }
 
     public function contact(){
-        session_start();
-        
-        require_once("./views/TEMPLATES/contactTemplate.php");
+        if(isset($_COOKIE['user_login'])){
+            session_start();
+            require_once("./views/TEMPLATES/contactTemplate.php");
+        }else{
+            header("location: ?action=signin");
+        }
     }
 
     public function sendMail(){

@@ -101,14 +101,17 @@ class AdministrationSite
 
     //Create new billets
     public function createBillet(){
-
-        if(!empty(isset($_POST["titleBillet"])) && !empty(isset($_POST["contentBillet"]))){
-            $title = $_POST["titleBillet"];
-            $content = $_POST["contentBillet"];
-            $billet = new ManagerBillets();
-            $billet->createBillet($title, $content);
+        if(isset($_COOKIE["user_login"])){
+            if(!empty(isset($_POST["titleBillet"])) && !empty(isset($_POST["contentBillet"]))){
+                $title = $_POST["titleBillet"];
+                $content = $_POST["contentBillet"];
+                $billet = new ManagerBillets();
+                $billet->createBillet($title, $content);
+            }
+            require_once("./views/ACCOUNT/createBillets.php");
+        }else{
+            header("location: ?action=signin");
         }
-        require_once("./views/ACCOUNT/createBillets.php");
     }
 }
  

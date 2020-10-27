@@ -8,6 +8,7 @@
     <script src="https://kit.fontawesome.com/224ea7dbd6.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../PUBLIC/CSS/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+    <script src="../../PUBLIC/JS/main.js"></script>
     <link rel="icon" href="favicon.ico" />
     <title>Jean Forteroche</title>
 </head>

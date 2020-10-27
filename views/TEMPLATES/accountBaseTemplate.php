@@ -10,12 +10,12 @@
     <link rel="stylesheet" href="../PUBLIC/CSS/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
     <link rel="icon" href="favicon.ico" />
-    <script src="PUBLIC\JS\main.js" async></script>
+    <script src="../../PUBLIC\JS\main.js" async></script>
     <title>Jean Forteroche</title>
 </head>
 
 <body>
-    <div class="globalBody">
+    <div class="globalBody position-relative">
         <header>
             <div class=" d-flex flex-column justify-content-center align-items-center m-2 border border-light rounded" id="banner">
                 <?php require("accountBarNav.php"); ?>

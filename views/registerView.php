@@ -29,10 +29,12 @@
         </table>
     </form>
     <div class=" p-1">
-        <pre class="text-center"><span class="text-danger h1"><i class="fas fa-exclamation-triangle"></i></strong></span> <u class="bg-warning">the password need contain at least 6 characters with letters, numbers and signs such as :</u><span class="h4">[<span class="bg-warning h6"> _ - @ </span>] </span><br><span class="bg-warning"><u>and no spaces</u></span></pre>
+        <pre class="text-center"><span class="text-danger h1"><i class="fas fa-exclamation-triangle"></i></strong></span><br> <u class="bg-warning">the password need contain at least 6 characters with letters,<br> numbers and signs such as :</u><span class="h4">[<span class="bg-warning h6"> _ - @ </span>] </span><br><span class="bg-warning"><u>and no spaces</u></span></pre>
     </div>
 </div><br><br>
-<?php require_once("./views/TEMPLATES/footerView.php"); ?>
+<footer class="fixed-bottom">
+    <?php require_once("./views/TEMPLATES/footerView.php"); ?>
+</footer>
 
 <?php if($signup_status == true){
     echo "<pre class='text-center text-dark bg-success m-auto w-50 rounded h4'>votre compte à été créé</pre>";

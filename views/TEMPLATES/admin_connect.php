@@ -11,7 +11,9 @@
         <input type="submit" value="Go Admin" class="btn btn-warning border border-dark">
     </form>
 </section>
-
+<div class="fixed-bottom">
+    <?php require_once("footerView.php") ?>
+</div>
 
 <?php 
     if($request_status == true){

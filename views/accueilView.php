@@ -28,7 +28,7 @@
         <img src="../PUBLIC\PICTURES\snow-winter-dog.jpg" alt="" id="picture-accueil8"  class="img-fluid img-thumbnail w-25 m-1 rounded" alt="Responsive image">
     </picture><hr>
 </section><hr><br> 
-<footer>
+<footer class="fixed-bottom">
     <?php require_once("TEMPLATES/footerView.php"); ?>
 </footer>
 
