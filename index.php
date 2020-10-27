@@ -58,7 +58,7 @@ try{
                 $administration->signup($_REQUEST, $_SERVER);
                 break;
 
-            case "apidata":
+            case "apidata/billets":
                 $apiData->billets_data();
                 break;
             

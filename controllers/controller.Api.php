@@ -8,9 +8,9 @@ require_once("./models/DatabaseClass.php");
 class APIdata{
 
     public function billets_data(){
-        
+        header("Content-type: application/json");
         $dataBillets = new ManagerBillets();
-        $response =$dataBillets->getBillet();
-        json_encode($response);
+        $post = $dataBillets->getBillet();
+        echo json_encode($post);  
     }
 }
