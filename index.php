@@ -1,6 +1,7 @@
 <?php
     require_once("./controllers/controller.NavigationSite.php");
     require_once("./controllers/controller.AdministrationSite.php");
+    require_once("./controllers/controller.Api.php");
 
 try{
 
@@ -12,6 +13,7 @@ try{
     
     $direction = new NavigationSite();
     $administration = new AdministrationSite();
+    $apiData = new APIdata();
     
     if ($action != null) {
         switch ($action) {
@@ -54,6 +56,10 @@ try{
             
             case "signup":
                 $administration->signup($_REQUEST, $_SERVER);
+                break;
+
+            case "apidata":
+                $apiData->billets_data();
                 break;
             
             default :
