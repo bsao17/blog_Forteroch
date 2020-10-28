@@ -61,6 +61,10 @@ try{
             case "apidata/billets":
                 $apiData->billets_data();
                 break;
+
+            case "apidata/comments":
+                $apiData->comments_data();
+                break;
             
             default :
                 echo "<h1 class='bg-warning'><u class'text-danger'>404 not found !</u></h1>";

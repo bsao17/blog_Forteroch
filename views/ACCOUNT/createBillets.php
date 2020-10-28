@@ -26,6 +26,10 @@
       <button class="btn btn-danger m-2"><a href="?action=getBillets" class="text-light">Disconnect</a></button>
     </form>
 
+    <section>
+    
+    </section>
+
 </body>
 
 </html>

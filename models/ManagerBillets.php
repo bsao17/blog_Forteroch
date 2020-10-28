@@ -37,6 +37,7 @@ class ManagerBillets
     }
 
     public function deleteBillet(){
+        $sql = "";
 
     }
 
