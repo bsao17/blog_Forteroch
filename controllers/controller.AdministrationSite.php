@@ -24,7 +24,7 @@ class AdministrationSite
                         $_SESSION['logued'] = true;
                         $cookie_name = "user_login";
                         $cookie_value = $_SESSION['login'];
-                        setcookie($cookie_name, $cookie_value, time() + (3600*24*365), "/");
+                        setcookie($cookie_name, $cookie_value, time() + (3600 * 24 * 365), "/");
                         header("location: ?action=home");
                     } else {
                         $signin_status = true;
@@ -77,41 +77,40 @@ class AdministrationSite
 
     // Account account access
     public function adminConnect($request, $server)
-    {   
+    {
         $request_status = false;
         $error = "<pre class='text-center text-danger bg-warning w-25 m-auto h4 rounded'>Error connection !</pre>";
-        if($server["REQUEST_METHOD"] == "POST"){
+        if ($server["REQUEST_METHOD"] == "POST") {
             $login = htmlspecialchars(trim($_POST['admin_log']));
             $password = htmlspecialchars(trim($_POST['admin_password']));
-            if(!empty(isset($login)) && !empty(isset($password))){
+            if (!empty(isset($login)) && !empty(isset($password))) {
                 $admin = new ManagerUser();
-                if($admin->adminConnection($login, $password) == true){
+                if ($admin->adminConnection($login, $password) == true) {
                     session_start();
                     header("location: ?action=createBillets");
-                }else{
+                } else {
                     $request_status = true;
                 }
-            }else{
+            } else {
                 $request_status = true;
             }
         }
         require_once("./views/TEMPLATES/admin_connect.php");
-        
     }
 
     //Create new billets
-    public function createBillet(){
-        if(isset($_COOKIE["user_login"])){
-            if(!empty(isset($_POST["titleBillet"])) && !empty(isset($_POST["contentBillet"]))){
+    public function createBillet()
+    {
+        if (isset($_COOKIE["user_login"])) {
+            if (!empty(isset($_POST["titleBillet"])) && !empty(isset($_POST["contentBillet"]))) {
                 $title = $_POST["titleBillet"];
                 $content = $_POST["contentBillet"];
                 $billet = new ManagerBillets();
                 $billet->createBillet($title, $content);
             }
             require_once("./views/ACCOUNT/createBillets.php");
-        }else{
+        } else {
             header("location: ?action=signin");
         }
     }
 }
- 
