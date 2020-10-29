@@ -26,8 +26,6 @@ class NavigationSite
         if ($_REQUEST == "POST" || isset($_COOKIE['user_login'])) {
 
             session_start();
-            $billets = new ManagerBillets();
-            
             require_once("./views/ACCOUNT/accountBilletsList.php");
         } else {
             header("location: ?action=signin");

@@ -1,6 +1,7 @@
 <?php
 require_once("./models/ManagerUser.php");
 require_once("./models/ManagerBillets.php");
+require_once("./models/ManagerComment.php");
 
 class AdministrationSite
 {
@@ -116,6 +117,10 @@ class AdministrationSite
 
 //Post comment
     public function postComment(){
-
+        if(!empty(isset($_POST["login"])) && !empty(isset($_post["content"]))){
+            $newComment = new ManagerComment();
+            $billet = new ManagerBillets();
+            $billet->getBillet(1);
+        }
     }
 }

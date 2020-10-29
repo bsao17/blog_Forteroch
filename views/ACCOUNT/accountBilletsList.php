@@ -28,13 +28,9 @@ require_once("./views/TEMPLATES/accountBaseTemplate.php");
         le froid m'a toujours attiré bien plus que le chaud,
         <br><a href="?action=billet3" class="btn btn-info">Lire la suite</a>
     </p>
-</article>
-
-
-
+</article><br><br><br>
 <?php
-require_once("./views/commentFormView.php");
-require_once("./views/commentDisplayView.php");
 require_once("./views/TEMPLATES/footerView.php");
-
 ?>
+
+

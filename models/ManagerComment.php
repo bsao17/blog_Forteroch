@@ -17,11 +17,12 @@ class ManagerComment
         $this->connection = $this->db->getConnection();
     }
 
-    public function postComment()
+    public function postComment($billetID, $userID, $contentComment)
     {
-        $comment = $this->connection->prepare("INSERT INTO comments(ID_billet, ID_user, contentsDb) VALUES( )");
-        $comment->bindParam(":username", $_SESSION['login']);
-        $comment->bindParam(":ID_billet", $ID_billet);
+        $comment = $this->connection->prepare("INSERT INTO comments(ID_billet, ID_user, contentsDb) VALUES( :ID_billet, :ID_user, :content )");
+        $comment->bindParam(":ID_billet", $billetID);
+        $comment->bindParam(":ID_user", $userID);
+        $comment->bindParam(":content", $contentComment );
         $comment->execute();
     }
 
