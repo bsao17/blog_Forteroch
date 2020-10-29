@@ -29,11 +29,23 @@ try {
                 break;
 
             case "getBillets":
-                $direction->getbillet();
+                $direction->getbillets();
                 break;
 
             case "createBillets":
                 $administration->createBillet();
+                break;
+
+            case "billet1":
+                $direction->getbilletOne();
+                break;
+                
+            case "billet2":
+                $direction->getbilletTwo();
+                break;
+
+            case "billet3":
+                $direction->getbilletThree();
                 break;
 
             case "admin_connect":

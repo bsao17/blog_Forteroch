@@ -1,6 +1,13 @@
 <?php require("./views/TEMPLATES/baseTemplate.php"); ?>
 <div id="login_form" class="d-flex flex-column align-items-center border border-light p-2 ml-2 mr-2 mb-5 rounded">
     <h2 class='card card-light rounded p-1'>Créer un compte</h2>
+<?php if($signup_status === true){
+    echo "<pre class='text-center text-dark bg-success m-auto w-50 rounded h4'>votre compte à été créé</pre>";
+}
+if($error != "") {
+    echo $error;
+}
+?>
     <form action="?action=signup" method="POST" class="border border-light rounded p-2 form-group" id="form">
         <table class="m-1">
             <tr>
@@ -36,12 +43,5 @@
     <?php require_once("./views/TEMPLATES/footerView.php"); ?>
 </footer>
 
-<?php if($signup_status == true){
-    echo "<pre class='text-center text-dark bg-success m-auto w-50 rounded h4'>votre compte à été créé</pre>";
-}
-if($error != "") {
-    echo $error;
-}
-?>
 
 

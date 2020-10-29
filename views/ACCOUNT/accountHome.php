@@ -1,7 +1,7 @@
 <?php require("./views/TEMPLATES/accountBaseTemplate.php"); ?>
 
 <section class="home border border-light m-2 p-2 rounded" id="home">
-    <h1 class="text-center">Bienvenue sur mon Livre "Billet simple pour l'Alaska" </h1><hr>
+    <h1 class="text-center">Bienvenue sur mon récit "Billet simple pour l'Alaska" </h1><hr>
     <h2>Présentation</h2>
     <p class="d-flex text-justify">Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
         Esse eius ea laboriosam, architecto est doloribus ad? Quidem fugiat quo nesciunt nisi non. Accusantium, at? Consequuntur, dolore. 

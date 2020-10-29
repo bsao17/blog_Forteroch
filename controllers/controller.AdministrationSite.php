@@ -8,7 +8,7 @@ class AdministrationSite
     public function signin($request, $server)
     {
         $error = '';
-        $signin_status = false;
+        $signin_status = "";
         if ($server['REQUEST_METHOD'] == 'POST') {
 
             $login = htmlspecialchars(trim($_POST['login']));
@@ -27,15 +27,15 @@ class AdministrationSite
                         setcookie($cookie_name, $cookie_value, time() + (3600 * 24 * 365), "/");
                         header("location: ?action=home");
                     } else {
-                        $signin_status = true;
+                        $signin_status = false;
                         $error = "<pre class='text-center text-danger bg-warning w-25 m-auto rounded'>Error password !</pre>";
                     }
                 } else {
-                    $signin_status = true;
-                    $error = "<pre class='text-center text-danger bg-warning w-25 m-auto rounded'>Error login or password !</pre>";
+                    $signin_status = false;
+                    $error = "<pre class='text-center text-danger bg-warning w-25 m-auto rounded'>Error not same password !</pre>";
                 }
             } else {
-                $signin_status = true;
+                $signin_status = false;
                 $error = "<pre class='text-center text-danger bg-warning w-25 m-auto rounded'>Field does not empty !</pre>";
             }
         }
@@ -55,21 +55,21 @@ class AdministrationSite
             $password = htmlspecialchars(trim($_POST['password']));
             $repeat_password = htmlspecialchars(trim($_POST['repeat_password']));
             $role = 'user';
-            if (($password == $repeat_password) && preg_match($regex, $password) == 1) {
+            if (($password == $repeat_password) && preg_match($regex, $password) == 1) {    
                 if (!empty($firstname) && !empty($lastname) && !empty($login)) {
                     $userManager = new ManagerUser();
                     $password = password_hash($password, PASSWORD_DEFAULT);
                     $user = $userManager->signup($login, $firstname, $lastname, $password, $role);
                     if ($user == null) {
-                        $error = "<pre class='text-center text-danger bg-warning w-50 m-auto rounded'>login Already exist !</pre>";
+                        $error = "<pre class='text-center text-danger bg-warning rounded-lg m-2 p-2 h4'>login Already exist</pre>";
                     } else {
                         $signup_status = true;
                     }
                 } else {
-                    $error = "<pre class='text-center text-danger bg-warning m-auto w-50 rounded h4'>error, fields shouldn't empty</pre>";
+                    $error = "<pre class='text-center text-danger bg-warning rounded-lg m-2 p-2 h4'>error, fields shouldn't empty</pre>";
                 }
             } else {
-                $error = "<pre class='text-center text-danger bg-warning m-2 h4'>error password<br>restart registration</pre>";
+                $error = "<pre class='text-center text-danger bg-warning m-2 p-2 h4 rounded-lg'>error password<br>restart registration</pre>";
             }
         }
         require_once("./views/registerView.php");
@@ -112,5 +112,10 @@ class AdministrationSite
         } else {
             header("location: ?action=signin");
         }
+    }
+
+//Post comment
+    public function postComment(){
+
     }
 }

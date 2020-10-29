@@ -9,6 +9,7 @@ class NavigationSite
         require("./views/accueilView.php");
     }
 
+//home account page
     public function home()
     {
         if (isset($_COOKIE['user_login'])) {
@@ -19,19 +20,64 @@ class NavigationSite
         }
     }
 
-    public function getbillet()
+//Billets list page
+    public function getbillets()
     {
         if ($_REQUEST == "POST" || isset($_COOKIE['user_login'])) {
 
             session_start();
             $billets = new ManagerBillets();
-            $post = $billets->getBillet();
-            require_once("./views/ACCOUNT/accountBillets.php");
+            
+            require_once("./views/ACCOUNT/accountBilletsList.php");
         } else {
             header("location: ?action=signin");
         }
     }
 
+//Billet one page
+    public function getbilletOne()
+    {
+        if ($_REQUEST == "POST" || isset($_COOKIE['user_login'])) {
+
+            session_start();
+            $ID = 1;
+            $billets = new ManagerBillets();
+            $post = $billets->getBillet(1);
+            require_once("./views/ACCOUNT/accountBillet__1.php");
+        } else {
+            header("location: ?action=signin");
+        }
+    }
+
+//Billet two page
+    public function getbilletTwo()
+    {
+        if ($_REQUEST == "POST" || isset($_COOKIE['user_login'])) {
+
+            session_start();
+            $billets = new ManagerBillets();
+            $post = $billets->getBillet(2);
+            require_once("./views/ACCOUNT/accountBillet__1.php");
+        } else {
+            header("location: ?action=signin");
+        }
+    }
+
+//Billet three page
+    public function getbilletThree()
+    {
+        if ($_REQUEST == "POST" || isset($_COOKIE['user_login'])) {
+
+            session_start();
+            $billets = new ManagerBillets();
+            $post = $billets->getBillet(3);
+            require_once("./views/ACCOUNT/accountBillet__1.php");
+        } else {
+            header("location: ?action=signin");
+        }
+    }
+
+//Comment form
     public function addComment()
     {
         require("./views/TEMPLATES/baseTemplate.php");
@@ -39,6 +85,7 @@ class NavigationSite
         $comment->postComment();
     }
 
+//Account biography page
     public function biography()
     {
         if (isset($_COOKIE['user_login'])) {
@@ -50,6 +97,7 @@ class NavigationSite
         }
     }
 
+//Account contact page
     public function contact()
     {
         if (isset($_COOKIE['user_login'])) {
@@ -59,7 +107,7 @@ class NavigationSite
             header("location: ?action=signin");
         }
     }
-
+//Sendmail form
     public function sendMail()
     {
         session_start();

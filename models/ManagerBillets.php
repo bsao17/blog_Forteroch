@@ -14,13 +14,17 @@ class ManagerBillets
         $this->db = new Database();
         $this->connection = $this->db->getConnection();
     }
+
     //Display Billets
-    public function getBillet()
+    public function getBillet($ID)
     { 
-        $request = $this->connection->query("SELECT * FROM billets");
+        $request = $this->connection->prepare("SELECT * FROM billets WHERE ID = :ID");
+        $request->bindParam(":ID", $ID );
+        $request->execute();
         $result = $request->fetchAll();
         return $result;
     }
+
     //Insert new billet in database
     public function createBillet($title, $content){
         try{
@@ -37,8 +41,10 @@ class ManagerBillets
     }
 
     public function deleteBillet(){
-        $sql = "";
-
+        $title = "";
+        $sql = "DELETE * FROM billets WHERE title = :title";
+        $req = $this->connection->prepare($sql);
+        $req->bindParam(":title", $title);
     }
 
     public function updateBillet(){

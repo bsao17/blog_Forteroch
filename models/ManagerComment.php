@@ -21,18 +21,19 @@ class ManagerComment
     {
         $comment = $this->connection->prepare("INSERT INTO comments(ID_billet, ID_user, contentsDb) VALUES( )");
         $comment->bindParam(":username", $_SESSION['login']);
-        $comment->bindParam(":ID_billet", $_POST['comment']);
+        $comment->bindParam(":ID_billet", $ID_billet);
         $comment->execute();
     }
 
+    
+    public function displayComment(){
+        $comment = $this->connection->query("SELECT * FROM comments INNER JOIN comment.ID_billet = billets.ID");
+        
+    }
+    
     public function deleteComment()
     {
-    }
-
-    public function displayComment()
-    {
-        $comment = $this->connection->prepare("SELECT contentsDb FROM comments WHERE ID_billet = (:ID_billet)");
-        // $comment->bindParam(":ID_billet", )
+        
     }
 
     public function updateComment()

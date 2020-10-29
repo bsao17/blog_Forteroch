@@ -35,14 +35,14 @@
         </table>
 
     </form>
+<?php  
+    if($signin_status === false){
+        echo $error;
+    }
+?>
 </div><br><br><br><br><br><br><br>
 <footer class="fixed-bottom">
     <?php require_once("./views/TEMPLATES/footerView.php"); ?>
 </footer>
-<?php  
-    if($signin_status == true){
-        echo $error;
-    }
-?>
 
 
