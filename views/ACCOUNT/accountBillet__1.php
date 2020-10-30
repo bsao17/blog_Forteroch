@@ -1,24 +1,17 @@
 <?php
 require_once("./views/TEMPLATES/accountBaseTemplate.php");
 ?>
-<h3 class="m-2 text-light text-center border border-dark p-1 pl-4 bg-danger rounded-pill"><i class="fas fa-book"></i> : <?php foreach ($post as $value) {
-    echo $value['ID'];
-} ?> </h3>
+<h3 class="m-2 text-light text-center border border-dark p-1 pl-4 bg-danger rounded-pill"><i class="fas fa-book"></i> : <?= $_GET['ID'];?> </h3>
 <section class="card ml-2 mr-2 mt-2 p-2 border border-danger">
-    <p>
         <?php
-        foreach ($post as $value) {
-            echo "<p class='h4 text-center'><strong><u>" . $value['title'] . "</u></strong></p>"; ?>
-    </p>
-    <article>
-    <?=
-                "<span class='lead h5 p-3'>" . $value['content'] . "</span>";
-        } ?>
-    </article>
-    
+            foreach($post as $value){
+                echo $value['title'];
+                echo $value['content'];
+            }
+        ?>
 </section>
 <section class="m-2 border border-light rounded" id="commentForm">
-    <form action="?action=postcomment" method="POST">
+    <form action="#" method="POST">
         <div class="form-group">
 
             <div class="m-2">

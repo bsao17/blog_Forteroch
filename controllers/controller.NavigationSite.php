@@ -26,8 +26,8 @@ class NavigationSite
         if ($_REQUEST == "POST" || isset($_COOKIE['user_login'])) {
 
             session_start();
-            $billet = new ManagerBillets();
-            $billet->getBillet();
+            $billets = new ManagerBillets();
+            $post = $billets->getBillet();
             require_once("./views/ACCOUNT/accountBilletsList.php");
         } else {
             header("location: ?action=signin");
@@ -35,44 +35,14 @@ class NavigationSite
     }
 
 //Billet one page
-    public function getbilletOne()
+    public function getbilletAlone()
     {
         if ($_REQUEST == "POST" || isset($_COOKIE['user_login'])) {
 
             session_start();
-            $ID = 1;
+            $ID = $_GET["ID"];
             $billets = new ManagerBillets();
-            $post = $billets->getBillet();
-            require_once("./views/ACCOUNT/accountBillet__1.php");
-        } else {
-            header("location: ?action=signin");
-        }
-    }
-
-//Billet two page
-    public function getbilletTwo()
-    {
-        if ($_REQUEST == "POST" || isset($_COOKIE['user_login'])) {
-
-            session_start();
-            $ID = 2;
-            $billets = new ManagerBillets();
-            $post = $billets->getBillet();
-            require_once("./views/ACCOUNT/accountBillet__1.php");
-        } else {
-            header("location: ?action=signin");
-        }
-    }
-
-//Billet three page
-    public function getbilletThree()
-    {
-        if ($_REQUEST == "POST" || isset($_COOKIE['user_login'])) {
-
-            session_start();
-            $ID = 3;
-            $billets = new ManagerBillets();
-            $post = $billets->getBillet();
+            $post = $billets->getBilletAlone($ID);
             require_once("./views/ACCOUNT/accountBillet__1.php");
         } else {
             header("location: ?action=signin");

@@ -36,16 +36,8 @@ try {
                 $administration->createBillet();
                 break;
 
-            case "billet1":
-                $direction->getbilletOne();
-                break;
-                
-            case "billet2":
-                $direction->getbilletTwo();
-                break;
-
-            case "billet3":
-                $direction->getbilletThree();
+            case "simplebillet":
+                $direction->getbilletAlone();
                 break;
 
             case "postcomment":

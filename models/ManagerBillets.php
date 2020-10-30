@@ -24,6 +24,16 @@ class ManagerBillets
         return $result;
     }
 
+// display one billet with ID    
+    public function getBilletAlone($ID)
+    { 
+        $request = $this->connection->prepare("SELECT * FROM billets WHERE ID = :ID");
+        $request->bindParam(":ID", $ID, PDO::PARAM_STR);
+        $request->execute();
+        $result = $request->fetchAll();
+        return $result;
+    }
+
     //Insert new billet in database
     public function createBillet($title, $content){
         try{
