@@ -16,10 +16,9 @@ class ManagerBillets
     }
 
     //Display Billets
-    public function getBillet($ID)
+    public function getBillet()
     { 
-        $request = $this->connection->prepare("SELECT * FROM billets WHERE ID = :ID");
-        $request->bindParam(":ID", $ID );
+        $request = $this->connection->query("SELECT * FROM billets");
         $request->execute();
         $result = $request->fetchAll();
         return $result;

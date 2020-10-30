@@ -17,13 +17,18 @@ class ManagerComment
         $this->connection = $this->db->getConnection();
     }
 
-    public function postComment($billetID, $userID, $contentComment)
+    public function addComment($billetID, $userID, $comment)
     {
-        $comment = $this->connection->prepare("INSERT INTO comments(ID_billet, ID_user, contentsDb) VALUES( :ID_billet, :ID_user, :content )");
-        $comment->bindParam(":ID_billet", $billetID);
-        $comment->bindParam(":ID_user", $userID);
-        $comment->bindParam(":content", $contentComment );
-        $comment->execute();
+        $sql = "INSERT INTO comments(ID_billet, ID_user, contentsDb) VALUES( :ID_billet, :ID_user, :content )";
+        if($req = $this->connection->prepare($sql)){
+            $req->bindParam(":ID_billet", $billetID, PDO::PARAM_STR);
+            $req->bindParam(":ID_user", $userID, PDO::PARAM_STR);
+            $req->bindParam(":content", $comment, PDO::PARAM_STR);
+            $req->execute();
+        }else{
+            echo "error sql";
+        }
+        
     }
 
     

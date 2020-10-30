@@ -26,6 +26,8 @@ class NavigationSite
         if ($_REQUEST == "POST" || isset($_COOKIE['user_login'])) {
 
             session_start();
+            $billet = new ManagerBillets();
+            $billet->getBillet();
             require_once("./views/ACCOUNT/accountBilletsList.php");
         } else {
             header("location: ?action=signin");
@@ -40,7 +42,7 @@ class NavigationSite
             session_start();
             $ID = 1;
             $billets = new ManagerBillets();
-            $post = $billets->getBillet(1);
+            $post = $billets->getBillet();
             require_once("./views/ACCOUNT/accountBillet__1.php");
         } else {
             header("location: ?action=signin");
@@ -53,8 +55,9 @@ class NavigationSite
         if ($_REQUEST == "POST" || isset($_COOKIE['user_login'])) {
 
             session_start();
+            $ID = 2;
             $billets = new ManagerBillets();
-            $post = $billets->getBillet(2);
+            $post = $billets->getBillet();
             require_once("./views/ACCOUNT/accountBillet__1.php");
         } else {
             header("location: ?action=signin");
@@ -67,20 +70,13 @@ class NavigationSite
         if ($_REQUEST == "POST" || isset($_COOKIE['user_login'])) {
 
             session_start();
+            $ID = 3;
             $billets = new ManagerBillets();
-            $post = $billets->getBillet(3);
+            $post = $billets->getBillet();
             require_once("./views/ACCOUNT/accountBillet__1.php");
         } else {
             header("location: ?action=signin");
         }
-    }
-
-//Comment form
-    public function addComment()
-    {
-        require("./views/TEMPLATES/baseTemplate.php");
-        $comment = new ManagerComment;
-        $comment->postComment();
     }
 
 //Account biography page

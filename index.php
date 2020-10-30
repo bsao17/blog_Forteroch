@@ -48,6 +48,10 @@ try {
                 $direction->getbilletThree();
                 break;
 
+            case "postcomment":
+                $administration->postComment($_REQUEST, $_server);
+                break;
+
             case "admin_connect":
                 $administration->adminConnect($_REQUEST, $_SERVER);
                 break;

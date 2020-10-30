@@ -104,7 +104,7 @@ class AdministrationSite
     {
         if (isset($_COOKIE["user_login"])) {
             if (!empty(isset($_POST["titleBillet"])) && !empty(isset($_POST["contentBillet"]))) {
-                $title = $_POST["titleBillet"];
+                $title = ($_POST["titleBillet"]);
                 $content = $_POST["contentBillet"];
                 $billet = new ManagerBillets();
                 $billet->createBillet($title, $content);
@@ -116,11 +116,19 @@ class AdministrationSite
     }
 
 //Post comment
-    public function postComment(){
-        if(!empty(isset($_POST["login"])) && !empty(isset($_post["content"]))){
-            $newComment = new ManagerComment();
-            $billet = new ManagerBillets();
-            $billet->getBillet(1);
+    public function postComment($request, $server){
+       
+        if($server["REQUEST_METHOD"] == "POST"){
+            if(!empty(isset($_POST["login"])) && !empty(isset($_POST["content"]))){
+                $user = htmlspecialchars(trim($_POST["login"]));
+                $IDbillet = $_POST["ID"];
+                $comment = htmlspecialchars(trim($_POST["content"]));
+                $newComment = new ManagerComment();
+                $newComment->addComment($IDbillet, $user, $comment);
+            }
+            require_once("./views/commentFormView.php");
+
         }
+
     }
 }
