@@ -2,16 +2,16 @@
 require_once("./views/TEMPLATES/accountBaseTemplate.php");
 ?>
 <h3 class="m-2 text-light text-center border border-dark p-1 pl-4 bg-danger rounded-pill"><i class="fas fa-book"></i> : <?= $_GET['ID'];?> </h3>
-<section class="card ml-2 mr-2 mt-2 p-2 border border-danger">
+<section class="card ml-2 mr-2 mt-2 p-3 lead border border-danger">
         <?php
             foreach($post as $value){
-                echo $value['title'];
+                echo "<div class='text-center h4'>".$value['title']."</div>";
                 echo $value['content'];
             }
         ?>
 </section>
 <section class="m-2 border border-light rounded" id="commentForm">
-    <form action="#" method="POST">
+    <form action="?action=postcomment" method="POST">
         <div class="form-group">
 
             <div class="m-2">

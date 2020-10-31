@@ -123,3 +123,7 @@ body{
 li{
     margin: 20px;
 }
+
+#carousel{
+    box-shadow: black 5px 5px 5px;
+}

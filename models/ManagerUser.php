@@ -36,7 +36,7 @@ class ManagerUser
 
     public function signin($login, $password)
     {
-        $sql = "SELECT login, password FROM user WHERE login = :username ";
+        $sql = "SELECT * FROM user WHERE login = :username ";
         if ($result = $this->connection->prepare($sql)) {
             $result->bindParam(":username", $login, PDO::PARAM_STR);
             if ($result->execute()) {
@@ -67,7 +67,22 @@ class ManagerUser
                         }
                     }
                 }
+            }
+        }
+    }
 
+    public function adminVerify(){
+        $sql = "SELECT  FROM user WHERE login = :username";
+        if($result = $this->connection->prepare($sql)){
+            $result->bindParam(":username", $_SESSION['login']);
+            if($result->execute()){
+                if($result->rowCount() == 1){
+                    $req = $result->fetchAll();
+                    $role = $req['role'];
+                    if($role == "admin"){
+                        return true;
+                    }
+                }  
             }
         }
     }

@@ -1,34 +1,67 @@
 <?php require("./views/TEMPLATES/baseTemplate.php"); ?>
 <section class="home border border-light m-2 rounded" id="home">
-    <h1 class="text-center">Welcome On My Blog</h1><hr>
+    <h1 class="text-center">Welcome On My Blog</h1>
+    <hr>
     <h2 class="pl-4"><u>Présentation</u> </h2>
     <p class=" p-4">
-        <img src="../PUBLIC/PICTURES/sky.jpg" alt="" id="picture-accueil"  class="img-fluid img-thumbnail w-25 m-auto rounded float-right" alt="Responsive image">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-        Esse eius ea laboriosam, architecto est doloribus ad? Quidem fugiat quo nesciunt nisi non. Accusantium, at? Consequuntur, dolore. 
-        Esse, inventore dolorum sequi iusto eos numquam id qui, accusamus non maxime dolore sit commodi quibusdam rerum ab, 
+        <img src="../PUBLIC/PICTURES/sky.jpg" alt="" id="picture-accueil" class="img-fluid img-thumbnail w-25 m-auto rounded float-right" alt="Responsive image">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+        Esse eius ea laboriosam, architecto est doloribus ad? Quidem fugiat quo nesciunt nisi non. Accusantium, at? Consequuntur, dolore.
+        Esse, inventore dolorum sequi iusto eos numquam id qui, accusamus non maxime dolore sit commodi quibusdam rerum ab,
         praesentium veniam alias sapiente voluptates debitis.
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-        Esse eius ea laboriosam, architecto est doloribus ad? Quidem fugiat quo nesciunt nisi non. Accusantium, at? Consequuntur, dolore. 
-        Esse, inventore dolorum sequi iusto eos numquam id qui, accusamus non maxime dolore sit commodi quibusdam rerum ab, 
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+        Esse eius ea laboriosam, architecto est doloribus ad? Quidem fugiat quo nesciunt nisi non. Accusantium, at? Consequuntur, dolore.
+        Esse, inventore dolorum sequi iusto eos numquam id qui, accusamus non maxime dolore sit commodi quibusdam rerum ab,
         praesentium veniam alias sapiente voluptates debitis.
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, perferendis ipsam ullam delectus qui cumque quidem alias ipsum est. 
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, perferendis ipsam ullam delectus qui cumque quidem alias ipsum est.
         Pariatur facere quia voluptatibus eos itaque, impedit cumque possimus consectetur eveniet.
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Labore, laborum tempore enim officiis expedita magni magnam quisquam minima cum, 
-        alias fuga error neque veritatis eos officia dicta sapiente ipsam animi excepturi exercitationem! Adipisci tenetur, pariatur vel cum soluta perspiciatis 
-        autem asperiores doloremque eum aperiam, consequuntur numquam quia nesciunt consectetur magni, dolorum cupiditate! Delectus accusamus voluptatum 
-        distinctio perspiciatis corporis quo, pariatur voluptas illo nisi quasi minus quod neque similique placeat. Autem non ex sed illo dolore. 
-    </p><hr>
-    <picture class="m-5 d-flex justify-content-center flex-wrap bg-dark border border-light">
-        <img src="../PUBLIC/PICTURES/landscape (2).jpg" alt="" id="picture-accueil2"  class="img-fluid img-thumbnail w-25 m-1 rounded" alt="Responsive image">
-        <img src="../PUBLIC/PICTURES/landscape (3).jpg" alt="" id="picture-accueil4"  class="img-fluid img-thumbnail w-25 m-1 rounded" alt="Responsive image">
-        <img src="../PUBLIC/PICTURES/landscape (4).jpg" alt="" id="picture-accueil5"  class="img-fluid img-thumbnail w-25 m-1 rounded" alt="Responsive image">
-        <img src="../PUBLIC/PICTURES/landscape (5).jpg" alt="" id="picture-accueil6"  class="img-fluid img-thumbnail w-25 m-1 rounded" alt="Responsive image">
-        <img src="../PUBLIC\PICTURES\wilderness-bear.jpg" alt="" id="picture-accueil7"  class="img-fluid img-thumbnail w-25 m-1 rounded" alt="Responsive image">
-        <img src="../PUBLIC\PICTURES\snow-winter-dog.jpg" alt="" id="picture-accueil8"  class="img-fluid img-thumbnail w-25 m-1 rounded" alt="Responsive image">
-    </picture><hr>
-</section><hr><br> 
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Labore, laborum tempore enim officiis expedita magni magnam quisquam minima cum,
+        alias fuga error neque veritatis eos officia dicta sapiente ipsam animi excepturi exercitationem! Adipisci tenetur, pariatur vel cum soluta perspiciatis
+        autem asperiores doloremque eum aperiam, consequuntur numquam quia nesciunt consectetur magni, dolorum cupiditate! Delectus accusamus voluptatum
+        distinctio perspiciatis corporis quo, pariatur voluptas illo nisi quasi minus quod neque similique placeat. Autem non ex sed illo dolore.
+    </p>
+    <hr>
+    
+    <div id="carousel" class="carousel slide w-50 h-auto m-auto card p-2 rounded-lg" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="../PUBLIC/PICTURES/landscape (2).jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="../PUBLIC/PICTURES/landscape (3).jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="../PUBLIC/PICTURES/landscape (4).jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="../PUBLIC/PICTURES/landscape (5).jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="../PUBLIC\PICTURES\wilderness-bear.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="../PUBLIC\PICTURES\snow-winter-dog.jpg" class="d-block w-100" alt="...">
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div><br>
+</section>
+<hr><br><br>
 <footer class="fixed-bottom">
     <?php require_once("TEMPLATES/footerView.php"); ?>
 </footer>
-

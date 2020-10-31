@@ -5,7 +5,7 @@ require_once("./models/ManagerComment.php");
 
 class AdministrationSite
 {
-    // Signin Method 
+// Signin Method 
     public function signin($request, $server)
     {
         $error = '';
@@ -43,7 +43,7 @@ class AdministrationSite
         require_once("./views/Connect.views.php");
     }
 
-    //Signup Method
+//Signup Method
     public function signup($request, $server)
     {
         $signup_status = false;
@@ -76,18 +76,19 @@ class AdministrationSite
         require_once("./views/registerView.php");
     }
 
-    // Account account access
+// Account account access
     public function adminConnect($request, $server)
     {
         $request_status = false;
         $error = "<pre class='text-center text-danger bg-warning w-25 m-auto h4 rounded'>Error connection !</pre>";
-        if ($server["REQUEST_METHOD"] == "POST") {
+        if ($server["REQUEST_METHOD"] == "POST"){
             $login = htmlspecialchars(trim($_POST['admin_log']));
             $password = htmlspecialchars(trim($_POST['admin_password']));
             if (!empty(isset($login)) && !empty(isset($password))) {
                 $admin = new ManagerUser();
-                if ($admin->adminConnection($login, $password) == true) {
+                if ($admin->adminConnection($login, $password) == true){
                     session_start();
+                    $_SESSION['login'] = $login;
                     header("location: ?action=createBillets");
                 } else {
                     $request_status = true;
@@ -99,15 +100,18 @@ class AdministrationSite
         require_once("./views/TEMPLATES/admin_connect.php");
     }
 
-    //Create new billets
+//Create new billets
     public function createBillet()
     {
         if (isset($_COOKIE["user_login"])) {
+            session_start();
             if (!empty(isset($_POST["titleBillet"])) && !empty(isset($_POST["contentBillet"]))) {
                 $title = ($_POST["titleBillet"]);
                 $content = $_POST["contentBillet"];
                 $billet = new ManagerBillets();
                 $billet->createBillet($title, $content);
+            }else{
+                
             }
             require_once("./views/ACCOUNT/createBillets.php");
         } else {
@@ -122,11 +126,10 @@ class AdministrationSite
             if(!empty(isset($_POST["login"])) && !empty(isset($_POST["content"]))){
                 $user = htmlspecialchars(trim($_POST["login"]));
                 $IDbillet = $_POST["ID"];
-                $comment = htmlspecialchars(trim($_POST["content"]));
+                $commentContent = htmlspecialchars(trim($_POST["content"]));
                 $newComment = new ManagerComment();
-                $newComment->addComment($IDbillet, $user, $comment);
+                $newComment->addComment($IDbillet, $user, $commentContent);
             }
-            require_once("./views/commentFormView.php");
 
         }
 

@@ -41,7 +41,7 @@ try {
                 break;
 
             case "postcomment":
-                $administration->postComment($_REQUEST, $_server);
+                $administration->postComment($_REQUEST, $_SERVER);
                 break;
 
             case "admin_connect":
