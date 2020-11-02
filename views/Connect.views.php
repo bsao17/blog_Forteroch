@@ -40,9 +40,29 @@
         echo $error;
     }
 ?>
+<?php 
+    if(isset($_COOKIE['PHPSESSID'])){
+        var_dump($_COOKIE["user_login"]); 
+    }
+    
+    var_dump(__DIR__);
+    var_dump(__FILE__);
+    var_dump(__CLASS__);
+    var_dump(spl_autoload_functions());
+?>
 </div><br><br><br><br><br><br><br>
-<footer class="fixed-bottom">
-    <?php require_once("./views/TEMPLATES/footerView.php"); ?>
+<footer id="footer" class="w-100">
+    <ul class="d-flex flex-wrap align-items-center m-auto m-1 justify-content-center w-50">
+        <a href="https://www.facebook.com/brunoDevOps">
+            <li class="text-light"><i class="fab fa-facebook-square"></i> Facebook</li>
+        </a>
+        <a href="">
+            <li class="text-light"><i class="fab fa-twitter-square"></i> Twitter</li>
+        </a>
+        <a href="">
+            <li class="text-light"><i class="fab fa-instagram"></i> Instagram</li>
+        </a>
+    </ul>
 </footer>
 
 

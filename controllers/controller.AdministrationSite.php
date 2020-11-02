@@ -5,7 +5,7 @@ require_once("./models/ManagerComment.php");
 
 class AdministrationSite
 {
-// Signin Method 
+    // Signin Method 
     public function signin($request, $server)
     {
         $error = '';
@@ -43,7 +43,7 @@ class AdministrationSite
         require_once("./views/Connect.views.php");
     }
 
-//Signup Method
+    //Signup Method
     public function signup($request, $server)
     {
         $signup_status = false;
@@ -56,7 +56,7 @@ class AdministrationSite
             $password = htmlspecialchars(trim($_POST['password']));
             $repeat_password = htmlspecialchars(trim($_POST['repeat_password']));
             $role = 'user';
-            if (($password == $repeat_password) && preg_match($regex, $password) == 1) {    
+            if (($password == $repeat_password) && preg_match($regex, $password) == 1) {
                 if (!empty($firstname) && !empty($lastname) && !empty($login)) {
                     $userManager = new ManagerUser();
                     $password = password_hash($password, PASSWORD_DEFAULT);
@@ -76,62 +76,42 @@ class AdministrationSite
         require_once("./views/registerView.php");
     }
 
-// Account account access
-    public function adminConnect($request, $server)
-    {
-        $request_status = false;
-        $error = "<pre class='text-center text-danger bg-warning w-25 m-auto h4 rounded'>Error connection !</pre>";
-        if ($server["REQUEST_METHOD"] == "POST"){
-            $login = htmlspecialchars(trim($_POST['admin_log']));
-            $password = htmlspecialchars(trim($_POST['admin_password']));
-            if (!empty(isset($login)) && !empty(isset($password))) {
-                $admin = new ManagerUser();
-                if ($admin->adminConnection($login, $password) == true){
-                    session_start();
-                    $_SESSION['login'] = $login;
-                    header("location: ?action=createBillets");
-                } else {
-                    $request_status = true;
-                }
-            } else {
-                $request_status = true;
-            }
-        }
-        require_once("./views/TEMPLATES/admin_connect.php");
-    }
-
-//Create new billets
+    //Create new billets
     public function createBillet()
     {
         if (isset($_COOKIE["user_login"])) {
-            session_start();
-            if (!empty(isset($_POST["titleBillet"])) && !empty(isset($_POST["contentBillet"]))) {
-                $title = ($_POST["titleBillet"]);
-                $content = $_POST["contentBillet"];
-                $billet = new ManagerBillets();
-                $billet->createBillet($title, $content);
+            $user = new ManagerUser();
+            if($user->adminVerify() == true){
+                session_start();
+                if (!empty(isset($_POST["titleBillet"])) && !empty(isset($_POST["contentBillet"]))) {
+                    $title = ($_POST["titleBillet"]);
+                    $content = $_POST["contentBillet"];
+                    $billet = new ManagerBillets();
+                    $billet->createBillet($title, $content);
+                } else {
+                    echo "Fields does not empty";
+                }
+                require_once("./views/ACCOUNT/createBillets.php");
             }else{
-                
+                header("location: ?action=home");
             }
-            require_once("./views/ACCOUNT/createBillets.php");
         } else {
             header("location: ?action=signin");
         }
     }
 
-//Post comment
-    public function postComment($request, $server){
-       
-        if($server["REQUEST_METHOD"] == "POST"){
-            if(!empty(isset($_POST["login"])) && !empty(isset($_POST["content"]))){
+    //Post comment
+    public function postComment($request, $server)
+    {
+
+        if ($server["REQUEST_METHOD"] == "POST") {
+            if (!empty(isset($_POST["login"])) && !empty(isset($_POST["content"]))) {
                 $user = htmlspecialchars(trim($_POST["login"]));
                 $IDbillet = $_POST["ID"];
                 $commentContent = htmlspecialchars(trim($_POST["content"]));
                 $newComment = new ManagerComment();
                 $newComment->addComment($IDbillet, $user, $commentContent);
             }
-
         }
-
     }
 }

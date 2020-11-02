@@ -1,129 +1,131 @@
-:root{
-    --globalBlue : #697a8db0;
+:root {
+  --globalBlue: #697a8db0;
 }
 
-a{
-    color: rgb(71, 71, 71);
-    text-decoration: none;
+a {
+  color: rgb(71, 71, 71);
+  text-decoration: none;
 }
 
-a:visited{
-    color: rgb(71, 71, 71);
-    text-decoration: none;
+a:visited {
+  color: rgb(71, 71, 71);
+  text-decoration: none;
 }
 
-a:hover{
-    text-decoration: none;
+a:hover {
+  text-decoration: none;
 }
 
-ul{
-    list-style: none;
+ul {
+  list-style: none;
 }
 
-body{
-    position: relative;
-    margin: 0px;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(2, 36, 87, 0.5);
-    font-family: 'Playfair Display', serif;
-    background: repeat center /cover fixed url('../PICTURES/landscape-nature-wilderness-walking-mountain-snow-864039-pxhere.com.jpg') ;
-    box-sizing: border-box;
+body {
+  position: relative;
+  margin: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(2, 36, 87, 0.5);
+  font-family: 'Playfair Display', serif;
+  background: repeat center / cover fixed
+    url('../PICTURES/landscape-nature-wilderness-walking-mountain-snow-864039-pxhere.com.jpg');
+  box-sizing: border-box;
 }
 
-#baseBody{
-    position: relative;
-    width: 100%;
-    height: max-content;
+#baseBody {
+  position: relative;
+  width: 100%;
+  height: max-content;
 }
 
-.globalBody{
-    position: relative;
+.globalBody {
+  position: relative;
 }
 
-#banner{
-    background-color: var(--globalBlue);
+#banner {
+  background-color: var(--globalBlue);
 }
 
-#billetTitle{
-    box-shadow: rgba(0, 0, 0, 0.5) 5px 5px 10px;
+#billetTitle {
+  box-shadow: rgba(0, 0, 0, 0.5) 5px 5px 10px;
 }
 
-#billet{
-    font-size: 1.1rem;
-    background-color: var(--globalBlue);
+#billet {
+  font-size: 1.1rem;
+  background-color: var(--globalBlue);
 }
 
-#billets{
-    font-size: 1.1rem;
-    display: flex;
+#billets {
+  font-size: 1.1rem;
+  display: flex;
 }
 
-#login_form{
-    background-color: var(--globalBlue);
+#login_form {
+  background-color: var(--globalBlue);
 }
 
-#form{
-    background-color: rgb(38, 45, 65);
+#form {
+  background-color: rgb(38, 45, 65);
+  box-shadow: rgba(0, 0, 0, 0.5) 5px 5px 10px;
 }
 
-#commentForm{
-    background-color: var(--globalBlue);
+#commentForm {
+  background-color: var(--globalBlue);
 }
 
-#home{
-    background-color: rgba(245, 245, 245, 0.8);
+#home {
+  background-color: rgba(245, 245, 245, 0.8);
 }
 
-.chapter1{
-    background-color: #17a3b84b;
-    font-size: 1.4rem;
+.chapter1 {
+  background-color: #17a3b84b;
+  font-size: 1.4rem;
 }
 
-.pict1{
-    box-shadow: rgb(48, 48, 48) 5px 5px 5px;
+.pict1 {
+  box-shadow: rgb(48, 48, 48) 5px 5px 5px;
 }
 
-#comments{
-    background: var(--globalBlue);
+#comments {
+  background: var(--globalBlue);
 }
 
-.picture{
-    width: 40%;
-    height: auto;
-    margin: auto;
+.picture {
+  width: 40%;
+  height: auto;
+  margin: auto;
 }
 
-#contactForm{
-    background-color: var(--globalBlue);
+#contactForm {
+  background-color: var(--globalBlue);
 }
 
-#picture-home{
-    box-shadow: black 5px 5px 10px;
+#picture-home {
+  box-shadow: black 5px 5px 10px;
 }
 
-#picture-accueil{
-    box-shadow: black 5px 5px 10px;
+#picture-accueil {
+  box-shadow: black 5px 5px 10px;
 }
 
-.bg-form{
-    background-color: #d6d6d6;
+.bg-form {
+  background-color: #d6d6d6;
 }
 
-#footer{
-    margin: auto;
-    position: absolute;
-    bottom: 0vh;
-    margin-bottom: 0px; 
-    background-color:  #343A40;
-    color: white;
-    box-sizing: content-box;
+#footer {
+  margin: auto;
+  position: absolute;
+  bottom: 0vh;
+  margin-bottom: 0px;
+  background-color: #343a40;
+  color: white;
+  box-sizing: content-box;
 }
 
-li{
-    margin: 20px;
+li {
+  margin: 20px;
 }
 
-#carousel{
-    box-shadow: black 5px 5px 5px;
+#carousel {
+  box-shadow: black 5px 5px 5px;
 }

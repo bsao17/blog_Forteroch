@@ -1,11 +1,12 @@
 <?php
 
 require_once("./models/DatabaseClass.php");
+
 class ManagerUser
 {
     private $db;
     private $connection;
-
+//Constructor
     public function __construct()
     {
         $this->db = new Database();
@@ -33,56 +34,37 @@ class ManagerUser
             }
         }
     }
-
+//Signin controller
     public function signin($login, $password)
     {
         $sql = "SELECT * FROM user WHERE login = :username ";
         if ($result = $this->connection->prepare($sql)) {
             $result->bindParam(":username", $login, PDO::PARAM_STR);
             if ($result->execute()) {
-               if($result->rowCount() == 1){
+                if ($result->rowCount() == 1) {
                     $res = $result->fetch();
                     $password_hash = $res['password'];
-                    if(password_verify($password, $password_hash)){
+                    if (password_verify($password, $password_hash)){
                         return true;
-                    }
-               }
-                
-            }
-        }
-    }
-
-    public function adminConnection($login, $password){
-        $sql = "SELECT login, password, role FROM user WHERE login = :username";
-        if($result = $this->connection->prepare($sql)){
-            $result->bindParam(":username", $login);
-            if($result->execute()){
-                if($result->rowCount() == 1){
-                    $req = $result->fetch();
-                    $password_hash = $req['password'];
-                    $roleDb = $req['role'];
-                    if(password_verify($password, $password_hash)){
-                        if($roleDb == "admin"){
-                            return true;
-                        }
                     }
                 }
             }
         }
     }
 
-    public function adminVerify(){
-        $sql = "SELECT  FROM user WHERE login = :username";
-        if($result = $this->connection->prepare($sql)){
-            $result->bindParam(":username", $_SESSION['login']);
-            if($result->execute()){
-                if($result->rowCount() == 1){
-                    $req = $result->fetchAll();
+    public function adminVerify()
+    {
+        $sql = "SELECT role FROM user WHERE login = :username";
+        if ($result = $this->connection->prepare($sql)) {
+            $result->bindParam(":username", $_COOKIE["user_login"]);
+            if ($result->execute()) {
+                if ($result->rowCount() == 1) {
+                    $req = $result->fetch();
                     $role = $req['role'];
-                    if($role == "admin"){
+                    if ($role == "admin") {
                         return true;
                     }
-                }  
+                }
             }
         }
     }

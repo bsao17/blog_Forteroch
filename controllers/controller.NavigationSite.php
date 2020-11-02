@@ -5,14 +5,14 @@ require("./models/ManagerComment.php");
 class NavigationSite
 {
     public function accueil()
-    {
+    {   
         require("./views/accueilView.php");
     }
 
 //home account page
     public function home()
     {
-        if (isset($_COOKIE['user_login'])) {
+        if (isset($_COOKIE['PHPSESSID'])) {
             session_start();
             require("./views/ACCOUNT/accountHome.php");
         } else {
@@ -35,7 +35,7 @@ class NavigationSite
     }
 
 //Billet one page
-    public function getbilletAlone()
+    public function getSingleBillet()
     {
         if ($_REQUEST == "POST" || isset($_COOKIE['user_login'])) {
 

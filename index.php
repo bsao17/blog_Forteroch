@@ -37,15 +37,11 @@ try {
                 break;
 
             case "simplebillet":
-                $direction->getbilletAlone();
+                $direction->getSingleBillet();
                 break;
 
             case "postcomment":
                 $administration->postComment($_REQUEST, $_SERVER);
-                break;
-
-            case "admin_connect":
-                $administration->adminConnect($_REQUEST, $_SERVER);
                 break;
 
             case "contact":
@@ -70,5 +66,5 @@ try {
         }
     }
 } catch (Exception $e) {
-    echo "404 not found : " . $e->getMessage();
+    echo "404 not found router : " . $e->getMessage();
 }

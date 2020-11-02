@@ -39,8 +39,18 @@ if($error != "") {
         <pre class="text-center"><span class="text-danger h1"><i class="fas fa-exclamation-triangle"></i></strong></span><br> <u class="bg-warning">the password need contain at least 6 characters with letters,<br> numbers and signs such as :</u><span class="h4">[<span class="bg-warning h6"> _ - @ </span>] </span><br><span class="bg-warning"><u>and no spaces</u></span></pre>
     </div>
 </div><br><br>
-<footer class="fixed-bottom">
-    <?php require_once("./views/TEMPLATES/footerView.php"); ?>
+<footer id="footer" class="w-100">
+    <ul class="d-flex flex-wrap align-items-center m-auto m-1 justify-content-center w-50">
+        <a href="https://www.facebook.com/brunoDevOps">
+            <li class="text-light"><i class="fab fa-facebook-square"></i> Facebook</li>
+        </a>
+        <a href="">
+            <li class="text-light"><i class="fab fa-twitter-square"></i> Twitter</li>
+        </a>
+        <a href="">
+            <li class="text-light"><i class="fab fa-instagram"></i> Instagram</li>
+        </a>
+    </ul>
 </footer>
 
 

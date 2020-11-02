@@ -1,7 +1,7 @@
 <?php
 
-function classAutoload($class){
-    require_once($class.'php');
+function classAutoload(){
+    require_once(__CLASS__.'php');
 }
 spl_autoload_register('classAutoload');
 class ManagerBillets
