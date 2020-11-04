@@ -53,7 +53,7 @@ require_once("./views/TEMPLATES/accountBaseTemplate.php");
         <a href="">
             <li class="text-light"><i class="fab fa-instagram"></i> Instagram</li>
         </a>
-        <a href="?action=admin_connect">
+        <a href="?action=createBillets">
             <li>
                 <p class="text-light"><span class="text-danger"><i class="fas fa-user-cog"></i> Admin</span></p>
             </li>

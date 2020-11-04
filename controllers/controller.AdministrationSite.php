@@ -11,7 +11,7 @@ class AdministrationSite
         $error = '';
         $signin_status = "";
         if ($server['REQUEST_METHOD'] == 'POST') {
-
+            
             $login = htmlspecialchars(trim($_POST['login']));
             $password = htmlspecialchars(trim($_POST['password']));
             $repeat_password = htmlspecialchars(trim($_POST['repeat_password']));
@@ -81,18 +81,21 @@ class AdministrationSite
     {
         if (isset($_COOKIE["user_login"])) {
             $user = new ManagerUser();
-            if($user->adminVerify() == true){
+            if ($user->adminVerify() == true) {
                 session_start();
-                if (!empty(isset($_POST["titleBillet"])) && !empty(isset($_POST["contentBillet"]))) {
-                    $title = ($_POST["titleBillet"]);
+                if (isset($_POST["titleBillet"]) && isset($_POST["contentBillet"])) {
+                    $title = $_POST["titleBillet"];
                     $content = $_POST["contentBillet"];
+                    $empty = false;
                     $billet = new ManagerBillets();
-                    $billet->createBillet($title, $content);
-                } else {
-                    echo "Fields does not empty";
+                    if(!empty($title) && !empty($content)){
+                        $billet->createBillet($title, $content);
+                    }else{
+                        $empty = true;
+                    }
                 }
                 require_once("./views/ACCOUNT/createBillets.php");
-            }else{
+            } else {
                 header("location: ?action=home");
             }
         } else {

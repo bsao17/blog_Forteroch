@@ -33,13 +33,18 @@ class ManagerComment
 
     
     public function displayComment(){
-        $comment = $this->connection->query("SELECT * FROM comments INNER JOIN comment.ID_billet = billets.ID");
-        
+        try{
+            $sql = "SELECT * FROM comments INNER JOIN comment.ID_billet = billets.ID";
+            $req = $this->connection->query($sql);
+            $req->execute();
+        }catch(Exception $e){
+            die("error SQL".$e->getMessage());
+        }
     }
     
-    public function deleteComment()
-    {
-        
+    public function deleteComment(){
+        $sql = "DELETE FROM comments WHERE ID = :ID ";
+        $req = $this->connection->prepare($sql);
     }
 
     public function updateComment()
