@@ -41,7 +41,7 @@ try {
                 break;
 
             case "postcomment":
-                $administration->postComment($_REQUEST, $_SERVER);
+                $administration->postComment();
                 break;
 
             case "contact":

@@ -17,18 +17,19 @@ class ManagerComment
         $this->connection = $this->db->getConnection();
     }
 
-    public function addComment($billetID, $userID, $comment)
-    {
-        $sql = "INSERT INTO comments(ID_billet, ID_user, contentsDb) VALUES( :ID_billet, :ID_user, :content )";
-        if($req = $this->connection->prepare($sql)){
-            $req->bindParam(":ID_billet", $billetID, PDO::PARAM_STR);
-            $req->bindParam(":ID_user", $userID, PDO::PARAM_STR);
-            $req->bindParam(":content", $comment, PDO::PARAM_STR);
-            $req->execute();
-        }else{
-            echo "error sql";
-        }
-        
+    public function addComment($billetID, $user, $comment){
+        try{
+            $sql = "INSERT INTO comments(ID_billet, user, contentsDb) VALUES ( :ID_billet, :user, :content )";
+            if($req = $this->connection->prepare($sql)){
+                $req->bindParam(":ID_billet", $billetID, PDO::PARAM_STR);
+                $req->bindParam(":user", $user, PDO::PARAM_STR);
+                $req->bindParam(":content", $comment, PDO::PARAM_STR);
+                $req->execute();
+            }
+            
+        }catch(Exception $e){
+            die("error SQL".$e->getMessage());
+        } 
     }
 
     
@@ -43,8 +44,12 @@ class ManagerComment
     }
     
     public function deleteComment(){
-        $sql = "DELETE FROM comments WHERE ID = :ID ";
-        $req = $this->connection->prepare($sql);
+        try{
+            $sql = "DELETE FROM comments WHERE ID = :ID ";
+            $req = $this->connection->prepare($sql);
+        }catch(Exception $e){
+            die("error".$e->getMessage());
+        }
     }
 
     public function updateComment()

@@ -16,12 +16,11 @@ require_once("./views/TEMPLATES/accountBaseTemplate.php");
 
             <div class="m-2">
                 <label for="login" class="text-light">Login</label>
-                <input type="text" name="login" class="form-control">
+                <input type="text" name="login" id="login" class="form-control">
             </div>
 
             <div class="m-2">
-                <label for="ID" class="text-light">ID</label>
-                <input type="text" name="ID" class="form-control" value="<?= $_GET["ID"] ?>">
+                <input type="hidden" name="ID" id="ID" class="form-control" value="<?= intval($_GET["ID"]); ?> ">
             </div>
 
             <div class="m-2">

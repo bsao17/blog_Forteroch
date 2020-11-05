@@ -104,17 +104,13 @@ class AdministrationSite
     }
 
     //Post comment
-    public function postComment($request, $server)
+    public function postComment()
     {
-
-        if ($server["REQUEST_METHOD"] == "POST") {
-            if (!empty(isset($_POST["login"])) && !empty(isset($_POST["content"]))) {
-                $user = htmlspecialchars(trim($_POST["login"]));
-                $IDbillet = $_POST["ID"];
-                $commentContent = htmlspecialchars(trim($_POST["content"]));
-                $newComment = new ManagerComment();
-                $newComment->addComment($IDbillet, $user, $commentContent);
-            }
-        }
+        $user = htmlspecialchars(trim($_POST["login"]));
+        $IDbillet = htmlspecialchars($_POST["ID"]);
+        $comment = htmlspecialchars(trim($_POST["comment"]));
+        $newComment = new ManagerComment();
+        $newComment->addComment($IDbillet, $user, $comment);
+        
     }
 }
