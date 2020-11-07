@@ -40,8 +40,8 @@ try {
                 $direction->getSingleBillet();
                 break;
 
-            case "postcomment":
-                $administration->postComment();
+            case "createcomment":
+                $administration->createComment();
                 break;
 
             case "contact":

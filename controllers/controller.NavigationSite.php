@@ -43,10 +43,16 @@ class NavigationSite
             $ID = $_GET["ID"];
             $billets = new ManagerBillets();
             $post = $billets->getBilletAlone($ID);
+            $comments = new ManagerComment();
+            $comment = $comments->getComments($ID);
             require_once("./views/ACCOUNT/accountBillet__1.php");
         } else {
             header("location: ?action=signin");
         }
+    }
+//Get comments display
+    public function getComments(){
+        
     }
 
 //Account biography page

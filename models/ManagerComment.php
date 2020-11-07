@@ -17,7 +17,7 @@ class ManagerComment
         $this->connection = $this->db->getConnection();
     }
 
-    public function addComment($billetID, $user, $comment){
+    public function createComment($billetID, $user, $comment){
         try{
             $sql = "INSERT INTO comments(ID_billet, user, contentsDb) VALUES ( :ID_billet, :user, :content )";
             if($req = $this->connection->prepare($sql)){
@@ -32,15 +32,14 @@ class ManagerComment
         } 
     }
 
-    
-    public function displayComment(){
-        try{
-            $sql = "SELECT * FROM comments INNER JOIN comment.ID_billet = billets.ID";
-            $req = $this->connection->query($sql);
-            $req->execute();
-        }catch(Exception $e){
-            die("error SQL".$e->getMessage());
-        }
+// get comments by billets ID
+    public function getComments($ID){
+        $sql = "SELECT * FROM comments WHERE ID_billet = :ID";
+        $req = $this->connection->prepare($sql);
+        $req->bindParam(":ID", $ID, PDO::PARAM_STR);
+        $req->execute();
+        $response = $req->fetchAll();
+        return $response;
     }
     
     public function deleteComment(){

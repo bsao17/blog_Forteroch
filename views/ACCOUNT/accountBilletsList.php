@@ -23,8 +23,8 @@ require_once("./views/TEMPLATES/accountBaseTemplate.php");
     <article>
     <?php
 
-            echo "<span class='lead h5 p-3'>" . trunc_chain($value['content'], 300) . "</span><br>";
-            echo "<a href='?action=simplebillet&ID={$value['ID']}' class='btn btn-outline-dark mt-2'>Lire la suite : ".$value['ID']."</a>";
+            echo "<span class='lead h5 p-3'>" . trunc_chain($value['content'], 250) . "</span><br>";
+            echo "<a href='?action=simplebillet&ID={$value['ID']}' class='btn btn-outline-dark mt-2'>Lire la suite : " . $value['ID'] . "</a><hr class='border border-danger w-50 m-auto'><br>";
         }
     ?>
     </article>

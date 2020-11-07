@@ -5,9 +5,8 @@ require_once("./models/ManagerComment.php");
 
 class AdministrationSite
 {
-    // Signin Method 
-    public function signin($request, $server)
-    {
+// Signin Method 
+    public function signin($request, $server){
         $error = '';
         $signin_status = "";
         if ($server['REQUEST_METHOD'] == 'POST') {
@@ -43,9 +42,8 @@ class AdministrationSite
         require_once("./views/Connect.views.php");
     }
 
-    //Signup Method
-    public function signup($request, $server)
-    {
+//Signup Method
+    public function signup($request, $server){
         $signup_status = false;
         $error = "";
         $regex = "/[a-zA-Z0-9\-\_\@]{6,}/";
@@ -76,9 +74,8 @@ class AdministrationSite
         require_once("./views/registerView.php");
     }
 
-    //Create new billets
-    public function createBillet()
-    {
+//Create new billets
+    public function createBillet(){
         if (isset($_COOKIE["user_login"])) {
             $user = new ManagerUser();
             if ($user->adminVerify() == true) {
@@ -103,14 +100,18 @@ class AdministrationSite
         }
     }
 
-    //Post comment
-    public function postComment()
-    {
-        $user = htmlspecialchars(trim($_POST["login"]));
+//Post new comment
+    public function createComment(){
+        $user = htmlspecialchars(trim($_COOKIE['user_login']));
         $IDbillet = htmlspecialchars($_POST["ID"]);
         $comment = htmlspecialchars(trim($_POST["comment"]));
-        $newComment = new ManagerComment();
-        $newComment->addComment($IDbillet, $user, $comment);
-        
+        if(!empty($comment)){
+            $newComment = new ManagerComment();
+            $newComment->createComment($IDbillet, $user, $comment);
+        }else{
+           
+        }
+        header("location: ?action=simplebillet&ID=".$IDbillet);
     }
+
 }
