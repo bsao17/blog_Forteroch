@@ -25,7 +25,6 @@ try {
 
             case "biography":
                 $direction->biography();
-                echo "here is biography";
                 break;
 
             case "getBillets":
