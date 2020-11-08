@@ -16,6 +16,5 @@
             <input type="submit" value="Send Comment" class="btn btn-outline-light m-2">
         </div>
     </form>
-    <hr class="border border-light w-50 mb-4">
     
 </section>

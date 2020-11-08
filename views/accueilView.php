@@ -61,13 +61,7 @@
         </a>
     </div><br>
 </section>
-<?php
 
-if(isset($_COOKIE['PHPSESSID'])){
-    var_dump($_COOKIE["user_login"]); 
-}
-var_dump(session_status());
-?>
 <hr><br><br>
 <footer id="footer" class="w-100">
     <ul class="d-flex flex-wrap align-items-center m-auto m-1 justify-content-center w-50">

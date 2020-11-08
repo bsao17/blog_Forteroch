@@ -16,10 +16,10 @@ require_once("./views/TEMPLATES/accountBaseTemplate.php");
 <!--Comments display-->
 <h3 class="text-light text-center border border-dark bg-danger load ml-2 mr-2 p-1 rounded-pill"><i class="fas fa-comment-dots"></i></h3>
 <section class="border border-danger m-2 bg-light p-3 rounded-lg">
-    <h2>commentaires</h2>
+    <h2 class="m-2"><u>commentaires</u> :</h2>
 <?php  
     foreach($comment as $com){
-        echo "<div class='lead'>".$com['user']."<br>".$com['contentsDb']."</div><br><hr>";
+        echo "<div class='lead card m-2'><span class='bg-secondary rounded-top p-2 text-light'>".$com['user']." | ".$com['dateDb']."</span><br>".$com['contentsDb']."</div>";
     }
 ?>    
 

@@ -24,7 +24,6 @@
         id sequi sed, perferendis sapiente culpa!
     </p>
     <img src="../../PUBLIC/PICTURES/landscape-nature-wilderness-walking-mountain-snow-864039-pxhere.com.jpg" alt="" id="picture-home"  class="img-fluid img-thumbnail w-50 m-auto rounded p-2" alt="Responsive image">
-    <?php var_dump(time()); ?>
 </section><br><br><br> 
 <footer>
     <?php require_once("./views/TEMPLATES/footerView.php"); ?>
