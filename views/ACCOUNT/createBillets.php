@@ -16,7 +16,7 @@
 
 </head>
 
-<body class="bg-secondary my-2">
+<body class="my-2" style="background-color: #22252A;">
   <h1 class="d-flex align-items-center justify-content-around w-50 m-auto text-light mx-2 bg-info rounded border border-light">
     Billet
     <div class="btn-group m-2" role="group" aria-label="Button group with nested dropdown">
