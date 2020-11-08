@@ -2,7 +2,7 @@
 require_once("./views/TEMPLATES/accountBaseTemplate.php");
 ?>
 <h3 class="m-2 text-light text-center border border-dark p-1 pl-4 bg-danger rounded-pill"><i class="fas fa-book"></i> : <?= $_GET['ID'];?> </h3>
-<section class="card ml-2 mr-2 mt-2 p-3 lead border border-danger">
+<section class="bg-light ml-2 mr-2 mt-2 p-3 lead border border-light">
         <?php
             foreach ($post as $value) {
                 echo "<div class='text-center h4'>".$value['title']."</div>";
@@ -15,11 +15,11 @@ require_once("./views/TEMPLATES/accountBaseTemplate.php");
 
 <!--Comments display-->
 <h3 class="text-light text-center border border-dark bg-danger load ml-2 mr-2 p-1 rounded-pill"><i class="fas fa-comment-dots"></i></h3>
-<section class="border border-danger m-2 bg-light p-3 rounded-lg">
-    <h2 class="m-2"><u>commentaires</u> :</h2>
+<section class="  p-2">
+    <h2 class="bg-light p-1 rounded-lg"><u>commentaires</u> :</h2>
 <?php  
     foreach($comment as $com){
-        echo "<div class='lead card m-2'><span class='bg-secondary rounded-top p-2 text-light'>".$com['user']." | ".$com['dateDb']."</span><br>".$com['contentsDb']."</div>";
+        echo "<div class='lead card my-2'><span class='bg-secondary rounded-top p-2 text-light'>".$com['user']." | ".$com['dateDb']."</span><br>".$com['contentsDb']."</div>";
     }
 ?>    
 

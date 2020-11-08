@@ -1,7 +1,7 @@
 <?php
 require_once("./views/TEMPLATES/accountBaseTemplate.php");
 ?>
-<section class="m-2 p-3 card">
+<section class="m-2 p-3 bg-light">
     <p>
         <?php
 
