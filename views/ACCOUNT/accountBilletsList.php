@@ -1,7 +1,7 @@
 <?php
 require_once("./views/TEMPLATES/accountBaseTemplate.php");
 ?>
-<section class="m-2 p-3 bg-light">
+<section class="p-3 bg-light">
     <p>
         <?php
 
@@ -28,6 +28,6 @@ require_once("./views/TEMPLATES/accountBaseTemplate.php");
         }
     ?>
     </article>
-</section><br><br><br>
+</section>
 
 <?php require_once("./views/TEMPLATES/footerView.php"); ?>

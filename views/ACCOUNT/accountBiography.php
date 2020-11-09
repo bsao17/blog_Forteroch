@@ -1,5 +1,5 @@
 
-<section class="home border border-light m-2 p-2" id="home">
+<section class="home border border-light p-2" id="home">
     <h1 class="text-center">Ma vie, mon parcours ... </h1><hr>
     <h2>Présentation</h2>
     <img src="../../PUBLIC/PICTURES/portrait (8).jpg" alt="" id="picture-home"  class="img-fluid img-thumbnail w-25 m-auto rounded p-2" alt="Responsive image"><hr>
@@ -24,7 +24,7 @@
         ab sapiente minima. Odit provident debitis consequatur, quis veniam natus nisi error nesciunt, consectetur labore eligendi delectus quasi at enim 
         id sequi sed, perferendis sapiente culpa!
     </p>
-</section><br><br> 
+</section> 
 <footer>
     <?php require_once("./views/TEMPLATES/footerView.php"); ?>
 </footer>

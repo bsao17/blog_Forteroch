@@ -32,7 +32,7 @@
 <body>
     <div class="globalBody position-relative">
         <header>
-            <div class=" d-flex flex-column justify-content-center align-items-center m-2 border border-light" id="banner">
+            <div class=" d-flex flex-column justify-content-center align-items-center m-0 border border-light" id="banner">
                 <?php require("accountBarNav.php"); ?>
                 <section class="text-dark w-25">
                     <h3 class="card card-light text-center"><?php echo strtoupper($_GET['action']); ?></h3>

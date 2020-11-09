@@ -1,6 +1,6 @@
 <?php require("./views/TEMPLATES/accountBaseTemplate.php"); ?>
 
-<section class="home border border-light m-2 p-2" id="home">
+<section class="home border border-light p-2" id="home">
     <h1 class="text-center">Bienvenue sur mon récit "Billet simple pour l'Alaska" </h1><hr>
     <h2>Présentation</h2>
     <p class="d-flex text-justify">Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
@@ -24,7 +24,7 @@
         id sequi sed, perferendis sapiente culpa!
     </p>
     <img src="../../PUBLIC/PICTURES/landscape-nature-wilderness-walking-mountain-snow-864039-pxhere.com.jpg" alt="" id="picture-home"  class="img-fluid img-thumbnail w-50 m-auto rounded p-2" alt="Responsive image">
-</section><br><br><br> 
+</section>
 <footer>
     <?php require_once("./views/TEMPLATES/footerView.php"); ?>
 </footer>
