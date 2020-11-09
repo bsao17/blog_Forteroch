@@ -1,5 +1,5 @@
 <?php require("./views/TEMPLATES/baseTemplate.php"); ?>
-<section class="home border border-light m-2 rounded" id="home">
+<section class="home border border-light" id="home">
     <h1 class="text-center">Welcome On My Blog</h1>
     <hr>
     <h2 class="pl-4"><u>Présentation</u> </h2>
@@ -62,7 +62,6 @@
     </div><br>
 </section>
 
-<hr><br><br>
 <footer id="footer" class="w-100">
     <ul class="d-flex flex-wrap align-items-center m-auto m-1 justify-content-center w-50">
         <a href="https://www.facebook.com/brunoDevOps">

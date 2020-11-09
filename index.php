@@ -35,6 +35,10 @@ try {
                 $administration->createBillet();
                 break;
 
+            case "uodateBillets":
+                $administration->updateBillet();
+                break;
+
             case "simplebillet":
                 $direction->getSingleBillet();
                 break;

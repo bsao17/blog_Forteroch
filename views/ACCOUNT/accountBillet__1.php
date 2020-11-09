@@ -1,8 +1,8 @@
 <?php
 require_once("./views/TEMPLATES/accountBaseTemplate.php");
 ?>
-<h3 class=" text-light text-center p-1 pl-4 bg-dark border-bottom border-light"><i class="fas fa-book"></i> : <?= $_GET['ID'];?> </h3>
-<section class="bg-light p-3 lead border border-light">
+<h3 class=" text-light text-center mb-0 p-1 pl-4 bg-dark"><i class="fas fa-book"></i> : <?= $_GET['ID'];?> </h3>
+<section class="bg-light p-3 lead ">
         <?php
             foreach ($post as $value) {
                 echo "<div class='text-center h4'>".$value['title']."</div>";
@@ -12,18 +12,6 @@ require_once("./views/TEMPLATES/accountBaseTemplate.php");
 </section>
 
 <?php require_once("createComment.php"); ?>
-
-<!--Comments display-->
-<h3 class="text-light text-center bg-dark border-bottom border-light load p-1"><i class="fas fa-comment-dots"></i></h3>
-<section class=" ">
-    <h2 class="bg-light p-1"><u>commentaires</u> :</h2>
-<?php  
-    foreach($comment as $com){
-        echo "<div class='lead card mb-2 ml-1 mr-1'><span class='bg-secondary rounded-top p-2 text-light'>".$com['user']." | ".$com['date']."</span><br>".$com['contentsDb']."</div>";
-    }
-?>    
-
-</section><br><br><br>
 
 
 <footer id="footer" class="w-100">
