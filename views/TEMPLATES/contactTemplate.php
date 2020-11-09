@@ -1,5 +1,5 @@
 <?php require("./views/TEMPLATES/accountBaseTemplate.php"); ?>
-<section class="border border-light" id="contactForm">
+<section id="contactForm">
     <form action="?action=sendmail" method="POST" class="d-flex flex-column form-group text-light">
         <label for="firstname"  class="m-2">Firstname :
             <input type="text" name="firstname" class="form-control">
