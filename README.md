@@ -8,6 +8,6 @@ Here are some photos of the admin part otherwise the site is accessible with thi
 
 Please note: the site is in French !
 
-Sorry, for my english i'm French so i can't do better ... or maybe if ;-)
+Sorry, for my english i'm French so i can't do better ... or maybe that if ;-)
 
 [Accueil admin site](PUBLIC/PICTURES/adminHome.jpg)
