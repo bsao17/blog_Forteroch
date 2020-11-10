@@ -4,7 +4,7 @@ I also started learning Vue.js as well as Angular for the front-end frameworks a
 
 this profession is really facinating and more i learn, more i like it, and it's just the begin ...
 
-Here are some photos of the admin part otherwise the site is accessible at this address : jeanforteroche.devwebdino.com/?action=accueil
+Here are some photos of the admin part otherwise the site is accessible at this address : [Blog Jean Forteroche](http://jeanforteroche.devwebdino.com/?action=accueil)
 
 Please note: the site is in French !
 
