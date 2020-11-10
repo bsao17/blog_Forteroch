@@ -10,7 +10,7 @@ Please note: the site is in French !
 
 Sorry, for my english i'm French so i can't do better ... or maybe that if ;-)
 
-[Admin site home](PUBLIC/PICTURES/adminHome.jpg)
+[Admin site home](PUBLIC/PICTURES/adminHome.jpg)\n
 [Admin site chapters create ](PUBLIC/PICTURES/adminCreate.jpg)
 [Admin site chapters update1 ](PUBLIC/PICTURES/adminUpdate1.jpg)
 [Admin site chapters update2 ](PUBLIC/PICTURES/adminUpdate2.jpg)
