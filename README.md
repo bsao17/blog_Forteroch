@@ -13,5 +13,7 @@ Sorry, for my english i'm French so i can't do better ... or maybe that if ;-)
 ![Admin site home](PUBLIC/PICTURES/adminHome.jpg)<br>
 ![Admin site chapters create ](PUBLIC/PICTURES/adminCreate.jpg)<br>
 ![Admin site chapters update1 ](PUBLIC/PICTURES/adminUpdate1.jpg)<br>
-![Admin site chapters update2 ](PUBLIC/PICTURES/adminUpdate2.jpg)<br>
-![Accueil admin site](PUBLIC/PICTURES/adminHome.jpg)<hr>
+![Admin site chapters update2 ](PUBLIC/PICTURES/adminUpdate2.jpg)<hr>
+
+<text-center>So right now, i love it php and Symfony</text-center>
+
