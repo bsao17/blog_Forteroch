@@ -9,7 +9,7 @@
         <a href="">
             <li class="text-light"><i class="fab fa-instagram"></i> Instagram</li>
         </a>
-        <a href="?action=createBillets">
+        <a href="?action=adList">
             <li>
                 <p class="text-light"><span class="text-danger"><i class="fas fa-user-cog"></i> Admin</span></p>
             </li>

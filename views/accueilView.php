@@ -1,10 +1,10 @@
 <?php require("./views/TEMPLATES/baseTemplate.php"); ?>
-<section class="home border border-light" id="home">
+<section class="home border border-light p-5" id="home">
     <h1 class="text-center">Welcome On My Blog</h1>
     <hr>
     <h2 class="pl-4"><u>Présentation</u> </h2>
-    <p class=" p-4">
-        <img src="../PUBLIC/PICTURES/sky.jpg" alt="" id="picture-accueil" class="img-fluid img-thumbnail w-25 m-auto rounded float-right" alt="Responsive image">
+    <p class=" p-4 text-justify">
+        <img src="../PUBLIC/PICTURES/sky.jpg" alt="" id="picture-accueil" class="img-fluid img-thumbnail w-25 mr-4 rounded float-left" alt="Responsive image">
         Lorem ipsum dolor, sit amet consectetur adipisicing elit.
         Esse eius ea laboriosam, architecto est doloribus ad? Quidem fugiat quo nesciunt nisi non. Accusantium, at? Consequuntur, dolore.
         Esse, inventore dolorum sequi iusto eos numquam id qui, accusamus non maxime dolore sit commodi quibusdam rerum ab,

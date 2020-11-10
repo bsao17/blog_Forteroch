@@ -74,6 +74,21 @@ class AdministrationSite
         require_once("./views/registerView.php");
     }
 
+//Admin account
+    public function admin(){
+        if (isset($_COOKIE["user_login"])) {
+            $user = new ManagerUser();
+            if ($user->adminVerify() == true) {
+                session_start();
+                require_once("./views/ACCOUNT/accountAdmin.php");
+            } else {
+                header("location: ?action=home");
+            }
+        } else {
+            header("location: ?action=signin");
+        }
+    }
+
 //Create new billets
     public function createBillet(){
         if (isset($_COOKIE["user_login"])) {
@@ -100,6 +115,22 @@ class AdministrationSite
         }
     }
 
+//update billet
+    public function updateBillet(){
+        if(isset($_COOKIE["user_login"])){
+            $user = new ManagerUser();
+            if($user->adminVerify()){
+                session_start();
+                $billet = new ManagerBillets();
+                $post = $billet->getBillet();
+                if(!empty(isset($_POST["ID"])) && isset($_POST["title"]) && isset($_POST["content"])){
+                    $billet->updateBillet($_POST["ID"], $_POST["title"], $_POST["content"]);
+                }
+                require_once("./views/ACCOUNT/updateBillet.php");
+            }
+        }
+    }
+
 //Post new comment
     public function createComment(){
         $user = htmlspecialchars(trim($_COOKIE['user_login']));
@@ -112,6 +143,18 @@ class AdministrationSite
            
         }
         header("location: ?action=simplebillet&ID=".$IDbillet);
+    }
+
+//Delete billet
+    public function deleteBillet(){
+        if(isset($_COOKIE["user_login"])){
+            $user = new ManagerUser();
+            if($user->adminVerify()){
+                $billet = new ManagerBillets();
+                $post = $billet->getBillet();
+                require_once("./views/ACCOUNT/deleteBillet.php");
+            }
+        }
     }
 
 }

@@ -67,7 +67,7 @@ class NavigationSite
         }
     }
 
-//Account contact page
+//Account sendMail contact page
     public function contact()
     {
         if (isset($_COOKIE['user_login'])) {

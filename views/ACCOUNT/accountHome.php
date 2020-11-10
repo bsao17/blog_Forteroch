@@ -1,9 +1,10 @@
 <?php require("./views/TEMPLATES/accountBaseTemplate.php"); ?>
 
-<section class="home p-2" id="home">
+<section class="home p-5" id="home">
     <h1 class="text-center">Bienvenue sur mon récit "Billet simple pour l'Alaska" </h1><hr>
     <h2>Présentation</h2>
-    <p class="d-flex text-justify">Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+    <img src="../../PUBLIC/PICTURES/landscape-nature-wilderness-walking-mountain-snow-864039-pxhere.com.jpg" alt="" id="picture-home"  class="img-fluid img-thumbnail w-25 ml-4 rounded p-2 float-right" alt="Responsive image">
+    <p class=" text-justify">Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
         Esse eius ea laboriosam, architecto est doloribus ad? Quidem fugiat quo nesciunt nisi non. Accusantium, at? Consequuntur, dolore. 
         Esse, inventore dolorum sequi iusto eos numquam id qui, accusamus non maxime dolore sit commodi quibusdam rerum ab, 
         praesentium veniam alias sapiente voluptates debitis.
@@ -23,7 +24,6 @@
         ab sapiente minima. Odit provident debitis consequatur, quis veniam natus nisi error nesciunt, consectetur labore eligendi delectus quasi at enim 
         id sequi sed, perferendis sapiente culpa!
     </p>
-    <img src="../../PUBLIC/PICTURES/landscape-nature-wilderness-walking-mountain-snow-864039-pxhere.com.jpg" alt="" id="picture-home"  class="img-fluid img-thumbnail w-50 m-auto rounded p-2" alt="Responsive image">
 </section>
 <footer>
     <?php require_once("./views/TEMPLATES/footerView.php"); ?>

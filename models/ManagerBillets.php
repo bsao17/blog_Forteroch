@@ -49,15 +49,20 @@ class ManagerBillets
         }   
     }
 
-    public function deleteBillet(){
-        $title = "";
-        $sql = "DELETE * FROM billets WHERE title = :title";
+    public function deleteBillet($ID){
+        $sql = "DELETE * FROM billets WHERE ID = :ID";
         $req = $this->connection->prepare($sql);
-        $req->bindParam(":title", $title);
+        $req->bindParam(":ID", $ID, PDO::PARAM_STR);
+        $req->execute();
     }
 
-    public function updateBillet(){
-
+    public function updateBillet($ID, $titleUpdate, $commentUpdate){
+        $sql = "UPDATE billets SET title = :title, content = :content WHERE ID = :ID ";
+        $req = $this->connection->prepare($sql);
+        $req->bindParam(":title", $titleUpdate, PDO::PARAM_STR );
+        $req->bindParam(":content", $commentUpdate, PDO::PARAM_STR);
+        $req->bindParam(":ID", $ID, PDO::PARAM_STR);
+        $req->execute();
     }
 
 }

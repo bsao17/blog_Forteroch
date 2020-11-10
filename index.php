@@ -27,16 +27,24 @@ try {
                 $direction->biography();
                 break;
 
-            case "getBillets":
-                $direction->getbillets();
+            case "adList":
+                $administration->admin();
                 break;
-
+                
             case "createBillets":
                 $administration->createBillet();
                 break;
-
-            case "uodateBillets":
+            
+            case "updateBillets":
                 $administration->updateBillet();
+                break;
+                
+            case "deleteBillets":
+                $administration->deleteBillet();
+                break;
+                
+            case "getBillets":
+                $direction->getbillets();
                 break;
 
             case "simplebillet":
