@@ -55,6 +55,10 @@ try {
                 $administration->createComment();
                 break;
 
+            case "notify":
+                $administration->commentNotify();
+                break;
+
             case "contact":
                 $direction->contact();
                 break;

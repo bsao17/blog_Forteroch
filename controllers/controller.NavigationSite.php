@@ -50,10 +50,6 @@ class NavigationSite
             header("location: ?action=signin");
         }
     }
-//Get comments display
-    public function getComments(){
-        
-    }
 
 //Account biography page
     public function biography()

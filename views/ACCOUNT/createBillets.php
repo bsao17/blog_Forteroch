@@ -34,7 +34,7 @@
 
 <div class="row w-100 m-auto">
   <div class="col-lg-12">
-    <a href="?action=home" class="text-light"><button class="btn btn-danger m-2">Return to Home Site</button></a>
+    <a href="?action=home" class="text-light"><button class="btn btn-danger m-2">Return Home Site</button></a>
   
     <section>
       <?php

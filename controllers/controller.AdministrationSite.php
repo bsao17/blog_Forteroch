@@ -145,6 +145,13 @@ class AdministrationSite
         header("location: ?action=simplebillet&ID=".$IDbillet);
     }
 
+//Comment notify
+    public function commentNotify(){
+        $comment = new ManagerComment();
+        $comment->commentNotify($_GET["ID"]);
+        require_once("./views/ACCOUNT/notifyConfirm.php");
+    }
+
 //Delete billet
     public function deleteBillet(){
         if(isset($_COOKIE["user_login"])){

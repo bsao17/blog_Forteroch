@@ -34,7 +34,7 @@ class ManagerComment
 
 // get comments by billets ID
     public function getComments($ID){
-        $sql = "SELECT ID_billet, user, contentsDb, DATE_FORMAT(dateDb, '%d/%m/%Y %Hh%imin%ss') as date FROM comments WHERE ID_billet = :ID";
+        $sql = "SELECT ID, ID_billet, user, contentsDb, DATE_FORMAT(dateDb, '%d/%m/%Y %Hh%imin%ss') as date FROM comments WHERE ID_billet = :ID";
         $req = $this->connection->prepare($sql);
         $req->bindParam(":ID", $ID, PDO::PARAM_STR);
         $req->execute();
@@ -51,7 +51,9 @@ class ManagerComment
         }
     }
 
-    public function updateComment()
-    {
+    public function commentNotify($ID){
+            $sql = "UPDATE comments SET notify = 'true' WHERE ID =".$ID;
+            $req = $this->connection->exec($sql);
+            
     }
 }
