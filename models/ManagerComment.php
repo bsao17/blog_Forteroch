@@ -53,7 +53,13 @@ class ManagerComment
 
     public function commentNotify($ID){
             $sql = "UPDATE comments SET notify = 'true' WHERE ID =".$ID;
-            $req = $this->connection->exec($sql);
-            
+            $req = $this->connection->exec($sql);     
+    }
+
+    public function getCommentsNotify(){
+        $sql = "SELECT * FROM comments WHERE notify = 'true'";
+        $req = $this->connection->query($sql);
+        $post = $req->fetchAll();
+        return $post;
     }
 }

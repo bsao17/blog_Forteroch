@@ -77,7 +77,7 @@ class NavigationSite
     public function sendMail()
     {
         session_start();
-        require_once("./views/TEMPLATES/baseTemplate.php");
+        require_once("./views/TEMPLATES/accountBaseTemplate.php");
         try {
             if (isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['mail']) && isset($_POST['contentMail'])) {
                 $firstname = $_POST['firstname'];

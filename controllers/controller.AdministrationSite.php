@@ -152,16 +152,25 @@ class AdministrationSite
         require_once("./views/ACCOUNT/notifyConfirm.php");
     }
 
-//Delete billet
+//Admin billet and comment delete 
     public function deleteBillet(){
         if(isset($_COOKIE["user_login"])){
             $user = new ManagerUser();
             if($user->adminVerify()){
                 $billet = new ManagerBillets();
-                $post = $billet->getBillet();
+                $billets = $billet->getBillet();
+                $comment = new ManagerComment();
+                $comments = $comment->getCommentsNotify();
                 require_once("./views/ACCOUNT/deleteBillet.php");
             }
         }
+    }
+
+//delete action
+    public function delete(){
+        $billet = new ManagerBillets();
+        $req = $billet->deleteBillet($_GET["ID"]);
+        header("location: ?action=deleteBillets");
     }
 
 }

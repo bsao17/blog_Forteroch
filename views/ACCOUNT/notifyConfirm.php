@@ -16,6 +16,7 @@
             </p><hr>
             <p>Nous vous en remercions ...</p>
             <pre>L'équipe de modération "Jean Forteroche".</pre>
+            <a href="?action=home" class="btn btn-danger">Return home site</a>
         </section>
     </div>
 </body>

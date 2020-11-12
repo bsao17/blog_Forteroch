@@ -57,7 +57,7 @@
     </div>
 </section>
 
-<a href="?action=home" class="btn btn-danger m-4">Return home site</a>
+<a href="?action=adList" class="btn btn-danger m-3">Return admin home</a>
 </body>
 
 </html>

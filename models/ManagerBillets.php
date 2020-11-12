@@ -50,7 +50,7 @@ class ManagerBillets
     }
 
     public function deleteBillet($ID){
-        $sql = "DELETE * FROM billets WHERE ID = :ID";
+        $sql = "DELETE FROM billets WHERE ID = :ID";
         $req = $this->connection->prepare($sql);
         $req->bindParam(":ID", $ID, PDO::PARAM_STR);
         $req->execute();

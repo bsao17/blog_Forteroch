@@ -42,6 +42,10 @@ try {
             case "deleteBillets":
                 $administration->deleteBillet();
                 break;
+
+            case "delete":
+                $administration->delete();
+                break;
                 
             case "getBillets":
                 $direction->getbillets();
