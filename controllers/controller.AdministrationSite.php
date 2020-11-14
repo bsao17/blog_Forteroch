@@ -5,12 +5,12 @@ require_once("./models/ManagerComment.php");
 
 class AdministrationSite
 {
-// Signin Method 
-    public function signin($request, $server){
+    // Signin Method
+    public function signin($request, $server)
+    {
         $error = '';
         $signin_status = "";
         if ($server['REQUEST_METHOD'] == 'POST') {
-            
             $login = htmlspecialchars(trim($_POST['login']));
             $password = htmlspecialchars(trim($_POST['password']));
             $repeat_password = htmlspecialchars(trim($_POST['repeat_password']));
@@ -42,8 +42,9 @@ class AdministrationSite
         require_once("./views/Connect.views.php");
     }
 
-//Signup Method
-    public function signup($request, $server){
+    //Signup Method
+    public function signup($request, $server)
+    {
         $signup_status = false;
         $error = "";
         $regex = "/[a-zA-Z0-9\-\_\@]{6,}/";
@@ -74,13 +75,14 @@ class AdministrationSite
         require_once("./views/registerView.php");
     }
 
-//Admin account
-    public function admin(){
+    //Admin account
+    public function admin()
+    {
         if (isset($_COOKIE["user_login"])) {
             $user = new ManagerUser();
             if ($user->adminVerify() == true) {
                 session_start();
-                require_once("./views/ACCOUNT/accountAdmin.php");
+                require_once("./views/account/accountAdmin.php");
             } else {
                 header("location: ?action=home");
             }
@@ -89,8 +91,9 @@ class AdministrationSite
         }
     }
 
-//Create new billets
-    public function createBillet(){
+    //Create new billets
+    public function createBillet()
+    {
         if (isset($_COOKIE["user_login"])) {
             $user = new ManagerUser();
             if ($user->adminVerify() == true) {
@@ -100,13 +103,13 @@ class AdministrationSite
                     $content = $_POST["contentBillet"];
                     $empty = false;
                     $billet = new ManagerBillets();
-                    if(!empty($title) && !empty($content)){
+                    if (!empty($title) && !empty($content)) {
                         $billet->createBillet($title, $content);
-                    }else{
+                    } else {
                         $empty = true;
                     }
                 }
-                require_once("./views/ACCOUNT/createBillets.php");
+                require_once("./views/account/createBillets.php");
             } else {
                 header("location: ?action=home");
             }
@@ -115,62 +118,81 @@ class AdministrationSite
         }
     }
 
-//update billet
-    public function updateBillet(){
-        if(isset($_COOKIE["user_login"])){
+    //update billet
+    public function updateBillet()
+    {
+        if (isset($_COOKIE["user_login"])) {
             $user = new ManagerUser();
-            if($user->adminVerify()){
+            if ($user->adminVerify()) {
                 session_start();
                 $billet = new ManagerBillets();
                 $post = $billet->getBillet();
-                if(!empty(isset($_POST["ID"])) && isset($_POST["title"]) && isset($_POST["content"])){
+                if (!empty(isset($_POST["ID"])) && isset($_POST["title"]) && isset($_POST["content"])) {
                     $billet->updateBillet($_POST["ID"], $_POST["title"], $_POST["content"]);
                 }
-                require_once("./views/ACCOUNT/updateBillet.php");
+                require_once("./views/account/updateBillet.php");
             }
         }
     }
 
-//Post new comment
-    public function createComment(){
+    //Post new comment
+    public function createComment()
+    {
         $user = htmlspecialchars(trim($_COOKIE['user_login']));
         $IDbillet = htmlspecialchars($_POST["ID"]);
         $comment = htmlspecialchars(trim($_POST["comment"]));
-        if(!empty($comment)){
+        if (!empty($comment)) {
             $newComment = new ManagerComment();
             $newComment->createComment($IDbillet, $user, $comment);
-        }else{
-           
+        } else {
         }
-        header("location: ?action=simplebillet&ID=".$IDbillet);
+        header("location: ?action=simplebillet&ID=" . $IDbillet);
     }
 
-//Comment notify
-    public function commentNotify(){
+    //Comment report
+    public function commentReport()
+    {
         $comment = new ManagerComment();
-        $comment->commentNotify($_GET["ID"]);
-        require_once("./views/ACCOUNT/notifyConfirm.php");
+        $comment->commentReport($_GET["ID"]);
+        require_once("./views/account/notifyConfirm.php");
     }
 
-//Admin billet and comment delete 
-    public function deleteBillet(){
-        if(isset($_COOKIE["user_login"])){
+    //List of messages and comments to delete : on admin page
+    public function deleteBillet()
+    {
+        if (isset($_COOKIE["user_login"])) {
             $user = new ManagerUser();
-            if($user->adminVerify()){
+            if ($user->adminVerify()) {
                 $billet = new ManagerBillets();
                 $billets = $billet->getBillet();
                 $comment = new ManagerComment();
                 $comments = $comment->getCommentsNotify();
-                require_once("./views/ACCOUNT/deleteBillet.php");
+                require_once("./views/account/deleteBillet.php");
             }
         }
     }
 
-//delete action
-    public function delete(){
+    //Billet delete action
+    public function delete()
+    {
         $billet = new ManagerBillets();
         $req = $billet->deleteBillet($_GET["ID"]);
         header("location: ?action=deleteBillets");
     }
 
+    //Comment delete action
+    public function deleteComment()
+    {
+        $comment = new ManagerComment();
+        $comment->deleteComment($_GET["ID"]);
+        header("location: ?action=deleteBillets");
+    }
+
+    //Billet confirm comment action
+    public function confirmComment()
+    {
+        $comment = new ManagerComment();
+        $comment->confirmComment($_GET["ID"]);
+        header("location: ?action=deleteBillets");
+    }
 }

@@ -4,7 +4,7 @@
     <hr>
     <h2 class="pl-4"><u>Présentation</u> </h2>
     <p class=" p-4 text-justify">
-        <img src="../PUBLIC/PICTURES/sky.jpg" alt="" id="picture-accueil" class="img-fluid img-thumbnail w-25 mr-4 rounded float-left" alt="Responsive image">
+        <img src="../public/pictures/sky.jpg" alt="" id="picture-accueil" class="img-fluid img-thumbnail w-25 mr-4 rounded float-left" alt="Responsive image">
         Lorem ipsum dolor, sit amet consectetur adipisicing elit.
         Esse eius ea laboriosam, architecto est doloribus ad? Quidem fugiat quo nesciunt nisi non. Accusantium, at? Consequuntur, dolore.
         Esse, inventore dolorum sequi iusto eos numquam id qui, accusamus non maxime dolore sit commodi quibusdam rerum ab,
@@ -21,7 +21,7 @@
         distinctio perspiciatis corporis quo, pariatur voluptas illo nisi quasi minus quod neque similique placeat. Autem non ex sed illo dolore.
     </p>
     <hr>
-    
+
     <div id="carousel" class="carousel slide w-50 h-auto m-auto card p-2 rounded-lg" data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -33,16 +33,16 @@
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="../PUBLIC/PICTURES/landscape (2).jpg" class="d-block w-100" alt="...">
+                <img src="../public/pictures/landscape (2).jpg" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item">
-                <img src="../PUBLIC/PICTURES/landscape (3).jpg" class="d-block w-100" alt="...">
+                <img src="../public/pictures/landscape (3).jpg" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item">
-                <img src="../PUBLIC/PICTURES/landscape (4).jpg" class="d-block w-100" alt="...">
+                <img src="../public/pictures/landscape (4).jpg" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item">
-                <img src="../PUBLIC/PICTURES/landscape (5).jpg" class="d-block w-100" alt="...">
+                <img src="../public/pictures/landscape (5).jpg" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item">
                 <img src="../PUBLIC\PICTURES\wilderness-bear.jpg" class="d-block w-100" alt="...">

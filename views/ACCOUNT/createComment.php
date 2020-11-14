@@ -15,9 +15,10 @@
 
             <input type="submit" value="Send Comment" class="btn btn-outline-light m-2">
         </div>
-    </form><hr class="border border-light w-50 m-auto">
+    </form>
+    <hr class="border border-light w-50 m-auto">
 
-<!--Comments display-->
+    <!--Comments display-->
     <h3 class="text-light text-center p-2 mb-0">Commentaires : <i class="fas fa-comment-dots"></i></h3>
     <?php
     foreach ($comment as $com) {

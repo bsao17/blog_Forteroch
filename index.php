@@ -30,15 +30,15 @@ try {
             case "adList":
                 $administration->admin();
                 break;
-                
+
             case "createBillets":
                 $administration->createBillet();
                 break;
-            
+
             case "updateBillets":
                 $administration->updateBillet();
                 break;
-                
+
             case "deleteBillets":
                 $administration->deleteBillet();
                 break;
@@ -46,7 +46,7 @@ try {
             case "delete":
                 $administration->delete();
                 break;
-                
+
             case "getBillets":
                 $direction->getbillets();
                 break;
@@ -59,8 +59,16 @@ try {
                 $administration->createComment();
                 break;
 
+            case "deletecomment":
+                $administration->deleteComment();
+                break;
+
+            case "confirmcomment":
+                $administration->confirmComment();
+                break;
+
             case "notify":
-                $administration->commentNotify();
+                $administration->commentReport();
                 break;
 
             case "contact":

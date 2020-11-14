@@ -1,7 +1,7 @@
 <?php require("./views/TEMPLATES/accountBaseTemplate.php"); ?>
 <section id="contactForm">
     <form action="?action=sendmail" method="POST" class="d-flex flex-column form-group text-light">
-        <label for="firstname"  class="m-2">Firstname :
+        <label for="firstname" class="m-2">Firstname :
             <input type="text" name="firstname" class="form-control">
         </label>
 
@@ -10,7 +10,7 @@
         </label>
 
         <label for="email" class="m-2">E-mail :
-            <input type="email" name="mail" id="mail" class="form-control"> 
+            <input type="email" name="mail" id="mail" class="form-control">
         </label>
 
         <label for="contentMail" class="m-2">Content :

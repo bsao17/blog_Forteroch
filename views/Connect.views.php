@@ -1,14 +1,14 @@
-<?php  require("./views/TEMPLATES/baseTemplate.php"); ?>
+<?php require("./views/TEMPLATES/baseTemplate.php"); ?>
 
 <div id="login_form" class="d-flex flex-column align-items-center p-2 ">
-    
+
     <form action="?action=signin" method="POST" class=" rounded p-2" id="form">
         <table>
             <tr>
                 <td class="text-light">Login :</td>
                 <td><input type="text" name="login" id="login" class="rounded bg-form m-1"></td>
             </tr>
-            <tr> 
+            <tr>
                 <td class="text-light">Password :</td>
                 <td><input type="password" name="password" id="password" class="rounded bg-form m-1"></td>
             </tr>
@@ -17,15 +17,16 @@
                 <td><input type="password" name="repeat_password" id="repeat_password" class="rounded bg-form m-1"></td>
             </tr>
         </table>
-        
+
         <table>
             <tr>
                 <td><button type="submit" class='btn btn-light text-dark'>Connect</button><br></td>
             </tr><br>
-        </table><hr class="border border-light">
-        
+        </table>
+        <hr class="border border-light">
+
     </form><br><br>
-    
+
     <form class=" rounded m-3 p-1 card">
         <table class="border border-light">
             <tr>
@@ -35,11 +36,11 @@
         </table>
 
     </form><br><br><br>
-<?php  
-    if($signin_status === false){
+    <?php
+    if ($signin_status === false) {
         echo $error;
     }
-?>
+    ?>
 
 </div>
 <footer id="footer" class="w-100">
@@ -55,5 +56,3 @@
         </a>
     </ul>
 </footer>
-
-

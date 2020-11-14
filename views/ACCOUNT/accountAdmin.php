@@ -14,27 +14,27 @@
         <div class="row my-5 mx-0">
             <div class="col-sm-3 m-auto card p-1">
                 <div class="card-body">
-                    <img src="../../PUBLIC/PICTURES/chapters1.jpg" class="card-img-top" alt="Livre ouvert/ open book">
+                    <img src="../../public/pictures/chapters1.jpg" class="card-img-top" alt="Livre ouvert/ open book">
                     <div class="card-title">
                         <h4>create Billet</h4>
                     </div>
                     <div class="card-text">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
                             Consequatur in hic modi est quasi non?
                         </p>
                     </div>
-                    <a href="?action=createBillets"><button class="btn btn-outline-dark">Enter</button></a> 
+                    <a href="?action=createBillets"><button class="btn btn-outline-dark">Enter</button></a>
                 </div>
             </div>
 
             <div class="col-sm-3 m-auto card p-1">
                 <div class="card-body">
-                    <img src="../../PUBLIC/PICTURES/update.jpg" class="card-img-top" alt="">
+                    <img src="../../public/pictures/update.jpg" class="card-img-top" alt="">
                     <div class="card-title">
                         <h4>update Billet</h4>
                     </div>
                     <div class="card-text">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
                             Consequatur in hic modi est quasi non?
                         </p>
                     </div>
@@ -44,12 +44,12 @@
 
             <div class="col-sm-3 m-auto card ">
                 <div class="card-body">
-                    <img src="../../PUBLIC/PICTURES/delete.webp" class="card-img-top" alt="">
+                    <img src="../../public/pictures/delete.webp" class="card-img-top" alt="">
                     <div class="card-title">
                         <h4>Delete Billet</h4>
                     </div>
                     <div class="card-text">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
                             Consequatur in hic modi est quasi non?
                         </p>
                     </div>
@@ -66,7 +66,7 @@
         </div>
     </section>
 
-<!--bootstrap js-->
+    <!--bootstrap js-->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 </body>

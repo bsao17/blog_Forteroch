@@ -13,7 +13,7 @@
         <div class="row p-3 mx-0">
             <div class="col-md-8 m-auto">
                 <section class="card m-5 p-2">
-                    <img src="../../PUBLIC/PICTURES/delete.webp" class="card-img-top w-75 m-auto" alt="">
+                    <img src="../../public/pictures/delete.webp" class="card-img-top w-75 m-auto" alt="">
                     <div class="card-body">
                         <div class="card-title">
                             <h4>Delete Billet and comment</h4>
@@ -25,8 +25,10 @@
                 </section>
             </div>
             <section>
-                <h2 class="text-light text-center"><u>Billets</u><pre class="text-muted">Moderation</pre></h2>
-                <div class="text-light border border-light m-5 p-3">
+                <h2 class="text-light text-center"><u>Billets</u>
+                    <pre class="text-muted">List</pre>
+                </h2>
+                <div class="border border-light m-5 p-3 bg-light lead">
                     <?php
                     foreach ($billets as $bill) {
                         echo "<div class='h4 text-center'>" . $bill["title"] . "</div><br>" . $bill["content"] . "<br>";
@@ -36,16 +38,19 @@
                 </div>
             </section>
         </div>
-        
-        <h2 class="text-light text-center"><u>Comments</u><pre class="text-muted">Moderation</pre></h2>
-        <section class="text-light border border-light m-5 p-3">
+
+        <h2 class="text-light text-center"><u>Comments</u>
+            <pre class="text-muted">Moderation</pre>
+        </h2>
+        <section class="bg-light border border-light m-5 p-3">
             <?php
             foreach ($comments as $com) {
-                echo $com["ID_billet"] . "<br>";
-                echo $com["user"];
-                echo "<div class=''>" . $com["contentsDb"] . "</div>";
-                echo $com["dateDb"] . "<br>";
-                echo "<a href='' class='btn btn-danger mt-2'>Delete comment</a><hr class='border border-danger mb-5'>";
+                echo "<div><strong>ID : </strong>" . $com["ID_billet"] . "</div><br>";
+                echo "<span><strong>User : </strong>" . $com["user"] . "</span>";
+                echo "<div class=''><strong>Comment : </strong>" . $com["contentsDb"] . "</div>";
+                echo "<span><strong>Date : </strong>" . $com["dateDb"] . "</span><br>";
+                echo "<a href='?action=deletecomment&amp;ID={$com["ID"]}' class='btn btn-danger mt-2'>Delete comment</a>" .
+                    "<a href='?action=confirmcomment&amp;ID={$com["ID"]}' class='btn btn-success mt-2 mx-2'>Confirm comment</a><hr class='border border-danger mb-5'>";
             }
             ?>
 

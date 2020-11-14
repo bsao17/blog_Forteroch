@@ -5,65 +5,63 @@ require("./models/ManagerComment.php");
 class NavigationSite
 {
     public function accueil()
-    {   
+    {
         require("./views/accueilView.php");
     }
 
-//home account page
+    //home account page
     public function home()
     {
         if (isset($_COOKIE['PHPSESSID'])) {
             session_start();
-            require("./views/ACCOUNT/accountHome.php");
+            require("./views/account/accountHome.php");
         } else {
             header("location: ?action=signin");
         }
     }
 
-//Billets list page
+    //Billets list page
     public function getbillets()
     {
         if ($_REQUEST == "POST" || isset($_COOKIE['user_login'])) {
-
             session_start();
             $billets = new ManagerBillets();
             $post = $billets->getBillet();
-            require_once("./views/ACCOUNT/accountBilletsList.php");
+            require_once("./views/account/accountBilletsList.php");
         } else {
             header("location: ?action=signin");
         }
     }
 
-//Billet one page
+    //Single billet page
     public function getSingleBillet()
     {
         if ($_REQUEST == "POST" || isset($_COOKIE['user_login'])) {
-
             session_start();
             $ID = $_GET["ID"];
             $billets = new ManagerBillets();
             $post = $billets->getBilletAlone($ID);
             $comments = new ManagerComment();
             $comment = $comments->getComments($ID);
-            require_once("./views/ACCOUNT/accountBillet__1.php");
+            require_once("./views/account/accountBillet__1.php");
         } else {
             header("location: ?action=signin");
         }
     }
 
-//Account biography page
+    //account biography page
     public function biography()
     {
         if (isset($_COOKIE['user_login'])) {
             session_start();
             require_once("./views/TEMPLATES/accountBaseTemplate.php");
-            require_once('./views/ACCOUNT/accountBiography.php');
+            require_once('./views/account/accountBiography.php');
         } else {
             header("location: ?action=signin");
         }
     }
 
-//Account sendMail contact page
+    //account sendMail contact page
     public function contact()
     {
         if (isset($_COOKIE['user_login'])) {
@@ -73,7 +71,7 @@ class NavigationSite
             header("location: ?action=signin");
         }
     }
-//Sendmail form
+    //Sendmail form
     public function sendMail()
     {
         session_start();

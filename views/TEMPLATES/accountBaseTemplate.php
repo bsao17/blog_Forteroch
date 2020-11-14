@@ -39,7 +39,7 @@
                     <div class=" p-0 bg-success rounded mb-2">
                         <p class="h6 bg-light p-1 text-center m-1 border border-dark"><span class="h4 text-secondary"><i class="fas fa-user-circle"></i></span><span class="h4"> <strong><?= " | " . $_SESSION['login']; ?></strong> :Logued !</span></p>
                     </div>
-                    <a href="<?php echo "?action=accueil";?>" class="btn btn-light mb-2 "><i class="fas fa-sign-out-alt"></i>deconnexion</a>
+                    <a href="<?php echo "?action=accueil"; ?>" class="btn btn-light mb-2 "><i class="fas fa-sign-out-alt"></i>deconnexion</a>
                 </section>
             </div>
 

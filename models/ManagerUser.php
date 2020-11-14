@@ -6,7 +6,7 @@ class ManagerUser
 {
     private $db;
     private $connection;
-//Constructor
+    //Constructor
     public function __construct()
     {
         $this->db = new Database();
@@ -34,7 +34,7 @@ class ManagerUser
             }
         }
     }
-//Signin controller
+    //Signin controller
     public function signin($login, $password)
     {
         $sql = "SELECT * FROM user WHERE login = :username ";
@@ -44,7 +44,7 @@ class ManagerUser
                 if ($result->rowCount() == 1) {
                     $res = $result->fetch();
                     $password_hash = $res['password'];
-                    if (password_verify($password, $password_hash)){
+                    if (password_verify($password, $password_hash)) {
                         return true;
                     }
                 }

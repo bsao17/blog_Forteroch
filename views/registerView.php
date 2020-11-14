@@ -1,13 +1,13 @@
 <?php require("./views/TEMPLATES/baseTemplate.php"); ?>
 <div id="login_form" class="d-flex flex-column align-items-center p-2">
     <h2 class='card card-light rounded p-1'>Créer un compte</h2>
-<?php if($signup_status === true){
-    echo "<pre class='text-center text-dark bg-success m-auto w-50 rounded h4'>votre compte à été créé</pre>";
-}
-if($error != "") {
-    echo $error;
-}
-?>
+    <?php if ($signup_status === true) {
+        echo "<pre class='text-center text-dark bg-success m-auto w-50 rounded h4'>votre compte à été créé</pre>";
+    }
+    if ($error != "") {
+        echo $error;
+    }
+    ?>
     <form action="?action=signup" method="POST" class=" rounded p-2 form-group" id="form">
         <table class="m-1">
             <tr>
@@ -52,6 +52,3 @@ if($error != "") {
         </a>
     </ul>
 </footer>
-
-
-
