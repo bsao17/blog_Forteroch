@@ -1,39 +1,48 @@
 <?php
-require("./models/ManagerBillets.php");
-require("./models/ManagerComment.php");
+require_once "./models/ManagerBillets.php";
+require_once "./models/ManagerComment.php";
 
+/**
+ * class NavigationSite
+ */
 class NavigationSite
 {
     public function accueil()
     {
-        require("./views/accueilView.php");
+        include_once "./views/accueilView.php";
     }
 
-    //home account page
+    /**
+     * home account page
+     */
     public function home()
     {
         if (isset($_COOKIE['PHPSESSID'])) {
             session_start();
-            require("./views/account/accountHome.php");
+            include_once "./views/ACCOUNT/accountHome.php";
         } else {
             header("location: ?action=signin");
         }
     }
 
-    //Billets list page
+    /**
+     * Billets list page
+     */
     public function getbillets()
     {
         if ($_REQUEST == "POST" || isset($_COOKIE['user_login'])) {
             session_start();
             $billets = new ManagerBillets();
             $post = $billets->getBillet();
-            require_once("./views/account/accountBilletsList.php");
+            include_once "./views/ACCOUNT/accountBilletsList.php";
         } else {
             header("location: ?action=signin");
         }
     }
 
-    //Single billet page
+    /**
+     * Billet one page
+     */
     public function getSingleBillet()
     {
         if ($_REQUEST == "POST" || isset($_COOKIE['user_login'])) {
@@ -43,39 +52,45 @@ class NavigationSite
             $post = $billets->getBilletAlone($ID);
             $comments = new ManagerComment();
             $comment = $comments->getComments($ID);
-            require_once("./views/account/accountBillet__1.php");
+            include_once "./views/ACCOUNT/accountBillet__1.php";
         } else {
             header("location: ?action=signin");
         }
     }
 
-    //account biography page
+    /**
+     * Account biography page
+     */
     public function biography()
     {
         if (isset($_COOKIE['user_login'])) {
             session_start();
-            require_once("./views/templates/accountBaseTemplate.php");
-            require_once('./views/account/accountBiography.php');
+            include_once "./views/TEMPLATES/accountBaseTemplate.php";
+            include_once './views/ACCOUNT/accountBiography.php';
         } else {
             header("location: ?action=signin");
         }
     }
 
-    //account sendMail contact page
+    /**
+     * Account sendMail contact page
+     */
     public function contact()
     {
         if (isset($_COOKIE['user_login'])) {
             session_start();
-            require_once("./views/templates/contactTemplate.php");
+            include_once "./views/TEMPLATES/contactTemplate.php";
         } else {
             header("location: ?action=signin");
         }
     }
-    //Sendmail form
+    /**
+     * Sendmail form
+     */
     public function sendMail()
     {
         session_start();
-        require_once("./views/templates/accountBaseTemplate.php");
+        include_once "./views/TEMPLATES/accountBaseTemplate.php";
         try {
             if (isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['mail']) && isset($_POST['contentMail'])) {
                 $firstname = $_POST['firstname'];

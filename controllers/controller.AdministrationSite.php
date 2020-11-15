@@ -1,11 +1,13 @@
 <?php
-require_once("./models/ManagerUser.php");
-require_once("./models/ManagerBillets.php");
-require_once("./models/ManagerComment.php");
+require_once "./models/ManagerUser.php";
+require_once "./models/ManagerBillets.php";
+require_once "./models/ManagerComment.php";
 
 class AdministrationSite
 {
-    // Signin Method
+    /**
+     * Signin Method
+     */
     public function signin($request, $server)
     {
         $error = '';
@@ -39,10 +41,12 @@ class AdministrationSite
                 $error = "<pre class='text-center text-danger bg-warning w-25 m-auto rounded'>Field does not empty !</pre>";
             }
         }
-        require_once("./views/Connect.views.php");
+        include_once "./views/Connect.views.php";
     }
 
-    //Signup Method
+    /**
+     * Signup Method
+     */
     public function signup($request, $server)
     {
         $signup_status = false;
@@ -72,17 +76,19 @@ class AdministrationSite
                 $error = "<pre class='text-center text-danger bg-warning m-2 p-2 h4 rounded-lg'>error password<br>restart registration</pre>";
             }
         }
-        require_once("./views/registerView.php");
+        include_once "./views/registerView.php";
     }
 
-    //Admin account
+    /**
+     * Admin account
+     */
     public function admin()
     {
         if (isset($_COOKIE["user_login"])) {
             $user = new ManagerUser();
             if ($user->adminVerify() == true) {
                 session_start();
-                require_once("./views/account/accountAdmin.php");
+                include_once "./views/ACCOUNT/accountAdmin.php";
             } else {
                 header("location: ?action=home");
             }
@@ -91,7 +97,9 @@ class AdministrationSite
         }
     }
 
-    //Create new billets
+    /**
+     * Create new billets
+     */
     public function createBillet()
     {
         if (isset($_COOKIE["user_login"])) {
@@ -109,7 +117,7 @@ class AdministrationSite
                         $empty = true;
                     }
                 }
-                require_once("./views/account/createBillets.php");
+                include_once "./views/ACCOUNT/createBillets.php";
             } else {
                 header("location: ?action=home");
             }
@@ -118,7 +126,9 @@ class AdministrationSite
         }
     }
 
-    //update billet
+    /**
+     * update billet
+     */
     public function updateBillet()
     {
         if (isset($_COOKIE["user_login"])) {
@@ -130,12 +140,14 @@ class AdministrationSite
                 if (!empty(isset($_POST["ID"])) && isset($_POST["title"]) && isset($_POST["content"])) {
                     $billet->updateBillet($_POST["ID"], $_POST["title"], $_POST["content"]);
                 }
-                require_once("./views/account/updateBillet.php");
+                include_once "./views/ACCOUNT/updateBillet.php";
             }
         }
     }
 
-    //Post new comment
+    /**
+     * Post new comment
+     */
     public function createComment()
     {
         $user = htmlspecialchars(trim($_COOKIE['user_login']));
@@ -149,15 +161,19 @@ class AdministrationSite
         header("location: ?action=simplebillet&ID=" . $IDbillet);
     }
 
-    //Comment report
+    /**
+     * Comment notify
+     */
     public function commentReport()
     {
         $comment = new ManagerComment();
         $comment->commentReport($_GET["ID"]);
-        require_once("./views/account/notifyConfirm.php");
+        include_once "./views/ACCOUNT/notifyConfirm.php";
     }
 
-    //List of messages and comments to delete : on admin page
+    /**
+     * Admin billet and comment delete page
+     */
     public function deleteBillet()
     {
         if (isset($_COOKIE["user_login"])) {
@@ -167,20 +183,24 @@ class AdministrationSite
                 $billets = $billet->getBillet();
                 $comment = new ManagerComment();
                 $comments = $comment->getCommentsNotify();
-                require_once("./views/account/deleteBillet.php");
+                include_once "./views/ACCOUNT/deleteBillet.php";
             }
         }
     }
 
-    //Billet delete action
+    /**
+     * Billet delete action
+     */
     public function delete()
     {
         $billet = new ManagerBillets();
-        $req = $billet->deleteBillet($_GET["ID"]);
+        $request = $billet->deleteBillet($_GET["ID"]);
         header("location: ?action=deleteBillets");
     }
 
-    //Comment delete action
+    /**
+     * Billet delete comment action
+     */
     public function deleteComment()
     {
         $comment = new ManagerComment();
@@ -188,7 +208,9 @@ class AdministrationSite
         header("location: ?action=deleteBillets");
     }
 
-    //Billet confirm comment action
+    /**
+     * Billet confirm comment action
+     */
     public function confirmComment()
     {
         $comment = new ManagerComment();

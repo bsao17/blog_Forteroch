@@ -21,11 +21,12 @@ class ManagerComment
     {
         try {
             $sql = "INSERT INTO comments(ID_billet, user, contentsDb, dateDb) VALUES ( :ID_billet, :user, :content, NOW())";
-            if ($req = $this->connection->prepare($sql)) {
-                $req->bindParam(":ID_billet", $billetID, PDO::PARAM_STR);
-                $req->bindParam(":user", $user, PDO::PARAM_STR);
-                $req->bindParam(":content", $comment, PDO::PARAM_STR);
-                $req->execute();
+            if ($request = $this->connection->prepare($sql)) {
+                $request->bindParam(":ID_billet", $billetID, PDO::PARAM_STR);
+                $request->bindParam(":user", $user, PDO::PARAM_STR);
+                $request->bindParam(":content", $comment, PDO::PARAM_STR);
+                $result = $request->execute();
+                return $result;
             }
         } catch (Exception $e) {
             die("error SQL" . $e->getMessage());
@@ -35,41 +36,70 @@ class ManagerComment
     // get comments by billets ID
     public function getComments($ID)
     {
-        $sql = "SELECT ID, ID_billet, user, contentsDb, DATE_FORMAT(dateDb, '%d/%m/%Y %Hh%imin%ss') as date FROM comments WHERE ID_billet = :ID";
-        $req = $this->connection->prepare($sql);
-        $req->bindParam(":ID", $ID, PDO::PARAM_STR);
-        $req->execute();
-        $response = $req->fetchAll();
-        return $response;
+        try{
+            $sql = "SELECT ID, ID_billet, user, contentsDb, DATE_FORMAT(dateDb, '%d/%m/%Y %Hh%imin%ss') as date FROM comments WHERE ID_billet = :ID";
+            $request = $this->connection->prepare($sql);
+            $request->bindParam(":ID", $ID, PDO::PARAM_STR);
+            $request->execute();
+            $response = $request->fetchAll();
+            return $response;
+        }catch(Exception $e){
+            echo("Error : ".$e->getMessage());
+            die;
+        }
     }
 
     public function deleteComment($ID)
     {
-        $sql = "DELETE FROM comments WHERE ID = :ID ";
-        $req = $this->connection->prepare($sql);
-        $req->bindParam(":ID", $ID, PDO::PARAM_STR);
-        $req->execute();
+        try{
+            $sql = "DELETE FROM comments WHERE ID = :ID ";
+            $request = $this->connection->prepare($sql);
+            $request->bindParam(":ID", $ID, PDO::PARAM_STR);
+            $result = $request->execute();
+            return $result;
+        }catch(Exception $e){
+            echo("Error : ".$e->getMessage());
+            die;
+        }
     }
 
     public function commentReport($ID)
     {
-        $sql = "UPDATE comments SET notify = 'true' WHERE ID =" . $ID;
-        $req = $this->connection->exec($sql);
+        try{
+            $sql = "UPDATE comments SET notify = 'true' WHERE ID =" . $ID;
+            $request = $this->connection->exec($sql);
+            return $request;
+        }catch(Exception $e){
+            echo("Error : ".$e->getMessage());
+            die;
+        }
     }
 
     public function getCommentsNotify()
     {
-        $sql = "SELECT * FROM comments WHERE notify = 'true'";
-        $req = $this->connection->query($sql);
-        $post = $req->fetchAll();
-        return $post;
+        try{
+            $sql = "SELECT * FROM comments WHERE notify = 'true'";
+            $request = $this->connection->query($sql);
+            $post = $request->fetchAll();
+            return $post;
+
+        }catch(Exception $e){
+            echo("Error : ".$e->getMessage());
+            die;
+        }
     }
 
     public function confirmComment($ID)
     {
-        $sql = "UPDATE comments SET notify = null WHERE ID = :ID";
-        $comment = $this->connection->prepare($sql);
-        $comment->bindParam(":ID", $ID, PDO::PARAM_STR);
-        $comment->execute();
+        try{
+            $sql = "UPDATE comments SET notify = null WHERE ID = :ID";
+            $comment = $this->connection->prepare($sql);
+            $comment->bindParam(":ID", $ID, PDO::PARAM_STR);
+            $result = $comment->execute();
+            return $result;
+        }catch(Exception $e){
+            echo("Error : ".$e->getMessage());
+            die;
+        }
     }
 }

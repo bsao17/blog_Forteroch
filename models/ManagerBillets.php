@@ -25,7 +25,7 @@ class ManagerBillets
             $result = $request->fetchAll();
             return $result;
         }catch(Exception $e){
-            echo ("Error" . $e->getMessage());
+            echo ("Error : " . $e->getMessage());
             die;
         }
     }
@@ -33,11 +33,16 @@ class ManagerBillets
     // display one billet with ID    
     public function getBilletAlone($ID)
     {
-        $request = $this->connection->prepare("SELECT * FROM billets WHERE ID = :ID");
-        $request->bindParam(":ID", $ID, PDO::PARAM_STR);
-        $request->execute();
-        $result = $request->fetchAll();
-        return $result;
+        try{
+            $request = $this->connection->prepare("SELECT * FROM billets WHERE ID = :ID");
+            $request->bindParam(":ID", $ID, PDO::PARAM_STR);
+            $request->execute();
+            $result = $request->fetchAll();
+            return $result;
+        }catch(Exception $e){
+            echo ("Error : ".$e->getMessage());
+            die;
+        }
     }
 
     //Insert new billet in database
@@ -45,10 +50,11 @@ class ManagerBillets
     {
         try {
             $sql = "INSERT INTO billets(title, content) VALUES (:title, :content) ";
-            if ($req = $this->connection->prepare($sql)) {
-                $req->bindParam(":title", $title, PDO::PARAM_STR);
-                $req->bindParam(":content", $content, PDO::PARAM_STR);
-                $req->execute();
+            if ($request = $this->connection->prepare($sql)) {
+                $request->bindParam(":title", $title, PDO::PARAM_STR);
+                $request->bindParam(":content", $content, PDO::PARAM_STR);
+                $result = $request->execute();
+                return $result;
             }
         } catch (Exception $e) {
             echo ("Error :" . $e->getMessage());
@@ -58,19 +64,31 @@ class ManagerBillets
 
     public function deleteBillet($ID)
     {
-        $sql = "DELETE FROM billets WHERE ID = :ID";
-        $req = $this->connection->prepare($sql);
-        $req->bindParam(":ID", $ID, PDO::PARAM_STR);
-        $req->execute();
+        try{
+            $sql = "DELETE FROM billets WHERE ID = :ID";
+            $request = $this->connection->prepare($sql);
+            $request->bindParam(":ID", $ID, PDO::PARAM_STR);
+            $result = $request->execute();
+            return $result;
+        }catch(Exception $e){
+            echo ("Error : ".$e->getMessage());
+            die;
+        }
     }
 
     public function updateBillet($ID, $titleUpdate, $commentUpdate)
     {
-        $sql = "UPDATE billets SET title = :title, content = :content WHERE ID = :ID ";
-        $req = $this->connection->prepare($sql);
-        $req->bindParam(":title", $titleUpdate, PDO::PARAM_STR);
-        $req->bindParam(":content", $commentUpdate, PDO::PARAM_STR);
-        $req->bindParam(":ID", $ID, PDO::PARAM_STR);
-        $req->execute();
+        try{
+            $sql = "UPDATE billets SET title = :title, content = :content WHERE ID = :ID ";
+            $request = $this->connection->prepare($sql);
+            $request->bindParam(":title", $titleUpdate, PDO::PARAM_STR);
+            $request->bindParam(":content", $commentUpdate, PDO::PARAM_STR);
+            $request->bindParam(":ID", $ID, PDO::PARAM_STR);
+            $result = $request->execute();
+            return $result;
+        }catch(Exception $e){
+            echo("Error : ".$e->getMessage());
+            die;
+        }
     }
 }
