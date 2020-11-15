@@ -1,4 +1,4 @@
-<?php require("./views/TEMPLATES/baseTemplate.php"); ?>
+<?php require("./views/templates/baseTemplate.php"); ?>
 
 <div id="login_form" class="d-flex flex-column align-items-center p-2 ">
 

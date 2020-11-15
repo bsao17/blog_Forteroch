@@ -27,5 +27,5 @@
     </p>
 </section>
 <footer>
-    <?php require_once("./views/TEMPLATES/footerView.php"); ?>
+    <?php require_once("./views/templates/footerView.php"); ?>
 </footer>

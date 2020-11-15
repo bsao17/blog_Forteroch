@@ -1,4 +1,4 @@
-<?php require("./views/TEMPLATES/baseTemplate.php"); ?>
+<?php require("./views/templates/baseTemplate.php"); ?>
 <div id="login_form" class="d-flex flex-column align-items-center p-2">
     <h2 class='card card-light rounded p-1'>Créer un compte</h2>
     <?php if ($signup_status === true) {

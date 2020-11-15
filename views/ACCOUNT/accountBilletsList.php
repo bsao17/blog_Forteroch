@@ -1,5 +1,5 @@
 <?php
-require_once("./views/TEMPLATES/accountBaseTemplate.php");
+require_once("./views/templates/accountBaseTemplate.php");
 ?>
 <section class="p-3 bg-light">
     <p>
@@ -30,4 +30,4 @@ require_once("./views/TEMPLATES/accountBaseTemplate.php");
     </article>
 </section>
 
-<?php require_once("./views/TEMPLATES/footerView.php"); ?>
+<?php require_once("./views/templates/footerView.php"); ?>

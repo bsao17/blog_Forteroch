@@ -54,7 +54,7 @@ class NavigationSite
     {
         if (isset($_COOKIE['user_login'])) {
             session_start();
-            require_once("./views/TEMPLATES/accountBaseTemplate.php");
+            require_once("./views/templates/accountBaseTemplate.php");
             require_once('./views/account/accountBiography.php');
         } else {
             header("location: ?action=signin");
@@ -66,7 +66,7 @@ class NavigationSite
     {
         if (isset($_COOKIE['user_login'])) {
             session_start();
-            require_once("./views/TEMPLATES/contactTemplate.php");
+            require_once("./views/templates/contactTemplate.php");
         } else {
             header("location: ?action=signin");
         }
@@ -75,7 +75,7 @@ class NavigationSite
     public function sendMail()
     {
         session_start();
-        require_once("./views/TEMPLATES/accountBaseTemplate.php");
+        require_once("./views/templates/accountBaseTemplate.php");
         try {
             if (isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['mail']) && isset($_POST['contentMail'])) {
                 $firstname = $_POST['firstname'];

@@ -1,4 +1,4 @@
-<?php require("./views/TEMPLATES/accountBaseTemplate.php"); ?>
+<?php require("./views/templates/accountBaseTemplate.php"); ?>
 <section id="contactForm">
     <form action="?action=sendmail" method="POST" class="d-flex flex-column form-group text-light">
         <label for="firstname" class="m-2">Firstname :
@@ -20,5 +20,5 @@
     </form>
 </section>
 <footer>
-    <?php require_once("./views/TEMPLATES/footerView.php"); ?>
+    <?php require_once("./views/templates/footerView.php"); ?>
 </footer>

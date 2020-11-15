@@ -1,4 +1,4 @@
-<?php require("./views/TEMPLATES/baseTemplate.php"); ?>
+<?php require("./views/templates/baseTemplate.php"); ?>
 <section class="home border border-light p-5" id="home">
     <h1 class="text-center">Welcome On My Blog</h1>
     <hr>

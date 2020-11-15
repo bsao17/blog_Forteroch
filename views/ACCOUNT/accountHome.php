@@ -1,4 +1,4 @@
-<?php require("./views/TEMPLATES/accountBaseTemplate.php"); ?>
+<?php require("./views/templates/accountBaseTemplate.php"); ?>
 
 <section class="home p-5" id="home">
     <h1 class="text-center">Bienvenue sur mon récit "Billet simple pour l'Alaska" </h1>
@@ -27,5 +27,5 @@
     </p>
 </section>
 <footer>
-    <?php require_once("./views/TEMPLATES/footerView.php"); ?>
+    <?php require_once("./views/templates/footerView.php"); ?>
 </footer>

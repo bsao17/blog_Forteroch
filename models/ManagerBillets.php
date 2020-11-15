@@ -19,10 +19,15 @@ class ManagerBillets
     //Display Billets
     public function getBillet()
     {
-        $request = $this->connection->query("SELECT * FROM billets");
-        $request->execute();
-        $result = $request->fetchAll();
-        return $result;
+        try{
+            $request = $this->connection->query("SELECT * FROM billets");
+            $request->execute();
+            $result = $request->fetchAll();
+            return $result;
+        }catch(Exception $e){
+            echo ("Error" . $e->getMessage());
+            die;
+        }
     }
 
     // display one billet with ID    
