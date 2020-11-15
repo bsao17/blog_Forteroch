@@ -1,6 +1,9 @@
 <?php
 
-require_once "./models/DatabaseClass.php";
+spl_autoload_register(function($className){
+    $className = "models".$className.".php";
+});
+
 
 /**
  * class ManagerBillets

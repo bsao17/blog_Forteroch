@@ -4,13 +4,23 @@ require_once "./controllers/controller.AdministrationSite.php";
 
 try {
 
+    /**
+     * Create super global variable with name "action" and POST or GET request method
+     */
     if (isset($_GET['action']) || isset($_POST['action'])) {
         $action = $_GET['action'];
     } else {
         $action = null;
     }
 
+    /**
+     * Class instance NavigationSite
+     */
     $direction = new NavigationSite();
+
+    /**
+     * Class instance AdministrationSite
+     */
     $administration = new AdministrationSite();
 
     if ($action != null) {
