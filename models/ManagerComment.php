@@ -1,22 +1,39 @@
 <?php
-function findClass($class)
-{
-    require($class . ".php");
-}
 
-spl_autoload_register("findClass");
+require_once "./models/DatabaseClass.php";
+
 class ManagerComment
 {
 
+    /**
+     * @var database
+     */
     private $db;
+
+
+    /**
+     * @var PDO
+     */
     private $connection;
 
+
+    /**
+     * constructor method for database connection
+     */
     public function __construct()
     {
         $this->db = new Database();
         $this->connection = $this->db->getConnection();
     }
 
+
+    /**
+     * Create new comment method
+     * @param int $billetID
+     * @param string $user
+     * @param string $comment
+     * @return bool
+     */
     public function createComment($billetID, $user, $comment)
     {
         try {
@@ -33,7 +50,11 @@ class ManagerComment
         }
     }
 
-    // get comments by billets ID
+    /**
+     * get comments by billets ID
+     * @param int $ID
+     * @return array $response
+     */
     public function getComments($ID)
     {
         try{
@@ -49,6 +70,11 @@ class ManagerComment
         }
     }
 
+    /**
+     * Delete comments by ID
+     * @param int $ID
+     * @return bool $result
+     */
     public function deleteComment($ID)
     {
         try{
@@ -63,6 +89,11 @@ class ManagerComment
         }
     }
 
+    /**
+     * Comment report for moderation
+     * @param int $ID
+     * @return int|bool $request
+     */
     public function commentReport($ID)
     {
         try{
@@ -75,6 +106,10 @@ class ManagerComment
         }
     }
 
+    /**
+     * comments report list in admin page
+     * @return array $post
+     */
     public function getCommentsNotify()
     {
         try{
@@ -89,6 +124,11 @@ class ManagerComment
         }
     }
 
+    /**
+     * comment report confirm in moderation page
+     * @param int $ID
+     * @return bool $result
+     */
     public function confirmComment($ID)
     {
         try{

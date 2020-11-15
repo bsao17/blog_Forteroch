@@ -1,6 +1,6 @@
 <?php
-require_once("./controllers/controller.NavigationSite.php");
-require_once("./controllers/controller.AdministrationSite.php");
+require_once "./controllers/controller.NavigationSite.php";
+require_once "./controllers/controller.AdministrationSite.php";
 
 try {
 
@@ -93,5 +93,5 @@ try {
         }
     }
 } catch (Exception $e) {
-    echo "404 not found router : " . $e->getMessage();
+    echo "404 not found : " . $e->getMessage();
 }

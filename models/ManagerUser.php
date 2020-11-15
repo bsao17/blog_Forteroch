@@ -1,18 +1,39 @@
 <?php
 
-require_once("./models/DatabaseClass.php");
+require_once "./models/DatabaseClass.php";
 
 class ManagerUser
 {
+    /**
+     * @var database
+     */
     private $db;
+
+
+    /**
+     * @var PDO
+     */
     private $connection;
-    //Constructor
+    
+    
+    /**
+     * constructor method for database connection
+     */
     public function __construct()
     {
         $this->db = new Database();
         $this->connection = $this->db->getConnection();
     }
 
+    /**
+     * Signup method
+     * @param string $login
+     * @param string $firstname
+     * @param string $lastname
+     * @param string $password
+     * @param string $role
+     * @return bool $user
+     */
     public function signup($login, $firstname, $lastname, $password, $role)
     {
         $sql = "SELECT * FROM user WHERE login = :username";
@@ -34,7 +55,12 @@ class ManagerUser
             }
         }
     }
-    //Signin controller
+    /**
+     * Signin method
+     * @param string $login
+     * @param string $password
+     * @return bool
+     */
     public function signin($login, $password)
     {
         $sql = "SELECT * FROM user WHERE login = :username ";
@@ -52,6 +78,10 @@ class ManagerUser
         }
     }
 
+    /**
+     * Admin verify method
+     * @return bool
+     */
     public function adminVerify()
     {
         $sql = "SELECT role FROM user WHERE login = :username";
