@@ -1,4 +1,4 @@
-<?php require("baseTemplate.php"); ?>
+<?php require "baseTemplate.php"; ?>
 
 <section>
     <form action="?action=admin_connect" method="POST" class="d-flex flex-column justify-content-center m-2 border border-dark w-25 m-auto bg-light rounded p-2">

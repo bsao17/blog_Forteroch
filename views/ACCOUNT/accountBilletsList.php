@@ -1,5 +1,5 @@
 <?php
-require_once("./views/templates/accountBaseTemplate.php");
+require_once "./views/templates/accountBaseTemplate.php";
 ?>
 <section class="p-3 bg-light">
     <p>
@@ -16,9 +16,7 @@ require_once("./views/templates/accountBaseTemplate.php");
         }
 
         foreach ($post as $value) {
-            echo "<p class='h4 text-center'><strong>" . $value["ID"] . " <u>" . $value['title'] . "</u></strong></p>";
-
-        ?>
+            echo "<p class='h4 text-center'><strong>" . $value["ID"] . " <u>" . $value['title'] . "</u></strong></p>"; ?>
     </p>
     <article>
     <?php
@@ -30,4 +28,4 @@ require_once("./views/templates/accountBaseTemplate.php");
     </article>
 </section>
 
-<?php require_once("./views/templates/footerView.php"); ?>
+<?php require_once "./views/templates/footerView.php"; ?>

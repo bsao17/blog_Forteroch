@@ -1,6 +1,6 @@
 <?php
 
-spl_autoload_register(function($className){
+spl_autoload_register(function ($className) {
     $className = "./models".$className.".php";
 });
 
@@ -59,14 +59,14 @@ class ManagerComment
      */
     public function getComments($ID)
     {
-        try{
+        try {
             $sql = "SELECT ID, ID_billet, user, contentsDb, DATE_FORMAT(dateDb, '%d/%m/%Y %Hh%imin%ss') as date FROM comments WHERE ID_billet = :ID";
             $request = $this->connection->prepare($sql);
             $request->bindParam(":ID", $ID, PDO::PARAM_STR);
             $request->execute();
             $response = $request->fetchAll();
             return $response;
-        }catch(Exception $e){
+        } catch (Exception $e) {
             echo("Error : ".$e->getMessage());
             die;
         }
@@ -79,13 +79,13 @@ class ManagerComment
      */
     public function deleteComment($ID)
     {
-        try{
+        try {
             $sql = "DELETE FROM comments WHERE ID = :ID ";
             $request = $this->connection->prepare($sql);
             $request->bindParam(":ID", $ID, PDO::PARAM_STR);
             $result = $request->execute();
             return $result;
-        }catch(Exception $e){
+        } catch (Exception $e) {
             echo("Error : ".$e->getMessage());
             die;
         }
@@ -98,11 +98,11 @@ class ManagerComment
      */
     public function commentReport($ID)
     {
-        try{
+        try {
             $sql = "UPDATE comments SET notify = 'true' WHERE ID =" . $ID;
             $request = $this->connection->exec($sql);
             return $request;
-        }catch(Exception $e){
+        } catch (Exception $e) {
             echo("Error : ".$e->getMessage());
             die;
         }
@@ -114,13 +114,12 @@ class ManagerComment
      */
     public function getCommentsNotify()
     {
-        try{
+        try {
             $sql = "SELECT * FROM comments WHERE notify = 'true'";
             $request = $this->connection->query($sql);
             $post = $request->fetchAll();
             return $post;
-
-        }catch(Exception $e){
+        } catch (Exception $e) {
             echo("Error : ".$e->getMessage());
             die;
         }
@@ -133,13 +132,13 @@ class ManagerComment
      */
     public function confirmComment($ID)
     {
-        try{
+        try {
             $sql = "UPDATE comments SET notify = null WHERE ID = :ID";
             $comment = $this->connection->prepare($sql);
             $comment->bindParam(":ID", $ID, PDO::PARAM_STR);
             $result = $comment->execute();
             return $result;
-        }catch(Exception $e){
+        } catch (Exception $e) {
             echo("Error : ".$e->getMessage());
             die;
         }

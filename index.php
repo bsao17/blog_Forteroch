@@ -98,7 +98,7 @@ try {
                 break;
 
             default:
-                echo "<h1 class='bg-warning'><u class'text-danger'>404 not found !</u></h1>";
+                echo "<h1 class='bg-warning'><u class'text-danger'>404 not found </u></h1>";
                 throw new Exception('aucun identifiant renvoyé');
         }
     }

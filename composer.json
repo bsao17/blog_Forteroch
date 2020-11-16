@@ -3,6 +3,7 @@
     "require-dev": {
         "phploc/phploc": "^7.0",
         "phpmd/phpmd": "^2.9",
-        "squizlabs/php_codesniffer": "^3.5"
+        "squizlabs/php_codesniffer": "^3.5",
+        "friendsofphp/php-cs-fixer": "^2.16"
     }
 }

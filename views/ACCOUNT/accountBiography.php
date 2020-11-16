@@ -2,9 +2,9 @@
     <h1 class="text-center">Ma vie, mon parcours ... </h1>
     <hr>
     <h2>Présentation</h2>
-    <img src="../../public/pictures/portrait (8).jpg" alt="" id="picture-home" class="img-fluid img-thumbnail w-25 m-auto rounded p-2" alt="Responsive image">
-    <hr>
-    <p class="d-flex">
+    <img src="../../public/pictures/portrait-wife.jpg" alt="" id="picture-home" class="img-fluid img-thumbnail w-25 mr-4 rounded p-2 float-left" alt="Responsive image">
+    
+    <p class="d-flex text-justify">
         Lorem ipsum dolor, sit amet consectetur adipisicing elit.
         Esse eius ea laboriosam, architecto est doloribus ad? Quidem fugiat quo nesciunt nisi non. Accusantium, at? Consequuntur, dolore.
         Esse, inventore dolorum sequi iusto eos numquam id qui, accusamus non maxime dolore sit commodi quibusdam rerum ab,
@@ -27,5 +27,5 @@
     </p>
 </section>
 <footer>
-    <?php require_once("./views/templates/footerView.php"); ?>
+    <?php require_once "./views/templates/footerView.php"; ?>
 </footer>

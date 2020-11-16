@@ -1,4 +1,4 @@
-<?php require("./views/templates/accountBaseTemplate.php"); ?>
+<?php include_once "./views/templates/accountBaseTemplate.php"; ?>
 <section id="contactForm">
     <form action="?action=sendmail" method="POST" class="d-flex flex-column form-group text-light">
         <label for="firstname" class="m-2">Firstname :

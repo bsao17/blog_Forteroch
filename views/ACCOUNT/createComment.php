@@ -1,5 +1,5 @@
 <!--Comments form-->
-<?php require_once("./views/templates/accountBaseTemplate.php"); ?>
+<?php require_once "./views/templates/accountBaseTemplate.php"; ?>
 <section class=" border-bottom border-top" id="commentForm">
     <form action="?action=createcomment&amp;ID=<?= $_GET['ID'] ?>" method="POST">
         <div class="form-group">

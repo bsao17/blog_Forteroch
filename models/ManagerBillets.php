@@ -1,6 +1,6 @@
 <?php
 
-spl_autoload_register(function($className){
+spl_autoload_register(function ($className) {
     $className = "models".$className.".php";
 });
 
@@ -43,7 +43,7 @@ class ManagerBillets
             $result = $request->fetchAll();
             return $result;
         } catch (Exception $e) {
-            echo ("Error : " . $e->getMessage());
+            echo("Error : " . $e->getMessage());
             die;
         }
     }
@@ -62,7 +62,7 @@ class ManagerBillets
             $result = $request->fetchAll();
             return $result;
         } catch (Exception $e) {
-            echo ("Error : " . $e->getMessage());
+            echo("Error : " . $e->getMessage());
             die;
         }
     }
@@ -84,7 +84,7 @@ class ManagerBillets
                 return $result;
             }
         } catch (Exception $e) {
-            echo ("Error :" . $e->getMessage());
+            echo("Error :" . $e->getMessage());
             die;
         }
     }
@@ -103,7 +103,7 @@ class ManagerBillets
             $result = $request->execute();
             return $result;
         } catch (Exception $e) {
-            echo ("Error : " . $e->getMessage());
+            echo("Error : " . $e->getMessage());
             die;
         }
     }
@@ -126,7 +126,7 @@ class ManagerBillets
             $result = $request->execute();
             return $result;
         } catch (Exception $e) {
-            echo ("Error : " . $e->getMessage());
+            echo("Error : " . $e->getMessage());
             die;
         }
     }

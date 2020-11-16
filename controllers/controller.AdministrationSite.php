@@ -7,6 +7,8 @@ class AdministrationSite
 {
     /**
      * Signin Method
+     * @param mixed $request
+     * @param mixed $server
      */
     public function signin($request, $server)
     {
@@ -46,6 +48,8 @@ class AdministrationSite
 
     /**
      * Signup Method
+     * @param mixed $request
+     * @param mixed $server
      */
     public function signup($request, $server)
     {

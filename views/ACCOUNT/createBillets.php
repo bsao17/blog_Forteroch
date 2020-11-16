@@ -39,7 +39,7 @@
       <section>
         <?php
         if (isset($empty)) {
-          echo "<div class='text-center bg-warning text-danger w-25 m-auto h4 p-2 rounded-lg'>Fields Does Not Empty</div>";
+            echo "<div class='text-center bg-warning text-danger w-25 m-auto h4 p-2 rounded-lg'>Fields Does Not Empty</div>";
         }
         ?>
       </section>
