@@ -9,7 +9,7 @@ use PDO;
  * Class Database
  * Database connection
  */
-class Database
+class DatabaseClass
 {
     /**
      * @var string host database
@@ -34,19 +34,23 @@ class Database
      */
     public function getConnection()
     {
-        /**
+        /*
          * Attempting to connect to the database
          */
         try {
-            $connection = new PDO(Database::DB_HOST, Database::DB_USER, Database::DB_PASS);
+            $connection = new PDO(self::DB_HOST, self::DB_USER, self::DB_PASS);
             $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             return $connection;
         }
-        /**
+
+        /*
          * Error if connection fails
          */
         catch (Exception $e) {
-            die('Erreur de connection :' . $e->getMessage());
+            die('Erreur de connection :'.$e->getMessage());
         }
-    }
-}
+
+    }//end getConnection()
+
+
+}//end class

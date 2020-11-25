@@ -2,16 +2,16 @@
 
 namespace models;
 
-use models\Database;
+use models\DatabaseClass;
 use PDO;
 
 class ManagerComment
 {
 
     /**
-     * @var database
+     * @var DatabaseClass
      */
-    private Database $db;
+    private DatabaseClass $db;
 
 
     /**
@@ -25,7 +25,7 @@ class ManagerComment
      */
     public function __construct()
     {
-        $this->db = new Database();
+        $this->db = new DatabaseClass();
         $this->connection = $this->db->getConnection();
     }
 

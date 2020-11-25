@@ -1,111 +1,107 @@
 <?php
 
-use controllers\AdministrationSite as Administration;
-use controllers\NavigationSite as Navigation;
+use controllers\BackController as Administration;
+use controllers\FrontController as Navigation;
 
-require_once "./controllers/FrontController.php";
-require_once "./controllers/BackController.php";
+require_once './controllers/FrontController.php';
+require_once './controllers/BackController.php';
 
 try {
     session_start();
-    /**
+    /*
      * Create super global variable with name "action" and POST or GET request method
      */
-    if (isset($_GET['action']) || isset($_POST['action'])) {
-        $action = $_GET['action'];
-    } else {
-        $action = null;
-    }
+    $action = isset($_GET['action']) ? $_GET['action'] : null;
 
-    /**
+    /*
      * Class instance NavigationSite
      */
     $direction = new Navigation();
 
-    /**
+    /*
      * Class instance AdministrationSite
      */
     $administration = new Administration();
 
     if ($action != null) {
         switch ($action) {
-            case "accueil":
+            case 'accueil':
                 $direction->accueil();
-                break;
+            break;
 
-            case "home":
+            case 'home':
                 $direction->home();
-                break;
+            break;
 
-            case "biography":
+            case 'biography':
                 $direction->biography();
-                break;
+            break;
 
-            case "adList":
+            case 'adList':
                 $administration->admin();
-                break;
+            break;
 
-            case "createBillets":
+            case 'createBillets':
                 $administration->createBillet();
-                break;
+            break;
 
-            case "updateBillets":
+            case 'updateBillets':
                 $administration->updateBillet();
-                break;
+            break;
 
-            case "deleteBillets":
+            case 'deleteBillets':
                 $administration->deleteBillet();
-                break;
+            break;
 
-            case "delete":
+            case 'delete':
                 $administration->delete();
-                break;
+            break;
 
-            case "getBillets":
+            case 'getBillets':
                 $direction->getbillets();
-                break;
+            break;
 
-            case "simplebillet":
+            case 'simplebillet':
                 $direction->getSingleBillet();
-                break;
+            break;
 
-            case "createcomment":
+            case 'createcomment':
                 $administration->createComment();
-                break;
+            break;
 
-            case "deletecomment":
+            case 'deletecomment':
                 $administration->deleteComment();
-                break;
+            break;
 
-            case "confirmcomment":
+            case 'confirmcomment':
                 $administration->confirmComment();
-                break;
+            break;
 
-            case "notify":
+            case 'notify':
                 $administration->commentReport();
-                break;
+            break;
 
-            case "contact":
+            case 'contact':
                 $direction->contact();
-                break;
+            break;
 
-            case "sendmail":
+            case 'sendmail':
                 $direction->sendMail();
-                break;
+            break;
 
-            case "signin":
-                $administration->signin($_REQUEST, $_SERVER);
-                break;
+            case 'signin':
+                $administration->signin($_SERVER);
+            break;
 
-            case "signup":
+            case 'signup':
                 $administration->signup($_REQUEST, $_SERVER);
-                break;
+            break;
 
             default:
                 echo "<h1 class='bg-warning'><u class'text-danger'>404 not found </u></h1>";
-                throw new Exception('aucun identifiant renvoyé');
-        }
-    }
+            throw new Exception('aucun identifiant renvoyé');
+        }//end switch
+    }//end if
 } catch (Exception $e) {
-    echo "404 not found : " . $e->getMessage();
-}
+    echo '404 not found : '.$e->getMessage();
+}//end try
