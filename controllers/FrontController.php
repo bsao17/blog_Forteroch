@@ -20,8 +20,9 @@ class FrontController
      */
     public function accueil()
     {
+        dump($_SESSION);
+        session_destroy();
         include_once './views/accueilView.php';
-
     }//end accueil()
 
 
@@ -35,7 +36,6 @@ class FrontController
         } else {
             header('location: ?action=signin');
         }
-
     }//end home()
 
 
@@ -51,7 +51,6 @@ class FrontController
         } else {
             header('location: ?action=signin');
         }
-
     }//end getbillets()
 
 
@@ -70,7 +69,6 @@ class FrontController
         } else {
             header('location: ?action=signin');
         }
-
     }//end getSingleBillet()
 
 
@@ -85,7 +83,6 @@ class FrontController
         } else {
             header('location: ?action=signin');
         }
-
     }//end biography()
 
 
@@ -99,7 +96,6 @@ class FrontController
         } else {
             header('location: ?action=signin');
         }
-
     }//end contact()
 
 
@@ -125,8 +121,5 @@ class FrontController
             echo 'send error : '.$e->getMessage();
             die;
         }
-
     }//end sendMail()
-
-
 }//end class

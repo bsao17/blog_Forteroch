@@ -32,8 +32,11 @@ class BackController
                     if ($user->signin($login, $password) == true) {
                         $_SESSION['login']  = $login;
                         $_SESSION['logued'] = true;
-                        $cookie_name        = 'user_login';
-                        $cookie_value       = $_SESSION['login'];
+                        /*
+                            @var Cookie $cookie_name
+                        */
+                        $cookie_name  = 'user_login';
+                        $cookie_value = $_SESSION['login'];
                         setcookie($cookie_name, $cookie_value, (time() + (3600 * 24 * 365)), '/');
                         header('location: ?action=home');
                     } else {
@@ -46,12 +49,12 @@ class BackController
                 }
             } else {
                 $signin_status = false;
-                $error         = "<pre class='text-center text-danger bg-warning w-25 m-auto rounded'>Field does not empty !</pre>";
+                $error         = '<pre class=\'text-' .
+                    'center text-danger bg-warning w-25 m-auto rounded\'>Field does not empty !</pre>';
             }//end if
         }//end if
 
         include_once './views/Connect.views.php';
-
     }//end signin()
 
 
@@ -92,7 +95,6 @@ class BackController
         }//end if
 
         include_once './views/registerView.php';
-
     }//end signup()
 
 
@@ -111,7 +113,6 @@ class BackController
         } else {
             header('location: ?action=signin');
         }
-
     }//end admin()
 
 
@@ -142,7 +143,6 @@ class BackController
         } else {
             header('location: ?action=signin');
         }//end if
-
     }//end createBillet()
 
 
@@ -163,7 +163,6 @@ class BackController
                 include_once './views/ACCOUNT/updateBillet.php';
             }
         }
-
     }//end updateBillet()
 
 
@@ -182,7 +181,6 @@ class BackController
         }
 
         header('location: ?action=simplebillet&ID='.$IDbillet);
-
     }//end createComment()
 
 
@@ -194,7 +192,6 @@ class BackController
         $comment = new ManagerComment();
         $comment->commentReport($_GET['ID']);
         include_once './views/ACCOUNT/notifyConfirm.php';
-
     }//end commentReport()
 
 
@@ -213,7 +210,6 @@ class BackController
                 include_once './views/ACCOUNT/deleteBillet.php';
             }
         }
-
     }//end deleteBillet()
 
 
@@ -225,7 +221,6 @@ class BackController
         $billet  = new ManagerBillets();
         $request = $billet->deleteBillet($_GET['ID']);
         header('location: ?action=deleteBillets');
-
     }//end delete()
 
 
@@ -237,7 +232,6 @@ class BackController
         $comment = new ManagerComment();
         $comment->deleteComment($_GET['ID']);
         header('location: ?action=deleteBillets');
-
     }//end deleteComment()
 
 
@@ -249,8 +243,5 @@ class BackController
         $comment = new ManagerComment();
         $comment->confirmComment($_GET['ID']);
         header('location: ?action=deleteBillets');
-
     }//end confirmComment()
-
-
 }//end class

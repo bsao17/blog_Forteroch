@@ -49,8 +49,5 @@ class DatabaseClass
         catch (Exception $e) {
             die('Erreur de connection :'.$e->getMessage());
         }
-
     }//end getConnection()
-
-
 }//end class

@@ -27,7 +27,6 @@ class ManagerUser
     {
         $this->db         = new DatabaseClass();
         $this->connection = $this->db->getConnection();
-
     }//end __construct()
 
 
@@ -61,7 +60,6 @@ class ManagerUser
                 }
             }
         }
-
     }//end signup()
 
 
@@ -87,7 +85,6 @@ class ManagerUser
                 }
             }
         }
-
     }//end signin()
 
 
@@ -111,8 +108,5 @@ class ManagerUser
                 }
             }
         }
-
     }//end adminVerify()
-
-
 }//end class

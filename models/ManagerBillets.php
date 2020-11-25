@@ -6,7 +6,6 @@ use Exception;
 use models\DatabaseClass;
 use PDO;
 
-
 /**
  * class ManagerBillets
  */
@@ -31,7 +30,6 @@ class ManagerBillets
     {
         $this->db         = new DatabaseClass();
         $this->connection = $this->db->getConnection();
-
     }//end __construct()
 
 
@@ -51,7 +49,6 @@ class ManagerBillets
             echo 'Error : '.$e->getMessage();
             die;
         }
-
     }//end getBillet()
 
 
@@ -75,7 +72,6 @@ class ManagerBillets
             echo 'Error : '.$e->getMessage();
             die;
         }
-
     }//end getBilletAlone()
 
 
@@ -103,7 +99,6 @@ class ManagerBillets
             echo 'Error :'.$e->getMessage();
             die;
         }
-
     }//end createBillet()
 
 
@@ -125,7 +120,6 @@ class ManagerBillets
             echo 'Error : '.$e->getMessage();
             die;
         }
-
     }//end deleteBillet()
 
 
@@ -151,8 +145,5 @@ class ManagerBillets
             echo 'Error : '.$e->getMessage();
             die;
         }
-
     }//end updateBillet()
-
-
 }//end class
