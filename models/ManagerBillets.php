@@ -1,8 +1,10 @@
 <?php
 
-spl_autoload_register(function ($className) {
-    $className = "models".$className.".php";
-});
+namespace models;
+
+use Exception;
+use models\Database;
+use PDO;
 
 
 /**
@@ -56,11 +58,11 @@ class ManagerBillets
     public function getBilletAlone($ID)
     {
         try {
+            /** @var Database $request */
             $request = $this->connection->prepare("SELECT * FROM billets WHERE ID = :ID");
             $request->bindParam(":ID", $ID, PDO::PARAM_STR);
             $request->execute();
-            $result = $request->fetchAll();
-            return $result;
+            return $request->fetchAll();
         } catch (Exception $e) {
             echo("Error : " . $e->getMessage());
             die;
@@ -76,6 +78,7 @@ class ManagerBillets
     public function createBillet($title, $content)
     {
         try {
+            /** @var Database $sql */
             $sql = "INSERT INTO billets(title, content) VALUES (:title, :content) ";
             if ($request = $this->connection->prepare($sql)) {
                 $request->bindParam(":title", $title, PDO::PARAM_STR);

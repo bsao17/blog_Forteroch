@@ -1,4 +1,11 @@
 <?php
+
+namespace controllers;
+
+use Exception;
+use models\ManagerBillets;
+use models\ManagerComment;
+
 require_once "./models/ManagerBillets.php";
 require_once "./models/ManagerComment.php";
 
@@ -18,7 +25,6 @@ class NavigationSite
     public function home()
     {
         if (isset($_COOKIE['PHPSESSID'])) {
-            session_start();
             include_once "./views/ACCOUNT/accountHome.php";
         } else {
             header("location: ?action=signin");
@@ -31,7 +37,6 @@ class NavigationSite
     public function getbillets()
     {
         if ($_REQUEST == "POST" || isset($_COOKIE['user_login'])) {
-            session_start();
             $billets = new ManagerBillets();
             $post = $billets->getBillet();
             include_once "./views/ACCOUNT/accountBilletsList.php";
@@ -46,7 +51,6 @@ class NavigationSite
     public function getSingleBillet()
     {
         if ($_REQUEST == "POST" || isset($_COOKIE['user_login'])) {
-            session_start();
             $ID = $_GET["ID"];
             $billets = new ManagerBillets();
             $post = $billets->getBilletAlone($ID);
@@ -64,7 +68,6 @@ class NavigationSite
     public function biography()
     {
         if (isset($_COOKIE['user_login'])) {
-            session_start();
             include_once "./views/TEMPLATES/accountBaseTemplate.php";
             include_once './views/ACCOUNT/accountBiography.php';
         } else {
@@ -78,7 +81,6 @@ class NavigationSite
     public function contact()
     {
         if (isset($_COOKIE['user_login'])) {
-            session_start();
             include_once "./views/TEMPLATES/contactTemplate.php";
         } else {
             header("location: ?action=signin");
@@ -89,7 +91,6 @@ class NavigationSite
      */
     public function sendMail()
     {
-        session_start();
         include_once "./views/TEMPLATES/accountBaseTemplate.php";
         try {
             if (isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['mail']) && isset($_POST['contentMail'])) {
@@ -99,7 +100,7 @@ class NavigationSite
                 $contentMail = $_POST['contentMail'];
                 $body = "$firstname\n$lastname\n$email\n$contentMail";
                 mail("declic62@gmail.com", "test", $body);
-                echo "<h1 class='border border-info bg-light'>E-mail send !!!</h1>";
+                echo "<h1 class='border border-info bg-light text-center'>E-mail send !!!</h1>";
             } else {
                 echo "sorry not send mail !";
             }

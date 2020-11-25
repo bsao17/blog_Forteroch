@@ -1,5 +1,10 @@
 <?php
 
+namespace models;
+
+use Exception;
+use PDO;
+
 /**
  * Class Database
  * Database connection

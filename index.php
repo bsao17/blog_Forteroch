@@ -1,9 +1,13 @@
 <?php
-require_once "./controllers/controller.NavigationSite.php";
-require_once "./controllers/controller.AdministrationSite.php";
+
+use controllers\AdministrationSite as Administration;
+use controllers\NavigationSite as Navigation;
+
+require_once "./controllers/FrontController.php";
+require_once "./controllers/BackController.php";
 
 try {
-
+    session_start();
     /**
      * Create super global variable with name "action" and POST or GET request method
      */
@@ -16,12 +20,12 @@ try {
     /**
      * Class instance NavigationSite
      */
-    $direction = new NavigationSite();
+    $direction = new Navigation();
 
     /**
      * Class instance AdministrationSite
      */
-    $administration = new AdministrationSite();
+    $administration = new Administration();
 
     if ($action != null) {
         switch ($action) {

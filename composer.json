@@ -1,9 +1,23 @@
 {
-    "require": {},
-    "require-dev": {
-        "phploc/phploc": "^7.0",
-        "phpmd/phpmd": "^2.9",
+    "name": "meddhed/projet4_oc",
+    "description": "blog",
+    "require": {
+        "mi-schi/phpmd-extension": "^4.3",
         "squizlabs/php_codesniffer": "^3.5",
-        "friendsofphp/php-cs-fixer": "^2.16"
+        "friendsofphp/php-cs-fixer": "^2.16",
+        "phploc/phploc": "^7.0",
+        "twig/twig": "^3.1",
+        "ext-pdo": "*"
+    },
+    "authors": [
+        {
+            "name": "Mehddeb Bruno",
+            "email": "declic62@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+
+        }
     }
 }

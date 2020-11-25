@@ -1,3 +1,5 @@
 public/key
 vendor
+.idea
+.php_cs.cache
 

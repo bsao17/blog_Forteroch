@@ -1,19 +1,23 @@
 <?php
 
-require_once "./models/DatabaseClass.php";
+namespace models;
+
+use PDO;
+
+require_once "DatabaseClass.php";
 
 class ManagerUser
 {
     /**
      * @var database
      */
-    private $db;
+    private Database $db;
 
 
     /**
      * @var PDO
      */
-    private $connection;
+    private PDO $connection;
     
     
     /**
@@ -55,6 +59,7 @@ class ManagerUser
             }
         }
     }
+
     /**
      * Signin method
      * @param string $login

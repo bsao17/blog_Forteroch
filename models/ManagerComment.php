@@ -1,8 +1,9 @@
 <?php
 
-spl_autoload_register(function ($className) {
-    $className = "./models".$className.".php";
-});
+namespace models;
+
+use models\Database;
+use PDO;
 
 class ManagerComment
 {
@@ -10,13 +11,13 @@ class ManagerComment
     /**
      * @var database
      */
-    private $db;
+    private Database $db;
 
 
     /**
      * @var PDO
      */
-    private $connection;
+    private PDO $connection;
 
 
     /**

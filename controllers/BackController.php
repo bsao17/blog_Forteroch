@@ -1,4 +1,11 @@
 <?php
+
+namespace controllers;
+
+use models\ManagerBillets;
+use models\ManagerComment;
+use models\ManagerUser;
+
 require_once "./models/ManagerUser.php";
 require_once "./models/ManagerBillets.php";
 require_once "./models/ManagerComment.php";
@@ -23,7 +30,6 @@ class AdministrationSite
                 if ($password == $repeat_password) {
                     $user = new ManagerUser();
                     if ($user->signin($login, $password) == true) {
-                        session_start();
                         $_SESSION['login'] = $login;
                         $_SESSION['logued'] = true;
                         $cookie_name = "user_login";
@@ -91,7 +97,6 @@ class AdministrationSite
         if (isset($_COOKIE["user_login"])) {
             $user = new ManagerUser();
             if ($user->adminVerify() == true) {
-                session_start();
                 include_once "./views/ACCOUNT/accountAdmin.php";
             } else {
                 header("location: ?action=home");
@@ -109,7 +114,6 @@ class AdministrationSite
         if (isset($_COOKIE["user_login"])) {
             $user = new ManagerUser();
             if ($user->adminVerify() == true) {
-                session_start();
                 if (isset($_POST["titleBillet"]) && isset($_POST["contentBillet"])) {
                     $title = $_POST["titleBillet"];
                     $content = $_POST["contentBillet"];
@@ -138,7 +142,6 @@ class AdministrationSite
         if (isset($_COOKIE["user_login"])) {
             $user = new ManagerUser();
             if ($user->adminVerify()) {
-                session_start();
                 $billet = new ManagerBillets();
                 $post = $billet->getBillet();
                 if (!empty(isset($_POST["ID"])) && isset($_POST["title"]) && isset($_POST["content"])) {
