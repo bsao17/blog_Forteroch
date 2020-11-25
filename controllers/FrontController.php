@@ -20,7 +20,6 @@ class FrontController
      */
     public function accueil()
     {
-        DD($_SESSION);
         include_once './views/accueilView.php';
 
     }//end accueil()
